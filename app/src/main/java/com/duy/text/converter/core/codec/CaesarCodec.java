@@ -75,7 +75,7 @@ public class CaesarCodec extends CodecImpl {
                 }
                 incConfident();
             } else {
-                //Append characcter to StringBuilder object
+                //Append character to StringBuilder object
                 encoded.append(i);
             }
         }

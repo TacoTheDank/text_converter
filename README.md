@@ -1,67 +1,68 @@
 # Text Converter
-Send your friends the most special text and mysterious text (Android)
+Send your friends special, stupid, mysterious, and ridiculous text.
 
-[<img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" width=300>](https://play.google.com/store/apps/details?id=duy.com.text_converter)
-## PLEASE DON'T RE UP THIS APPLICATION. USE THIS APP FOR YOUR STUDY OR RESEARCH
+Supports encoding and decoding, as one would expect.
+
+Forked from the [original by tranleduy2000](https://github.com/tranleduy2000/text_converter). Thanks so much for this app.
 
 # Features
-### Codec
-- Ascii encoder/decoder
-- Binary encoder/decoder (a -> 01100001)
-- Hex encoder/decoder
-- Octal encoder/decoder
-- Reverser text (abc def -> fed cba) encoder/decoder
-- Upper case text (abc -> ABC) encoder/decoder
-- Lower case text (ABC -> abc) encoder/decoder
-- Upside down text (hello -> oןןǝɥ)
-- Supper script ᵃᵇᶜᵈᵉᶠᵍʰⁱʲᵏˡᵐⁿᵒᵖqʳˢᵗᵘᵛʷˣʸᶻ_,;.?!/\'ᴬᴮᶜᴰᴱᶠᴳᴴᴵᴶᴷᴸᴹᴺᴼᴾQᴿˢᵀᵁⱽᵂˣʸᶻ⁰¹²³⁴⁵⁶⁷⁸⁹
-- Sub script ₐbcdₑfgₕᵢⱼₖₗₘₙₒₚqᵣₛₜᵤᵥwₓyz_,;.?!/\'ₐBCDₑFGₕᵢⱼₖₗₘₙₒₚQᵣₛₜᵤᵥWₓYZ₀₁₂₃₄₅₆₇₈₉
-- International morse code encoder/decoder
-- Zalgo Big/Normal/Mini encoder/decoder
-- Base 32 encoder/decoder
-- Base 64 encoder/decoder
-- Url encoder/decoder
-- Random case
+### Supported codecs (encoding/decoding)
+- ASCII
+- Atbash
+- Base32
+- Base64
+- Binary (a -> 01100001)
 - Caesar
-- Atbash encoder/decoder
-- ROT-13 codec
-- Nato codec
-- Unicode encoder/decoder
-- Wingding encoder/decoder
+- Hex
+- Lowercase text (ABC -> abc)
+- Morse code
+- NATO (Alpha, Bravo, Charlie, etc.)
+- Octal
+- Random case
+- Reverser text (abc def -> fed cba)
+- ROT13 (Special case of Caesar)
+- Subscript (ₐbcdₑfgₕᵢⱼₖₗₘₙₒₚqᵣₛₜᵤᵥwₓyz_,;.?!/\'ₐBCDₑFGₕᵢⱼₖₗₘₙₒₚQᵣₛₜᵤᵥWₓYZ₀₁₂₃₄₅₆₇₈₉)
+- Superscript (ᵃᵇᶜᵈᵉᶠᵍʰⁱʲᵏˡᵐⁿᵒᵖqʳˢᵗᵘᵛʷˣʸᶻ_,;.?!/\'ᴬᴮᶜᴰᴱᶠᴳᴴᴵᴶᴷᴸᴹᴺᴼᴾQᴿˢᵀᵁⱽᵂˣʸᶻ⁰¹²³⁴⁵⁶⁷⁸⁹)
+- Unicode
+- Uppercase text (abc -> ABC)
+- Upside-down text (hello -> oןןǝɥ)
+- URL
+- Wingding
+- Zalgo Big/Mini/Normal
 
-### Barcode encoder/decoder
+### Supported barcodes (encoding/decoding)
 - AZTEC
 - CODABAR
 - CODE_39
-- CODE_128,
+- CODE_128
 - EAN_8
 - EAN_13
 - ITF
-- PDF_417,
+- PDF_417
 - QR_CODE
 - UPC_A
 
 ### Stylish text & decorate text generator
-- More than 200 style
+- More than 200 styles
 
-### Hash
+### Supported hashes (encoding/decoding)
 - MD5
 - SHA-1
 - SHA-256
 - SHA-384
 - SHA-512
 
-### Base converter
-Convert from base to other base (Hex, decmial, octal, binary)
+### Base conversion
+- Converts from a base to another base (Hex, decimal, octal, binary, etc.)
 
-### Cipher
+### Supported ciphers
 - Caesar
-- Vignere
+- Vigenère
 
-### More feature
+### Other features
 - Frequency analysis
 
-## GNU GPL 3.0 License
+## License (GNU GPLv3)
 
     Copyright (C) 2017-2018 Tran Le Duy
 
@@ -77,13 +78,3 @@ Convert from base to other base (Hex, decmial, octal, binary)
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-## Some Image
-
-![](art/screenshot/Screenshot_20170710-144003.png)
-![](art/screenshot/Screenshot_20170710-144006.png)
-![](art/screenshot/Screenshot_20170710-144011.png)
-![](art/screenshot/Screenshot_20170710-144013.png)
-![](art/screenshot/Screenshot_20170710-144015.png)
-
-

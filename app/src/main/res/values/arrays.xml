@@ -17,10 +17,10 @@
 
 <resources>
 
-    <string name="ascii">Ascii</string>
+    <string name="ascii">ASCII</string>
     <string name="binary">Binary</string>
     <string name="hex">Hex</string>
-    <string name="zalgo_mini">Zalog mini</string>
+    <string name="zalgo_mini">Zalgo mini</string>
     <string name="reverser">Reverser</string>
     <string name="morse_code">Morse code</string>
 
