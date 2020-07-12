@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         mDrawerLayout.closeDrawers();
         int id = item.getItemId();
         switch (id) {
-            case R.id.action_setting:
+            case R.id.action_settings:
                 Intent intent = new Intent(this, SettingActivity.class);
                 startActivityForResult(intent, REQ_CODE_SETTING);
                 break;

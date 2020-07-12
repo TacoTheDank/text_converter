@@ -52,7 +52,7 @@ public class SettingActivity extends BaseActivity implements SharedPreferences.O
         setContentView(R.layout.activity_setting);
 
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
-        setTitle(R.string.action_setting);
+        setTitle(R.string.action_settings);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
