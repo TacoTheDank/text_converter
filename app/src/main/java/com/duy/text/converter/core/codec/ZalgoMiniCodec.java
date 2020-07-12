@@ -23,7 +23,7 @@ import androidx.annotation.NonNull;
 
 import com.duy.text.converter.core.codec.interfaces.CodecImpl;
 
-import org.apache.commons.lang.ArrayUtils;
+import org.apache.commons.lang3.ArrayUtils;
 
 public class ZalgoMiniCodec extends CodecImpl {
 

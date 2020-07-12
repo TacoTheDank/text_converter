@@ -56,24 +56,24 @@ dependencies {
     implementation project(':common')
 
 // AndroidX
-    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'com.google.android.material:material:1.1.0'
 
 // Third party
-    implementation 'commons-codec:commons-codec:1.7'
-    implementation 'commons-lang:commons-lang:2.6'
-    implementation 'com.google.zxing:core:3.3.0'
-    implementation 'com.journeyapps:zxing-android-embedded:3.5.0@aar'
-    implementation 'com.ogaclejapan.smarttablayout:library:1.6.1@aar'
-    implementation 'com.simplecityapps:recyclerview-fastscroll:1.0.16'
-    implementation 'com.github.PhilJay:MPAndroidChart:v2.2.4'
+    implementation 'commons-codec:commons-codec:1.14'
+    implementation 'org.apache.commons:commons-lang3:3.10'
+    implementation 'org.apache.commons:commons-text:1.8'
+    implementation 'com.google.zxing:core:3.4.0'
+    //noinspection GradleDependency
+    implementation 'com.journeyapps:zxing-android-embedded:3.6.0@aar' //4.x requires minSdk 24
+    implementation 'com.ogaclejapan.smarttablayout:library:2.0.0@aar'
+    implementation 'com.simplecityapps:recyclerview-fastscroll:2.0.1'
+    implementation 'com.github.PhilJay:MPAndroidChart:v2.2.5' //TODO: 3.x requires breaking changes
 
 // Testing
-    testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test:rules:1.2.0'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0')/* {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    }*/
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }

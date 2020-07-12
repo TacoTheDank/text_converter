@@ -23,7 +23,7 @@ import androidx.annotation.NonNull;
 
 import com.duy.text.converter.core.codec.interfaces.CodecImpl;
 
-import org.apache.commons.lang.StringEscapeUtils;
+import org.apache.commons.text.StringEscapeUtils;
 
 /**
  * Created by Duy on 2/10/2018.
