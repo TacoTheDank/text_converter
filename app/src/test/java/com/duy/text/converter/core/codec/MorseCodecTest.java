@@ -54,7 +54,7 @@ public class MorseCodecTest {
     }
 
     @Test
-    public void decode3(){
+    public void decode3() {
         assertEquals("--.- .-- . .-. - -.-- ..- .. --- .--. .- ... -.. ..-. --. .... .--- -" +
                         ".- .-.. --.. -..- -.-. ...- -... -. -- .---- ..--- ...-- ....- ..... -.... -" +
                         "-... ---.. ----. -----",

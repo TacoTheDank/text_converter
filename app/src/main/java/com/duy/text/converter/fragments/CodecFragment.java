@@ -37,11 +37,11 @@ import android.widget.Spinner;
 
 import com.duy.text.converter.R;
 import com.duy.text.converter.core.codec.interfaces.CodecMethod;
+import com.duy.text.converter.pro.activities.CodecAllActivity;
 import com.duy.text.converter.ui.menu.EditMenuViewHolder;
 import com.duy.text.converter.utils.ShareManager;
 import com.duy.text.converter.view.BaseEditText;
 import com.duy.text.converter.view.RoundedBackgroundEditText;
-import com.duy.text.converter.pro.activities.CodecAllActivity;
 
 
 /**

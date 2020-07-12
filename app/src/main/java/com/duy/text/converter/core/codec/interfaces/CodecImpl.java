@@ -17,8 +17,6 @@
 
 package com.duy.text.converter.core.codec.interfaces;
 
-import android.content.Context;
-
 /**
  * Created by Duy on 16-Dec-17.
  */

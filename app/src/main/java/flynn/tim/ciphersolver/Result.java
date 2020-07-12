@@ -32,27 +32,27 @@ public class Result {
         this.ex = ex;
     }
 
-    public void setResult(String r) {
-        this.result = r;
-    }
-
     public String getResult() {
         return this.result;
     }
 
-    public void setChecked(Boolean checked) {
-        this.checked = checked;
+    public void setResult(String r) {
+        this.result = r;
     }
 
     public Boolean getChecked() {
         return this.checked;
     }
 
-    public void setEx(Boolean ex) {
-        this.ex = ex;
+    public void setChecked(Boolean checked) {
+        this.checked = checked;
     }
 
     public boolean getEx() {
         return this.ex;
+    }
+
+    public void setEx(Boolean ex) {
+        this.ex = ex;
     }
 }

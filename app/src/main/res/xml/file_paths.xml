@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (C)  2017-2018 Tran Le Duy
   ~
   ~  This program is free software: you can redistribute it and/or modify
@@ -15,6 +14,8 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <http://www.gnu.org/licenses/>.
   -->
-<paths xmlns:android="http://schemas.android.com/apk/res/android">
-    <external-path name="my_images" path="."/>
+<paths>
+    <external-path
+        name="my_images"
+        path="." />
 </paths>

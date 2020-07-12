@@ -28,8 +28,8 @@ import android.widget.TextView;
 
 import com.duy.text.converter.R;
 import com.duy.text.converter.clipboard.ClipboardUtil;
-import com.duy.text.converter.utils.ShareManager;
 import com.duy.text.converter.pro.menu.fragments.OnTextSelectedListener;
+import com.duy.text.converter.utils.ShareManager;
 
 import java.util.ArrayList;
 import java.util.Locale;

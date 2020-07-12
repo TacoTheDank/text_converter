@@ -23,8 +23,8 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 
-import com.duy.text.converter.activities.base.BaseActivity;
 import com.duy.text.converter.R;
+import com.duy.text.converter.activities.base.BaseActivity;
 
 /**
  * Created by Duy on 14-Aug-17.
@@ -52,7 +52,6 @@ public class BarcodeEncodedActivity extends BaseActivity {
         viewPager.setCurrentItem(8); //barcode
         ((TabLayout) findViewById(R.id.tab_layout)).setupWithViewPager(viewPager);
     }
-
 
 
 }
