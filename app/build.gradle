@@ -21,34 +21,15 @@ apply plugin: 'io.fabric'
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
-    useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
+        applicationId "com.duy.text_converter"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 401
         versionName "4.0.1"
 
         testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
-    }
-    signingConfigs {
-        proRelease {
-
-        }
-        freeRelease {
-
-        }
-    }
-    flavorDimensions "applicationId"
-    productFlavors {
-        free {
-            signingConfig signingConfigs.freeRelease
-            applicationId "duy.com.text_converter"
-        }
-        pro {
-            signingConfig signingConfigs.proRelease
-            applicationId "com.duy.text_converter.pro"
-        }
     }
 
     sourceSets {
@@ -57,53 +38,44 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-        debug {
-        }
     }
-}
 
-def Properties props = new Properties()
-def propFile = new File(rootProject.projectDir, 'signing.properties')
-if (propFile.exists()) {
-    props.load(new FileInputStream(propFile))
-    android.signingConfigs.proRelease.storeFile = file(props['PRO_RELEASE_STORE_FILE'])
-    android.signingConfigs.proRelease.storePassword = props['PRO_RELEASE_STORE_PASSWORD']
-    android.signingConfigs.proRelease.keyAlias = props['PRO_RELEASE_KEY_ALIAS']
-    android.signingConfigs.proRelease.keyPassword = props['PRO_RELEASE_KEY_PASSWORD']
+    compileOptions {
+        encoding = 'UTF-8'
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 
-    android.signingConfigs.freeRelease.storeFile = file(props['FREE_RELEASE_STORE_FILE'])
-    android.signingConfigs.freeRelease.storePassword = props['FREE_RELEASE_STORE_PASSWORD']
-    android.signingConfigs.freeRelease.keyAlias = props['FREE_RELEASE_KEY_ALIAS']
-    android.signingConfigs.freeRelease.keyPassword = props['FREE_RELEASE_KEY_PASSWORD']
-} else {
-    println 'signing.properties not found'
-    android.buildTypes.release.signingConfig = null
+    useLibrary 'org.apache.http.legacy'
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-
-    testImplementation 'junit:junit:4.12'
+// Local
     implementation project(':lvl')
     implementation project(':common')
 
+// Android support
     implementation "com.android.support:appcompat-v7:$androidSupportVersion"
     implementation "com.android.support:cardview-v7:$androidSupportVersion"
     implementation "com.android.support:design:$androidSupportVersion"
     implementation "com.android.support:support-v4:$androidSupportVersion"
 
-    implementation group: 'commons-lang', name: 'commons-lang', version: '2.6'
+// Third party
+    implementation 'commons-lang:commons-lang:2.6'
     implementation 'com.google.zxing:core:3.3.0'
     implementation 'com.journeyapps:zxing-android-embedded:3.5.0@aar'
     implementation 'com.ogaclejapan.smarttablayout:library:1.6.1@aar'
     implementation 'com.simplecityapps:recyclerview-fastscroll:1.0.16'
     implementation 'io.github.kobakei:ratethisapp:1.2.0'
     implementation 'com.github.PhilJay:MPAndroidChart:v2.2.4'
+
+// Testing
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
 }
 apply plugin: 'com.google.gms.google-services'
