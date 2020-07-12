@@ -60,7 +60,7 @@ public class ReplaceEffect implements Style {
             = "äḅċḋëḟġḧïjḳḷṁṅöṗqṛṡẗüṿẅẍÿż_,;.?!/\\'ÄḄĊḊЁḞĠḦЇJḲḶṀṄÖṖQṚṠṪÜṾẄẌŸŻ012ӟ456789";
     private static final String STROKE
             = "Ⱥƀȼđɇfǥħɨɉꝁłmnøᵽꝗɍsŧᵾvwxɏƶ_,;.?!/\\'ȺɃȻĐɆFǤĦƗɈꝀŁMNØⱣꝖɌSŦᵾVWXɎƵ01ƻ3456789";
-    private static final String SUPPER_SCRIPT
+    private static final String SUPER_SCRIPT
             = "ᵃᵇᶜᵈᵉᶠᵍʰⁱʲᵏˡᵐⁿᵒᵖqʳˢᵗᵘᵛʷˣʸᶻ_,;.?!/\\'ᴬᴮᶜᴰᴱᶠᴳᴴᴵᴶᴷᴸᴹᴺᴼᴾQᴿˢᵀᵁⱽᵂˣʸᶻ⁰¹²³⁴⁵⁶⁷⁸⁹";
     private static final String SUB_SCRIPT
             = "ₐbcdₑfgₕᵢⱼₖₗₘₙₒₚqᵣₛₜᵤᵥwₓyz_,;.?!/\\'ₐBCDₑFGₕᵢⱼₖₗₘₙₒₚQᵣₛₜᵤᵥWₓYZ₀₁₂₃₄₅₆₇₈₉";
@@ -130,7 +130,7 @@ public class ReplaceEffect implements Style {
         STYLES.add(CURVY_3);
         STYLES.add(ROCK_DOT);
         STYLES.add(STROKE);
-        STYLES.add(SUPPER_SCRIPT);
+        STYLES.add(SUPER_SCRIPT);
         STYLES.add(SUB_SCRIPT);
         STYLES.add(FAUX_CYRILLIC);
         STYLES.add(SMALL_CAP);
