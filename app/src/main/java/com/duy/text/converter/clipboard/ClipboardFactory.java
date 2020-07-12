@@ -18,7 +18,8 @@
 package com.duy.text.converter.clipboard;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+
+import androidx.annotation.NonNull;
 
 /**
  * Created by Duy on 13-Apr-18.

@@ -18,9 +18,10 @@
 package com.duy.text.converter.pro.floating.codec;
 
 import android.content.Context;
-import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.viewpager.widget.PagerAdapter;
 
 import com.duy.text.converter.core.codec.interfaces.CodecUtil;
 

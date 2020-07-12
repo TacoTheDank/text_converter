@@ -18,9 +18,6 @@
 package flynn.tim.ciphersolver.vigenere;
 
 import android.os.Bundle;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.Spanned;
@@ -28,6 +25,10 @@ import android.text.TextWatcher;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
+
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.duy.text.converter.R;
 import com.duy.text.converter.activities.base.BaseActivity;

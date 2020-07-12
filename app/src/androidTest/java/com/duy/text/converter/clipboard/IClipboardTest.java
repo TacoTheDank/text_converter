@@ -17,8 +17,9 @@
 
 package com.duy.text.converter.clipboard;
 
-import android.support.test.rule.ActivityTestRule;
 import android.util.Log;
+
+import androidx.test.rule.ActivityTestRule;
 
 import com.duy.text.converter.BuildConfig;
 import com.duy.text.converter.TestUtils;
@@ -27,7 +28,7 @@ import com.duy.text.converter.activities.MainActivity;
 import org.junit.Rule;
 import org.junit.Test;
 
-import static android.support.test.espresso.matcher.ViewMatchers.assertThat;
+import static androidx.test.espresso.matcher.ViewMatchers.assertThat;
 import static org.hamcrest.core.IsEqual.equalTo;
 
 /**

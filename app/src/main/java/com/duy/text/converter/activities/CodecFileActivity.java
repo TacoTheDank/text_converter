@@ -18,8 +18,9 @@
 package com.duy.text.converter.activities;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentTransaction;
+
+import androidx.annotation.Nullable;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.duy.text.converter.R;
 import com.duy.text.converter.activities.base.BaseActivity;

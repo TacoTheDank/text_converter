@@ -18,13 +18,14 @@
 package com.duy.text.converter.barcode;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
-import android.support.v7.widget.Toolbar;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
+import androidx.viewpager.widget.ViewPager;
 
 import com.duy.text.converter.R;
 import com.duy.text.converter.activities.base.BaseActivity;
+import com.google.android.material.tabs.TabLayout;
 
 /**
  * Created by Duy on 14-Aug-17.

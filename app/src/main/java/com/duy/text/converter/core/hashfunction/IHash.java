@@ -17,7 +17,7 @@
 
 package com.duy.text.converter.core.hashfunction;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 /**
  * Created by Duy on 08-Aug-17.

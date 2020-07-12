@@ -20,8 +20,9 @@ package com.duy.text.converter.clipboard;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 
 import com.duy.text.converter.R;
 

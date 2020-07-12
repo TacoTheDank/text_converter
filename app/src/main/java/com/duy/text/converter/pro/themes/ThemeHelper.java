@@ -20,9 +20,10 @@ package com.duy.text.converter.pro.themes;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.support.annotation.NonNull;
-import android.support.v7.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.view.ContextThemeWrapper;
 
 import com.duy.text.converter.R;
 

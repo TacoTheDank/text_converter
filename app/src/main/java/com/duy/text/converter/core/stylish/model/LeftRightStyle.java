@@ -18,7 +18,7 @@
 package com.duy.text.converter.core.stylish.model;
 
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 /**
  * Created by Duy on 13-Jul-17.

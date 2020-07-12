@@ -34,8 +34,6 @@ import android.graphics.Point;
 import android.os.Build;
 import android.os.IBinder;
 import android.os.Vibrator;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -52,6 +50,9 @@ import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.OvershootInterpolator;
 import android.widget.FrameLayout;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.duy.text.converter.R;
 import com.duy.text.converter.pro.themes.ThemeHelper;

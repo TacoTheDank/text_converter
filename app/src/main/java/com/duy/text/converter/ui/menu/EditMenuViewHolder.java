@@ -18,13 +18,14 @@
 package com.duy.text.converter.ui.menu;
 
 import android.content.Context;
-import android.support.annotation.IdRes;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.text.Editable;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.IdRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.duy.common.utils.ShareUtil;
 import com.duy.text.converter.R;

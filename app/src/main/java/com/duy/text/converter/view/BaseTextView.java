@@ -23,13 +23,15 @@ import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.widget.Toast;
 
+import androidx.appcompat.widget.AppCompatTextView;
+
 import com.duy.text.converter.R;
 
 /**
  * Created by DUy on 07-Feb-17.
  */
 
-public class BaseTextView extends android.support.v7.widget.AppCompatTextView {
+public class BaseTextView extends AppCompatTextView {
 
     public BaseTextView(Context context) {
         super(context);

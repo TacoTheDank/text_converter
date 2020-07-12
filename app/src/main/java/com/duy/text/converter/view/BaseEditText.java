@@ -21,13 +21,15 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.Toast;
 
+import androidx.appcompat.widget.AppCompatEditText;
+
 import com.duy.text.converter.R;
 
 /**
  * Created by Duy on 23-Mar-17.
  * full support unicode
  */
-public class BaseEditText extends android.support.v7.widget.AppCompatEditText {
+public class BaseEditText extends AppCompatEditText {
     public BaseEditText(Context context) {
         super(context);
         setup(context);

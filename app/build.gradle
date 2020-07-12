@@ -28,7 +28,7 @@ android {
         versionCode 401
         versionName "4.0.1"
 
-        testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
 
     sourceSets {
@@ -55,11 +55,10 @@ dependencies {
 // Local
     implementation project(':common')
 
-// Android support
-    implementation "com.android.support:appcompat-v7:$androidSupportVersion"
-    implementation "com.android.support:cardview-v7:$androidSupportVersion"
-    implementation "com.android.support:design:$androidSupportVersion"
-    implementation "com.android.support:support-v4:$androidSupportVersion"
+// AndroidX
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
 
 // Third party
     implementation 'commons-codec:commons-codec:1.7'
@@ -72,7 +71,9 @@ dependencies {
 
 // Testing
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+    androidTestImplementation 'androidx.test:rules:1.2.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0')/* {
         exclude group: 'com.android.support', module: 'support-annotations'
-    })
+    }*/
 }
