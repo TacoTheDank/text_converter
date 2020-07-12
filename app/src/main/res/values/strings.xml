@@ -16,7 +16,7 @@
   -->
 
 <resources>
-    <string name="app_name">Codec</string>
+    <string name="app_name">Text Converter</string>
     <string name="choose_method">Choose method</string>
     <string name="encode">Encode</string>
     <string name="decode">Decode</string>
