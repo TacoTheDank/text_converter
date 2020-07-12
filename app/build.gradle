@@ -64,16 +64,25 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.google.android.material:material:1.1.0'
 
+
 // Third party
+    // Apache commons
     implementation 'commons-codec:commons-codec:1.14'
     implementation 'org.apache.commons:commons-lang3:3.10'
     implementation 'org.apache.commons:commons-text:1.8'
+
+    // Barcode
     implementation 'com.google.zxing:core:3.4.0'
     //noinspection GradleDependency
     implementation 'com.journeyapps:zxing-android-embedded:3.6.0@aar' //4.x requires minSdk 24
+
+    // Misc UI
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
     implementation 'com.ogaclejapan.smarttablayout:library:2.0.0@aar'
     implementation 'com.simplecityapps:recyclerview-fastscroll:2.0.1'
     implementation 'com.github.PhilJay:MPAndroidChart:v2.2.5' //TODO: 3.x requires breaking changes
+
 
 // Testing
     testImplementation 'junit:junit:4.13'

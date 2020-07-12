@@ -40,8 +40,4 @@ android {
 dependencies {
 // AndroidX
     api 'androidx.appcompat:appcompat:1.1.0'
-
-// Third party
-    api 'com.github.bumptech.glide:glide:4.11.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 }
