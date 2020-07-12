@@ -23,8 +23,6 @@ import android.preference.Preference;
 import android.preference.PreferenceManager;
 import android.preference.RingtonePreference;
 
-import androidx.appcompat.app.AppCompatDelegate;
-
 public class PreferencesUtil {
 
     private static Preference.OnPreferenceChangeListener sBindPreferenceSummaryToValueListener =
@@ -51,8 +49,6 @@ public class PreferencesUtil {
                 }
                 return true;
             };
-
-    private AppCompatDelegate mDelegate;
 
     /**
      * Binds a preference's summary to its value. More specifically, when the
