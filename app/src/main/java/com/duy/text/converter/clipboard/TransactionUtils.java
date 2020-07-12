@@ -37,25 +37,15 @@ public class TransactionUtils {
     public static boolean isTransactionTooLarge(String content) {
         int bytes = content.getBytes().length;
         if (Build.VERSION.SDK_INT >= 23) {
-            if (bytes > 517716) {
-                return true;
-            }
+            return bytes > 517716;
         } else if (Build.VERSION.SDK_INT >= 22) {
-            if (bytes > 517876) {
-                return true;
-            }
+            return bytes > 517876;
         } else if (Build.VERSION.SDK_INT >= 19) {
-            if (bytes > 518368) {
-                return true;
-            }
+            return bytes > 518368;
         } else if (Build.VERSION.SDK_INT >= 16) {
-            if (bytes > 518396) {
-                return true;
-            }
+            return bytes > 518396;
         } else if (Build.VERSION.SDK_INT >= 10) {
-            if (bytes > 518580) {
-                return true;
-            }
+            return bytes > 518580;
         }
         return false;
     }

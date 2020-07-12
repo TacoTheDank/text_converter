@@ -203,10 +203,7 @@ public class CodecFileFragment extends Fragment implements View.OnClickListener 
             }
         }
         i = ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE);
-        if (i != PackageManager.PERMISSION_GRANTED) {
-            return false;
-        }
-        return true;
+        return i == PackageManager.PERMISSION_GRANTED;
     }
 
     @Override
