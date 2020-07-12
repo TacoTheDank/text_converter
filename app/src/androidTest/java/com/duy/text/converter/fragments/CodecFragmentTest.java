@@ -20,8 +20,9 @@ package com.duy.text.converter.fragments;
 import android.support.test.filters.LargeTest;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
+import android.util.Log;
 
-import com.duy.common.utils.DLog;
+import com.duy.text.converter.BuildConfig;
 import com.duy.text.converter.R;
 import com.duy.text.converter.TestUtils;
 import com.duy.text.converter.activities.MainActivity;
@@ -332,7 +333,7 @@ public class CodecFragmentTest {
         String toBeDuplicated = "hello\n";
         String text = TestUtils.duplicateString(toBeDuplicated, count);
 
-        if (DLog.DEBUG) DLog.d(TAG, "testLargeData_failed: " + text.length());
+        if (BuildConfig.DEBUG) Log.d(TAG, "testLargeData_failed: " + text.length());
 
         assertThat(text.length(), equalTo(count * toBeDuplicated.length()));
 

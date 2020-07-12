@@ -18,8 +18,9 @@
 package com.duy.text.converter.clipboard;
 
 import android.support.test.rule.ActivityTestRule;
+import android.util.Log;
 
-import com.duy.common.utils.DLog;
+import com.duy.text.converter.BuildConfig;
 import com.duy.text.converter.TestUtils;
 import com.duy.text.converter.activities.MainActivity;
 
@@ -71,7 +72,7 @@ public class IClipboardTest {
             @Override
             public void run() {
                 String largeText = TestUtils.duplicateString("LargeText", 500000);
-                if (DLog.DEBUG) DLog.d(TAG, "run: size " + largeText.getBytes().length);
+                if (BuildConfig.DEBUG) Log.d(TAG, "run: size " + largeText.getBytes().length);
                 IClipboard clipboard = ClipboardFactory.createClipboardManager(mRule.getActivity());
                 boolean result = clipboard.setClipboard(largeText);
                 assertThat(result, equalTo(true));
