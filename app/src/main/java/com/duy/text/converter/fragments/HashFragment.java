@@ -45,6 +45,7 @@ import com.duy.text.converter.core.hashfunction.Sha1Hash;
 import com.duy.text.converter.core.hashfunction.Sha256Hash;
 import com.duy.text.converter.core.hashfunction.Sha384Hash;
 import com.duy.text.converter.core.hashfunction.Sha512Hash;
+import com.duy.text.converter.core.hashfunction.UnixCryptHash;
 import com.duy.text.converter.view.BaseEditText;
 import com.duy.text.converter.view.RoundedBackgroundEditText;
 
@@ -100,6 +101,7 @@ public class HashFragment extends Fragment {
         mHashFunctions.add(new Sha256Hash());
         mHashFunctions.add(new Sha384Hash());
         mHashFunctions.add(new Sha512Hash());
+        mHashFunctions.add(new UnixCryptHash());
     }
 
     @Override

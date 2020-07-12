@@ -51,6 +51,7 @@ Forked from the [original by tranleduy2000](https://github.com/tranleduy2000/tex
 - SHA-256
 - SHA-384
 - SHA-512
+- Unix's crypt
 
 ### Base conversion
 - Converts from a base to another base (Hex, decimal, octal, binary, etc.)

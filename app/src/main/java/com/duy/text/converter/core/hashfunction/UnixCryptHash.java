@@ -36,6 +36,10 @@ public class UnixCryptHash implements IHash {
     @NonNull
     @Override
     public String encode(@NonNull String text) {
-        return UnixCrypt.crypt(text.getBytes());
+        try {
+            return UnixCrypt.crypt(text.getBytes());
+        } catch (Exception e) {
+            return "";
+        }
     }
 }

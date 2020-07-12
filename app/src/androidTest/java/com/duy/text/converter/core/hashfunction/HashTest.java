@@ -49,4 +49,9 @@ public class HashTest {
     public void sha512() {
         new Sha512Hash().encode("Hello");
     }
+
+    @Test
+    public void unixCrypt() {
+        new UnixCryptHash().encode("Hello");
+    }
 }

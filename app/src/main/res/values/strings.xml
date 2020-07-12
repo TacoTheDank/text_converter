@@ -60,10 +60,10 @@
     <string name="hint_input">Input…</string>
     <string name="hint_type_something">Type something</string>
 
-    <string name="process_text_title_encode_it">Encode It!</string>
+    <string name="process_text_title_encode_it">Encode it!</string>
     <string name="process_text_title_encode_pro">Encode</string>
     <string name="process_text_title_decode_pro">Decode</string>
-    <string name="process_text_title_stylish_it">Stylish it</string>
+    <string name="process_text_title_stylish_it">Stylize it</string>
 
     <string name="tab_title_codec">Codec</string>
     <string name="tab_title_stylish">Stylish</string>

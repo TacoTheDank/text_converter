@@ -18,37 +18,32 @@
 <resources>
 
     <string name="ascii">ASCII</string>
-    <string name="binary">Binary</string>
-    <string name="hex">Hex</string>
-    <string name="zalgo_mini">Zalgo mini</string>
-    <string name="reverser">Reverser</string>
-    <string name="morse_code">Morse code</string>
 
     <string-array name="codec_methods">
         <item>@string/ascii</item>
-        <item>@string/binary</item>
-        <item>@string/hex</item>
-        <item>Octal</item>
-        <item>@string/reverser</item>
-        <item>Upper</item>
-        <item>Lower</item>
-        <item>Upside down</item>
-        <item>Superscript</item>
-        <item>Subscript</item>
-        <item>@string/morse_code</item>
-        <item>@string/zalgo_mini</item>
-        <item>Zalgo normal</item>
-        <item>Zalgo big</item>
+        <item>Atbash</item>
         <item>Base32</item>
         <item>Base64</item>
-        <item>URL</item>
-        <item>Random Case</item>
+        <item>Binary</item>
         <item>Caesar offset 1</item>
-        <item>Atbash</item>
-        <item>ROT 13</item>
+        <item>Hex</item>
+        <item>Lowercase</item>
+        <item>Morse code</item>
         <item>NATO</item>
+        <item>Octal</item>
+        <item>Random case</item>
+        <item>Reverser</item>
+        <item>ROT13</item>
+        <item>Subscript</item>
+        <item>Superscript</item>
         <item>Unicode</item>
+        <item>Uppercase</item>
+        <item>Upside-down</item>
+        <item>URL</item>
         <item>Winding</item>
+        <item>Zalgo big</item>
+        <item>Zalgo mini</item>
+        <item>Zalgo normal</item>
     </string-array>
 
     <string-array name="barcode_format">

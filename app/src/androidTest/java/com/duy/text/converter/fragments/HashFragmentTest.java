@@ -29,6 +29,7 @@ import com.duy.text.converter.core.hashfunction.Sha1Hash;
 import com.duy.text.converter.core.hashfunction.Sha256Hash;
 import com.duy.text.converter.core.hashfunction.Sha384Hash;
 import com.duy.text.converter.core.hashfunction.Sha512Hash;
+import com.duy.text.converter.core.hashfunction.UnixCryptHash;
 
 import org.junit.Before;
 import org.junit.FixMethodOrder;
@@ -94,6 +95,11 @@ public class HashFragmentTest {
     @Test
     public void Sha512HashFunction_encode() throws InterruptedException {
         testEncode(new Sha512Hash(), "Sha512HashFunction");
+    }
+
+    @Test
+    public void UnixCryptHashFunction_encode() throws InterruptedException {
+        testEncode(new UnixCryptHash(), "UnixCryptHashFunction");
     }
 
     private void testEncode(IHash codec, String stringToBeType) throws InterruptedException {
