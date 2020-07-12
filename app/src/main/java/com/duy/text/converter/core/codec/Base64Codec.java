@@ -18,6 +18,7 @@
 package com.duy.text.converter.core.codec;
 
 import android.content.Context;
+import android.os.Build;
 
 import androidx.annotation.NonNull;
 
@@ -26,6 +27,7 @@ import com.duy.text.converter.core.codec.interfaces.CodecImpl;
 import org.apache.commons.codec.binary.Base64;
 
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 /**
  * Created by Duy on 22-Jun-17.
@@ -38,7 +40,12 @@ public class Base64Codec extends CodecImpl {
         setMax(1);
         try {
             byte[] encodedBytes = new Base64().encode(token.getBytes());
-            String result = new String(encodedBytes, Charset.forName("UTF-8"));
+            String result;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                result = new String(encodedBytes, StandardCharsets.UTF_8);
+            } else {
+                result = new String(encodedBytes, Charset.forName("UTF-8"));
+            }
             setConfident(1);
             return result;
         } catch (Exception e) {
@@ -54,7 +61,12 @@ public class Base64Codec extends CodecImpl {
         setMax(1);
         try {
             byte[] decodedBytes = new Base64().decode(token.getBytes());
-            String result = new String(decodedBytes, Charset.forName("UTF-8"));
+            String result;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                result = new String(decodedBytes, StandardCharsets.UTF_8);
+            } else {
+                result = new String(decodedBytes, Charset.forName("UTF-8"));
+            }
             setConfident(1);
             return result;
         } catch (Exception e) {

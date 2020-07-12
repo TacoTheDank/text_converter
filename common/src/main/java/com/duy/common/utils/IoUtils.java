@@ -16,12 +16,15 @@
 
 package com.duy.common.utils;
 
+import android.os.Build;
+
 import java.io.File;
 import java.io.FileFilter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.nio.charset.StandardCharsets;
 
 /**
  * Created by Duy on 12-Apr-18.
@@ -33,7 +36,12 @@ public class IoUtils {
         final int bufferSize = 1024;
         final char[] buffer = new char[bufferSize];
         final StringBuilder out = new StringBuilder();
-        Reader in = new InputStreamReader(inputStream, "UTF-8");
+        Reader in;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            in = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
+        } else {
+            in = new InputStreamReader(inputStream, "UTF-8");
+        }
         for (; ; ) {
             int rsz = in.read(buffer, 0, buffer.length);
             if (rsz < 0)
