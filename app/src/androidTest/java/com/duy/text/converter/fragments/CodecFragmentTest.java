@@ -89,7 +89,7 @@ import static org.hamcrest.CoreMatchers.is;
 public class CodecFragmentTest {
     private static final String TAG = "CodecFragmentTest";
     @Rule
-    public ActivityTestRule<MainActivity> mRule = new ActivityTestRule<MainActivity>(MainActivity.class);
+    public ActivityTestRule<MainActivity> mRule = new ActivityTestRule<>(MainActivity.class);
 
     @Before
     public void selectCodecFragment() {

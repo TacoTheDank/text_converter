@@ -53,7 +53,6 @@ public class DecorateFragment extends Fragment implements TextWatcher {
 
     private View mRootView;
     private EditText mInput;
-    private RecyclerView mListResult;
     private ResultAdapter mAdapter;
 
 
@@ -83,7 +82,7 @@ public class DecorateFragment extends Fragment implements TextWatcher {
         mInput = mRootView.findViewById(R.id.edit_input);
         mAdapter = new ResultAdapter(getActivity(), R.layout.list_item_style);
 
-        mListResult = mRootView.findViewById(R.id.recycler_view);
+        RecyclerView mListResult = mRootView.findViewById(R.id.recycler_view);
         mListResult.setLayoutManager(new LinearLayoutManager(getContext()));
         mListResult.setHasFixedSize(true);
         mListResult.setAdapter(mAdapter);

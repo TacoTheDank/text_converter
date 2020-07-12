@@ -41,7 +41,6 @@ import java.util.Locale;
 public class CaesarCipherActivity extends BaseActivity implements TextWatcher {
 
     private EditText mInput;
-    private RecyclerView mListResult;
     private RadioButton mIsEncrypt;
     private Spinner mSpinnerOffset;
 
@@ -60,7 +59,7 @@ public class CaesarCipherActivity extends BaseActivity implements TextWatcher {
         mInput = findViewById(R.id.edit_input);
         mAdapter = new ResultAdapter(this, R.layout.list_item_style);
 
-        mListResult = findViewById(R.id.recycler_view);
+        RecyclerView mListResult = findViewById(R.id.recycler_view);
         mListResult.setLayoutManager(new LinearLayoutManager(this));
         mListResult.setHasFixedSize(true);
         mListResult.setAdapter(mAdapter);

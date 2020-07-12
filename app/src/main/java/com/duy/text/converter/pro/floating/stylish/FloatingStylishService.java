@@ -48,7 +48,6 @@ public class FloatingStylishService extends FloatingView implements TextWatcher 
 
     private StylistGenerator mGenerator;
     private EditText mInput;
-    private RecyclerView mListResult;
     private ResultAdapter mAdapter;
 
     @NonNull
@@ -67,7 +66,7 @@ public class FloatingStylishService extends FloatingView implements TextWatcher 
 
         mAdapter = new ResultAdapter(getContext(), R.layout.list_item_style_floating);
 
-        mListResult = view.findViewById(R.id.recycler_view);
+        RecyclerView mListResult = view.findViewById(R.id.recycler_view);
         mListResult.setLayoutManager(new LinearLayoutManager(getContext()));
         mListResult.setHasFixedSize(true);
         mListResult.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));

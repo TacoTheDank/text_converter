@@ -46,7 +46,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
  */
 public class EditMenuViewHolderTest {
     @Rule
-    public ActivityTestRule<MainActivity> mRule = new ActivityTestRule<MainActivity>(MainActivity.class);
+    public ActivityTestRule<MainActivity> mRule = new ActivityTestRule<>(MainActivity.class);
     private EditMenuViewHolder editMenuViewHolder;
 
     @Before

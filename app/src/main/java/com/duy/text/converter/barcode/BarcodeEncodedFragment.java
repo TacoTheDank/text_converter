@@ -223,45 +223,24 @@ public class BarcodeEncodedFragment extends Fragment {
                 int height = 1024;
                 switch (format) {
                     case AZTEC:
+                    case CODE_93:
+                    case DATA_MATRIX:
+                    case MAXICODE:
+                    case QR_CODE:
+                    case RSS_14:
+                    case RSS_EXPANDED:
+                    case UPC_A:
+                    case UPC_E:
+                    case UPC_EAN_EXTENSION:
                         break;
                     case CODABAR:
-                        height = (int) (width * 0.4f);
-                        break;
                     case CODE_39:
-                        height = (int) (width * 0.4f);
-                        break;
-                    case CODE_93:
-                        break;
                     case CODE_128:
-                        height = (int) (width * 0.4f);
-                        break;
-                    case DATA_MATRIX:
-                        break;
                     case EAN_8:
-                        height = (int) (width * 0.4f);
-                        break;
                     case EAN_13:
-                        height = (int) (width * 0.4f);
-                        break;
                     case ITF:
-                        height = (int) (width * 0.4f);
-                        break;
-                    case MAXICODE:
-                        break;
                     case PDF_417:
                         height = (int) (width * 0.4f);
-                        break;
-                    case QR_CODE:
-                        break;
-                    case RSS_14:
-                        break;
-                    case RSS_EXPANDED:
-                        break;
-                    case UPC_A:
-                        break;
-                    case UPC_E:
-                        break;
-                    case UPC_EAN_EXTENSION:
                         break;
                 }
                 BitMatrix bitMatrix = multiFormatWriter.encode(data, format, width, height);

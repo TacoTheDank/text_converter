@@ -58,7 +58,6 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     protected Toolbar mToolbar;
     private CoordinatorLayout mCoordinatorLayout;
     private DrawerLayout mDrawerLayout;
-    private NavigationView mNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         mCoordinatorLayout.getViewTreeObserver().addOnGlobalLayoutListener(keyBoardEventListener);
 
         mDrawerLayout = findViewById(R.id.drawer_layout);
-        mNavigationView = findViewById(R.id.nav_view);
+        NavigationView mNavigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
                 mToolbar, R.string.desc_open_drawer, R.string.desc_close_drawer);
         mDrawerLayout.addDrawerListener(drawerToggle);
@@ -111,8 +110,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
 
         if (Intent.ACTION_SEND.equals(action) && type != null) {
             if (type.equals("text/plain")) {
-                String text = intent.getStringExtra(Intent.EXTRA_TEXT);
-                return text;
+                return intent.getStringExtra(Intent.EXTRA_TEXT);
             }
         }
         return null;
@@ -184,12 +182,10 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         Log.d(TAG, "onActivityResult() called with: requestCode = [" + requestCode + "], resultCode = [" + resultCode + "], data = [" + data + "]");
         super.onActivityResult(requestCode, resultCode, data);
-        switch (requestCode) {
-            case REQ_CODE_SETTING:
-                if (resultCode == RESULT_OK) {
-                    recreate();
-                }
-                break;
+        if (requestCode == REQ_CODE_SETTING) {
+            if (resultCode == RESULT_OK) {
+                recreate();
+            }
         }
     }
 

@@ -53,7 +53,7 @@ import static org.hamcrest.CoreMatchers.is;
  */
 public class CodecAllFragmentTest {
     @Rule
-    public ActivityTestRule<MainActivity> mRule = new ActivityTestRule<MainActivity>(MainActivity.class);
+    public ActivityTestRule<MainActivity> mRule = new ActivityTestRule<>(MainActivity.class);
 
     public static Matcher<? super View> hasData() {
         return new TypeSafeMatcher<View>() {

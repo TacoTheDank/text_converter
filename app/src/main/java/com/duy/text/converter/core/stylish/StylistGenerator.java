@@ -77,7 +77,7 @@ public class StylistGenerator {
     private void sortEncoders(Context context) {
         //init position, from 0 to mEncoders.size() - 1
         final HashMap<Style, Integer> positionMap = new HashMap<>();
-        for (Integer i = 0; i < mEncoders.size(); i++) {
+        for (int i = 0; i < mEncoders.size(); i++) {
             positionMap.put(mEncoders.get(i), i);
         }
 

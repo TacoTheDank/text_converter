@@ -50,16 +50,14 @@ public class BinaryCodecTest {
 
     @Test
     public void encodeUtf16() {
-        String expected = UTF_16_STR;
-        String encoded = codec.encode(expected);
+        String encoded = codec.encode(UTF_16_STR);
         assertEquals("000000011111010010100111", encoded);
     }
 
     @Test
     public void decodeUtf16() {
-        String expected = UTF_16_STR;
         String decode = codec.decode("000000011111010010100111");
-        assertEquals(expected, decode);
+        assertEquals(UTF_16_STR, decode);
     }
 
 }

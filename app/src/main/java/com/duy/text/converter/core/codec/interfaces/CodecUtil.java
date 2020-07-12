@@ -91,9 +91,7 @@ public class CodecUtil {
             case BASE_64:
                 return new Base64Codec().decode(inp);
             case ZALGO_MINI:
-                break;
             case ZALGO_NORMAL:
-                break;
             case ZALGO_BIG:
                 break;
             case BASE_32:

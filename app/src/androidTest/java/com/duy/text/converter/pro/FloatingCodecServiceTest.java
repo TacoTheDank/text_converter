@@ -44,7 +44,7 @@ import static org.hamcrest.CoreMatchers.allOf;
 public class FloatingCodecServiceTest {
     private static final String TO_BE_ENCODE = "Sample";
     @Rule
-    public ActivityTestRule<MainActivity> mRule = new ActivityTestRule<MainActivity>(MainActivity.class);
+    public ActivityTestRule<MainActivity> mRule = new ActivityTestRule<>(MainActivity.class);
 
     @Test
     public void encode() {

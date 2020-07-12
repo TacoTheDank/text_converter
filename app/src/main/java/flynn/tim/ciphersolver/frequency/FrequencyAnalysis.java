@@ -25,7 +25,7 @@ import java.util.HashMap;
 class FrequencyAnalysis {
 
     static HashMap<Character, Integer> analyze(String input) {
-        HashMap<Character, Integer> map = new HashMap<Character, Integer>();
+        HashMap<Character, Integer> map = new HashMap<>();
         for (int i = 0; i < input.length(); i++) {
             char c = input.charAt(i);
             Integer val = map.get(c);

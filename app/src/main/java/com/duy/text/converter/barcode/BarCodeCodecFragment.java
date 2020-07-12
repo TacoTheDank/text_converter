@@ -153,16 +153,14 @@ public class BarCodeCodecFragment extends Fragment implements View.OnClickListen
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        switch (requestCode) {
-            case REQUEST_READ_EXTERNAL_STORAGE:
-                if (grantResults.length > 0) {
-                    if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                        decodeImage();
-                    } else {
-                        Toast.makeText(getContext(), R.string.message_read_permission, Toast.LENGTH_LONG).show();
-                    }
+        if (requestCode == REQUEST_READ_EXTERNAL_STORAGE) {
+            if (grantResults.length > 0) {
+                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    decodeImage();
+                } else {
+                    Toast.makeText(getContext(), R.string.message_read_permission, Toast.LENGTH_LONG).show();
                 }
-                break;
+            }
         }
     }
 

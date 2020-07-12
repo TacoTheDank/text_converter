@@ -52,7 +52,6 @@ import java.util.ArrayList;
 public class StylistFragment extends Fragment implements TextWatcher {
     public static final String KEY = "StylistFragment";
     private EditText mInput;
-    private RecyclerView mListResult;
     private ResultAdapter mAdapter;
     private StylistGenerator mGenerator;
 
@@ -91,7 +90,7 @@ public class StylistFragment extends Fragment implements TextWatcher {
             }
         });
 
-        mListResult = view.findViewById(R.id.recycler_view);
+        RecyclerView mListResult = view.findViewById(R.id.recycler_view);
         mListResult.setLayoutManager(new LinearLayoutManager(getContext()));
         mListResult.setHasFixedSize(true);
         mListResult.setAdapter(mAdapter);

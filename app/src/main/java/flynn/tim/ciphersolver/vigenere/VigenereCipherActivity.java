@@ -39,7 +39,6 @@ import java.util.ArrayList;
 public class VigenereCipherActivity extends BaseActivity implements TextWatcher, CompoundButton.OnCheckedChangeListener {
 
     private EditText mInput;
-    private RecyclerView mListResult;
     private RadioButton mCkbEncrypt;
     private EditText mInputKey;
     private ResultAdapter mAdapter;
@@ -55,7 +54,7 @@ public class VigenereCipherActivity extends BaseActivity implements TextWatcher,
         mInputKey = findViewById(R.id.edit_key);
 
         mAdapter = new ResultAdapter(this, R.layout.list_item_style);
-        mListResult = findViewById(R.id.recycler_view);
+        RecyclerView mListResult = findViewById(R.id.recycler_view);
         mListResult.setLayoutManager(new LinearLayoutManager(this));
         mListResult.setHasFixedSize(true);
         mListResult.setAdapter(mAdapter);

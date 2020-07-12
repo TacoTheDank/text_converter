@@ -77,7 +77,7 @@ public class PreferencesUtil {
             sBindPreferenceSummaryToValueListener.onPreferenceChange(preference,
                     PreferenceManager.getDefaultSharedPreferences(preference.getContext())
                             .getString(preference.getKey(), ""));
-        } catch (Exception e) {
+        } catch (Exception ignored) {
         }
     }
 

@@ -140,7 +140,7 @@ public class ReplaceEffect implements Style {
         STYLES.add(SORCERER);
     }
 
-    private String replacement = "";
+    private String replacement;
 
     ReplaceEffect(String replacement) {
         this.replacement = replacement;

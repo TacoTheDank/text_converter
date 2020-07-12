@@ -359,12 +359,9 @@ public class AutoScrollViewPager extends ViewPager {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
 
-            switch (msg.what) {
-                case SCROLL_WHAT:
-                    scrollOnce();
-                    sendScrollMessage(interval);
-                default:
-                    break;
+            if (msg.what == SCROLL_WHAT) {
+                scrollOnce();
+                sendScrollMessage(interval);
             }
         }
     }

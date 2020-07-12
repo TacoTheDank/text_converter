@@ -49,7 +49,7 @@ public class StyleCodecTest extends TestCase {
             System.out.println(style);
             if (style.length() != size) {
                 System.out.println(style + " " + style.length());
-                assertTrue(false);
+                fail();
             }
         }
         assertTrue(true);

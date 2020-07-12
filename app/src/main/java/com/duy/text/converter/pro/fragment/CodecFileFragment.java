@@ -69,7 +69,6 @@ public class CodecFileFragment extends Fragment implements View.OnClickListener 
     private TextView mEditInputPath, mEditOutPath;
     private RadioButton mIsEncode;
     private Spinner mCodecMethodSpinner;
-    private EncodeTask mEncodeTask;
     private View mBtnProcess, mBtnOpenOutput;
 
     public static CodecFileFragment newInstance() {
@@ -170,7 +169,7 @@ public class CodecFileFragment extends Fragment implements View.OnClickListener 
         if (mInputUri != null) {
             try {
                 String methodName = mCodecMethodSpinner.getSelectedItem().toString();
-                mEncodeTask = new EncodeTask(getContext(), mIsEncode.isChecked(), methodName);
+                EncodeTask mEncodeTask = new EncodeTask(getContext(), mIsEncode.isChecked(), methodName);
                 InputStream inputStream = getContext().getContentResolver().openInputStream(mInputUri);
                 mEncodeTask.execute(inputStream);
             } catch (Exception e) {
@@ -219,12 +218,10 @@ public class CodecFileFragment extends Fragment implements View.OnClickListener 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        switch (requestCode) {
-            case REQUEST_SELECT_FILE:
-                if (resultCode == RESULT_OK && data.getData() != null) {
-                    setInputUri(data.getData());
-                }
-                break;
+        if (requestCode == REQUEST_SELECT_FILE) {
+            if (resultCode == RESULT_OK && data.getData() != null) {
+                setInputUri(data.getData());
+            }
         }
     }
 

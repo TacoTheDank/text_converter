@@ -106,11 +106,10 @@ public class EditMenuViewHolder implements View.OnClickListener {
         Editable editable = mEditText.getText();
         if (selectionEnd != selectionStart) {
             editable.delete(selectionStart, selectionEnd);
-            editable.insert(selectionStart, text);
         } else {
             selectionStart = Math.max(0, selectionStart);
-            editable.insert(selectionStart, text);
         }
+        editable.insert(selectionStart, text);
         mEditText.setSelection(selectionStart);
         mEditText.requestFocus();
     }

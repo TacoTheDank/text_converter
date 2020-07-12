@@ -37,7 +37,7 @@ import static org.hamcrest.core.IsEqual.equalTo;
 public class IClipboardTest {
     private static final String TAG = "IClipboardTest";
     @Rule
-    public ActivityTestRule<MainActivity> mRule = new ActivityTestRule<MainActivity>(MainActivity.class);
+    public ActivityTestRule<MainActivity> mRule = new ActivityTestRule<>(MainActivity.class);
 
     @Test
     public void getClipboard() throws Throwable {

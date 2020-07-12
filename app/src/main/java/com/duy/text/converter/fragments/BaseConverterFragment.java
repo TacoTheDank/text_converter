@@ -262,7 +262,7 @@ public class BaseConverterFragment extends Fragment implements View.OnClickListe
         }
     }
 
-    private class BaseInputFilter implements InputFilter {
+    private static class BaseInputFilter implements InputFilter {
         private static final String NUMBER = "0123456789ABCDEF";
         private String mAcceptChar;
 
