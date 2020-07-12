@@ -46,9 +46,6 @@
     <string name="pref_title_user_interface">User interface</string>
     <string name="pref_title_process_text">Process text menu</string>
     <string name="pref_title_floating_window">Floating window</string>
-    <string name="pref_title_notification">Notification</string>
-    <string name="pref_title_encode_notifi">Encode notification</string>
-    <string name="pref_title_decode_notifi">Decode notification</string>
     <string name="pref_title_menu_text">Menu text (Android M and above)</string>
     <string name="pref_desc_open_codec">Click to open floating codec</string>
     <string name="pref_desc_show_process_text_menu">Show menu when select text</string>
@@ -69,7 +66,6 @@
     <string name="process_text_title_stylish_it">Stylish it</string>
 
     <string name="tab_title_codec">Codec</string>
-    <string name="tab_title_ads">Ads</string>
     <string name="tab_title_stylish">Stylish</string>
     <string name="tab_title_decorate">Decorate</string>
     <string name="tab_title_barcode">Barcode</string>
