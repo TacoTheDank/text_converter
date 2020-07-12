@@ -24,11 +24,11 @@ import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
-import com.duy.common.utils.DLog;
 import com.duy.text.converter.R;
 import com.duy.text.converter.pro.themes.ThemeHelper;
 
@@ -53,7 +53,7 @@ public abstract class BaseActivity extends AppCompatActivity implements SharedPr
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String s) {
-        DLog.d(TAG, "onSharedPreferenceChanged() called with: s = [" + s + "]");
+        Log.d(TAG, "onSharedPreferenceChanged() called with: s = [" + s + "]");
         if (s.equalsIgnoreCase(getString(R.string.pref_key_theme))) {
             recreate();
         }
@@ -61,7 +61,7 @@ public abstract class BaseActivity extends AppCompatActivity implements SharedPr
 
     @Override
     protected void onDestroy() {
-        DLog.d(TAG, "onDestroy() called");
+        Log.d(TAG, "onDestroy() called");
         PreferenceManager.getDefaultSharedPreferences(this).unregisterOnSharedPreferenceChangeListener(this);
         super.onDestroy();
     }

@@ -25,9 +25,10 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 
-import com.duy.common.utils.DLog;
+import com.duy.text.converter.BuildConfig;
 import com.duy.text.converter.R;
 import com.duy.text.converter.activities.base.BaseActivity;
 import com.duy.text.converter.pro.menu.DecodeAllProcessTextActivity;
@@ -80,8 +81,8 @@ public class SettingActivity extends BaseActivity implements SharedPreferences.O
     }
 
     private void changeModeProcessTextMenu(SharedPreferences pref, String key) {
-        if (DLog.DEBUG)
-            DLog.d(TAG, "changeModeProcessTextMenu() called with: pref = [" + pref + "], key = [" + key + "]");
+        if (BuildConfig.DEBUG)
+            Log.d(TAG, "changeModeProcessTextMenu() called with: pref = [" + pref + "], key = [" + key + "]");
         boolean show = pref.getBoolean(key, true);
         final String[] classes = new String[]{
                 DecodeAllProcessTextActivity.class.getName(),

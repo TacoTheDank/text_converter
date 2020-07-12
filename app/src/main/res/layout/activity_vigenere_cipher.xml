@@ -95,7 +95,7 @@
                 android:layout_height="match_parent" />
         </LinearLayout>
 
-        <include layout="@layout/ads_wrapper" />
+
 
     </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>

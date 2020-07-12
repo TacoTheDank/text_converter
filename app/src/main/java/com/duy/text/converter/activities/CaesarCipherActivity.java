@@ -29,12 +29,10 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 
-import com.duy.common.ads.AdsManager;
 import com.duy.text.converter.R;
 import com.duy.text.converter.activities.base.BaseActivity;
 import com.duy.text.converter.core.codec.CaesarCodec;
 import com.duy.text.converter.core.stylish.adapter.ResultAdapter;
-import com.duy.text.converter.pro.license.Premium;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -68,12 +66,6 @@ public class CaesarCipherActivity extends BaseActivity implements TextWatcher {
         mListResult.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
 
         mInput.addTextChangedListener(this);
-        if (Premium.isPremium(this)) {
-            View containerAd = findViewById(R.id.container_ad);
-            if (containerAd != null) containerAd.setVisibility(View.GONE);
-        } else {
-            AdsManager.loadAds(this, findViewById(R.id.container_ad), findViewById(R.id.ad_view));
-        }
 
         mSpinnerOffset.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

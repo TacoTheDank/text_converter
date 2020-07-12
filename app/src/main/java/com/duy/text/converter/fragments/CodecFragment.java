@@ -42,7 +42,6 @@ import com.duy.text.converter.utils.ShareManager;
 import com.duy.text.converter.view.BaseEditText;
 import com.duy.text.converter.view.RoundedBackgroundEditText;
 import com.duy.text.converter.pro.activities.CodecAllActivity;
-import com.duy.text.converter.pro.license.Premium;
 
 
 /**
@@ -159,29 +158,17 @@ public class CodecFragment extends Fragment implements View.OnClickListener, Ada
     }
 
     private void decodeAll() {
-        if (!Premium.isPremium(getContext())) {
-            showDialogUpgrade();
-        } else {
-            Intent intent = new Intent(getContext(), CodecAllActivity.class);
-            intent.setAction(CodecAllActivity.EXTRA_ACTION_DECODE);
-            intent.putExtra(CodecAllActivity.EXTRA_INPUT, mOutput.getText().toString());
-            startActivity(intent);
-        }
+        Intent intent = new Intent(getContext(), CodecAllActivity.class);
+        intent.setAction(CodecAllActivity.EXTRA_ACTION_DECODE);
+        intent.putExtra(CodecAllActivity.EXTRA_INPUT, mOutput.getText().toString());
+        startActivity(intent);
     }
 
     private void encodeAll() {
-        if (!Premium.isPremium(getContext())) {
-            showDialogUpgrade();
-        } else {
-            Intent intent = new Intent(getContext(), CodecAllActivity.class);
-            intent.setAction(CodecAllActivity.EXTRA_ACTION_ENCODE);
-            intent.putExtra(CodecAllActivity.EXTRA_INPUT, mInput.getText().toString());
-            startActivity(intent);
-        }
-    }
-
-    private void showDialogUpgrade() {
-        Premium.upgrade(getActivity());
+        Intent intent = new Intent(getContext(), CodecAllActivity.class);
+        intent.setAction(CodecAllActivity.EXTRA_ACTION_ENCODE);
+        intent.putExtra(CodecAllActivity.EXTRA_INPUT, mInput.getText().toString());
+        startActivity(intent);
     }
 
     @Override

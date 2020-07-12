@@ -29,12 +29,12 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
-import com.duy.common.utils.DLog;
 import com.duy.text.converter.R;
 import com.duy.text.converter.core.stylish.DecorateTool;
 import com.duy.text.converter.core.stylish.adapter.ResultAdapter;
@@ -93,7 +93,7 @@ public class DecorateFragment extends Fragment implements TextWatcher {
 
     private void convert() {
         String input = mInput.getText().toString();
-        DLog.d(TAG, "convert: " + input);
+        Log.d(TAG, "convert: " + input);
         ArrayList<String> converted = DecorateTool.generate(input);
         mAdapter.setData(converted);
     }

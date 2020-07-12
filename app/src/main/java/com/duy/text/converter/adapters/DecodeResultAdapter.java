@@ -19,13 +19,13 @@ package com.duy.text.converter.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.duy.common.utils.DLog;
 import com.duy.text.converter.R;
 import com.duy.text.converter.clipboard.ClipboardUtil;
 import com.duy.text.converter.utils.ShareManager;
@@ -63,7 +63,7 @@ public class DecodeResultAdapter extends RecyclerView.Adapter<DecodeResultAdapte
         holder.txtResult.setText(item.getResult());
         holder.txtTitle.setText(item.getName());
         if (item.getMax() > 0) {
-            DLog.d(TAG, "onBindViewHolder() called with: holder = [" + holder + "], position = [" + position + "]");
+            Log.d(TAG, "onBindViewHolder() called with: holder = [" + holder + "], position = [" + position + "]");
             holder.progressBar.setMax(item.getMax());
             holder.progressBar.setProgress(item.getConfident());
 

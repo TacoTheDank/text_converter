@@ -108,7 +108,7 @@
 
         </LinearLayout>
 
-        <include layout="@layout/ads_wrapper" />
+
 
     </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>

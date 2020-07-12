@@ -20,14 +20,11 @@ package flynn.tim.ciphersolver.frequency;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.View;
 import android.widget.EditText;
 
-import com.duy.common.ads.AdsManager;
 import com.duy.common.views.ViewUtils;
 import com.duy.text.converter.R;
 import com.duy.text.converter.activities.base.BaseActivity;
-import com.duy.text.converter.pro.license.Premium;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
@@ -60,13 +57,6 @@ public class FrequencyActivity extends BaseActivity implements TextWatcher {
 
         mInput = findViewById(R.id.edit_input);
         mInput.addTextChangedListener(this);
-
-        if (Premium.isPremium(this)){
-            View containerAd = findViewById(R.id.container_ad);
-            if (containerAd != null) containerAd.setVisibility(View.GONE);
-        }else {
-            AdsManager.loadAds(this, findViewById(R.id.container_ad), findViewById(R.id.ad_view));
-        }
     }
 
     private void initChart() {

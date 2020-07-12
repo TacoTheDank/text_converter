@@ -20,12 +20,13 @@ package com.duy.text.converter.core.stylish.adapter;
 import android.content.Context;
 import android.support.annotation.LayoutRes;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.duy.common.utils.DLog;
+import com.duy.text.converter.BuildConfig;
 import com.duy.text.converter.R;
 import com.duy.text.converter.clipboard.ClipboardUtil;
 import com.duy.text.converter.utils.ShareManager;
@@ -106,8 +107,8 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ViewHolder
 
     @Override
     public void onItemMove(int fromPosition, int toPosition) {
-        if (DLog.DEBUG)
-            DLog.d(TAG, "onItemMove() called with: fromPosition = [" + fromPosition + "], toPosition = [" + toPosition + "]");
+        if (BuildConfig.DEBUG)
+            Log.d(TAG, "onItemMove() called with: fromPosition = [" + fromPosition + "], toPosition = [" + toPosition + "]");
         if (fromPosition < toPosition) {
             for (int i = fromPosition; i < toPosition; i++) {
                 Collections.swap(mItems, i, i + 1);
@@ -122,8 +123,8 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ViewHolder
 
     @Override
     public void onItemMoved(int fromPos, int toPos) {
-        if (DLog.DEBUG)
-            DLog.d(TAG, "onItemMoved() called with: fromPos = [" + fromPos + "], toPos = [" + toPos + "]");
+        if (BuildConfig.DEBUG)
+            Log.d(TAG, "onItemMoved() called with: fromPos = [" + fromPos + "], toPos = [" + toPos + "]");
         if (mOnSwapStyleListener != null) {
             mOnSwapStyleListener.onSwap(fromPos, toPos);
         }

@@ -34,6 +34,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,7 +43,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.duy.common.utils.DLog;
 import com.duy.text.converter.R;
 import com.duy.text.converter.ui.menu.EditMenuViewHolder;
 import com.duy.text.converter.view.BaseEditText;
@@ -269,7 +269,7 @@ public class BarCodeCodecFragment extends Fragment implements View.OnClickListen
                 opts.outWidth = 1024;
                 Bitmap bitmap = BitmapFactory.decodeStream(inputStream, null, opts);
                 if (bitmap == null) {
-                    DLog.e(TAG, "uri is not a bitmap," + uri.toString());
+                    Log.e(TAG, "uri is not a bitmap," + uri.toString());
                     return null;
                 }
                 int width = bitmap.getWidth(), height = bitmap.getHeight();
@@ -283,7 +283,7 @@ public class BarCodeCodecFragment extends Fragment implements View.OnClickListen
                     Result result = reader.decode(bBitmap);
                     return result.getText();
                 } catch (NotFoundException e) {
-                    DLog.e(TAG, "decode exception", e);
+                    Log.e(TAG, "decode exception", e);
                     return null;
                 }
             } catch (Throwable e) {

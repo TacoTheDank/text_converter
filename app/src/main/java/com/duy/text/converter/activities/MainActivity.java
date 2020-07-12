@@ -21,7 +21,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
-import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -31,94 +30,43 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.Toast;
 
-import com.duy.common.purchase.InAppPurchaseHelper;
-import com.duy.common.utils.DLog;
-import com.duy.common.utils.ShareUtil;
-import com.duy.common.utils.StoreUtil;
-import com.duy.text.converter.BuildConfig;
 import com.duy.text.converter.R;
-import com.duy.text.converter.PagerSectionAdapter;
-import com.duy.text.converter.activities.base.InAppPurchaseActivityImpl;
-import com.duy.text.converter.fragments.AdsFragment;
 import com.duy.text.converter.help.HelpDialog;
 import com.duy.text.converter.pro.PagerSectionAdapterPro;
 import com.duy.text.converter.pro.SettingActivity;
 import com.duy.text.converter.pro.floating.codec.FloatingCodecOpenShortCutActivity;
 import com.duy.text.converter.pro.floating.stylish.FloatingStylishOpenShortCutActivity;
-import com.duy.text.converter.pro.license.Key;
-import com.duy.text.converter.pro.license.PolicyFactory;
-import com.duy.text.converter.pro.license.Premium;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.vending.licensing.LicenseChecker;
-import com.google.android.vending.licensing.LicenseCheckerCallback;
-import com.google.android.vending.licensing.Policy;
-import com.google.firebase.analytics.FirebaseAnalytics;
-import com.kobakei.ratethisapp.RateThisApp;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 
 import flynn.tim.ciphersolver.frequency.FrequencyActivity;
 import flynn.tim.ciphersolver.vigenere.VigenereCipherActivity;
 
 
-public class MainActivity extends InAppPurchaseActivityImpl implements ViewPager.OnPageChangeListener, NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener, NavigationView.OnNavigationItemSelectedListener {
     private static final int REQ_CODE_SETTING = 1201;
     private static final String TAG = "MainActivity";
     protected Toolbar mToolbar;
-    private LicenseChecker mChecker;
-    private CheckLicenseCallBack mCallBack;
     private CoordinatorLayout mCoordinatorLayout;
-    private FirebaseAnalytics mFirebaseAnalytics;
-    private Handler mHandler;
     private DrawerLayout mDrawerLayout;
     private NavigationView mNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (!Premium.isPremium(this)) {
-            MobileAds.initialize(this);
-        }
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
-        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         setContentView(R.layout.activity_main);
         setupToolbar();
         bindView();
-        showDialogRate();
-        checkLicense();
-    }
-
-    private void checkLicense() {
-        mHandler = new Handler();
-        Policy policy = PolicyFactory.createPolicy(this, getPackageName());
-        mChecker = new LicenseChecker(this, policy, Key.BASE_64_PUBLIC_KEY);
-        mCallBack = new CheckLicenseCallBack();
-        mChecker.checkAccess(mCallBack);
-    }
-
-    private void showDialogRate() {
-        // Monitor launch times and interval from installation
-        RateThisApp.onCreate(this);
-        // If the criteria is satisfied, "Rate this app" dialog will be shown
-        if (!BuildConfig.DEBUG) {
-            RateThisApp.showRateDialogIfNeeded(this);
-        }
-    }
-
-    private void handleCracked() {
-        FirebaseAnalytics.getInstance(this).logEvent("crack_version", new Bundle());
-        Premium.setCracked(this, true);
-        if (getPackageName().equals(Premium.PRO_PACKAGE)) {
-            Toast.makeText(this, "Licence check failed", Toast.LENGTH_LONG).show();
-        }
     }
 
     protected void setupToolbar() {
@@ -151,11 +99,7 @@ public class MainActivity extends InAppPurchaseActivityImpl implements ViewPager
     }
 
     protected PagerAdapter getPageAdapter(String initValue) {
-        if (Premium.isPremium(this)) {
-            return new PagerSectionAdapterPro(this, getSupportFragmentManager(), initValue);
-        } else {
-            return new PagerSectionAdapter(this, getSupportFragmentManager(), initValue);
-        }
+        return new PagerSectionAdapterPro(this, getSupportFragmentManager(), initValue);
     }
 
     @Nullable
@@ -167,7 +111,6 @@ public class MainActivity extends InAppPurchaseActivityImpl implements ViewPager
         if (Intent.ACTION_SEND.equals(action) && type != null) {
             if (type.equals("text/plain")) {
                 String text = intent.getStringExtra(Intent.EXTRA_TEXT);
-                FirebaseAnalytics.getInstance(this).logEvent("open_from_another_app", new Bundle());
                 return text;
             }
         }
@@ -192,47 +135,23 @@ public class MainActivity extends InAppPurchaseActivityImpl implements ViewPager
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-        if (Premium.isPremium(this)) {
-            menu.findItem(R.id.action_upgrade).setVisible(false);
-        } else {
-            menu.findItem(R.id.action_upgrade).setVisible(true);
-        }
         return super.onPrepareOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        mFirebaseAnalytics.logEvent(item.getTitle().toString(), new Bundle());
-
         mDrawerLayout.closeDrawers();
         int id = item.getItemId();
         switch (id) {
-            case R.id.action_share:
-                ShareUtil.shareThisApp(this);
-                break;
-            case R.id.action_review:
-                StoreUtil.gotoPlayStore(this, getPackageName());
-                break;
-            case R.id.action_upgrade:
-                Premium.upgrade(this);
-                break;
             case R.id.action_setting:
                 Intent intent = new Intent(this, SettingActivity.class);
                 startActivityForResult(intent, REQ_CODE_SETTING);
                 break;
             case R.id.action_open_stylish:
-                if (Premium.isPremium(this)) {
-                    startActivity(new Intent(this, FloatingStylishOpenShortCutActivity.class));
-                } else {
-                    Premium.upgrade(this);
-                }
+                startActivity(new Intent(this, FloatingStylishOpenShortCutActivity.class));
                 break;
             case R.id.action_open_codec:
-                if (Premium.isPremium(this)) {
-                    startActivity(new Intent(this, FloatingCodecOpenShortCutActivity.class));
-                } else {
-                    Premium.upgrade(this);
-                }
+                startActivity(new Intent(this, FloatingCodecOpenShortCutActivity.class));
                 break;
             case R.id.action_how_to_use:
                 HelpDialog helpDialog = new HelpDialog();
@@ -245,11 +164,7 @@ public class MainActivity extends InAppPurchaseActivityImpl implements ViewPager
                 startActivity(new Intent(this, NumberConverterActivity.class));
                 break;
             case R.id.action_codec_file:
-                if (Premium.isPremium(this)) {
-                    startActivity(new Intent(this, CodecFileActivity.class));
-                } else {
-                    Premium.upgrade(this);
-                }
+                startActivity(new Intent(this, CodecFileActivity.class));
                 break;
             case R.id.action_caesar_cipher:
                 startActivity(new Intent(this, CaesarCipherActivity.class));
@@ -260,28 +175,16 @@ public class MainActivity extends InAppPurchaseActivityImpl implements ViewPager
             case R.id.action_vigenere_cipher:
                 startActivity(new Intent(this, VigenereCipherActivity.class));
                 break;
-            case R.id.action_ascii_art:
-                StoreUtil.openApp(this, "com.duy.asciiart");
-                break;
-            case R.id.action_text_editor:
-                StoreUtil.openApp(this, "com.duy.text.editor");
-                break;
-
         }
         return super.onOptionsItemSelected(item);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        DLog.d(TAG, "onActivityResult() called with: requestCode = [" + requestCode + "], resultCode = [" + resultCode + "], data = [" + data + "]");
+        Log.d(TAG, "onActivityResult() called with: requestCode = [" + requestCode + "], resultCode = [" + resultCode + "], data = [" + data + "]");
         super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode) {
             case REQ_CODE_SETTING:
-                if (resultCode == RESULT_OK) {
-                    recreate();
-                }
-                break;
-            case InAppPurchaseHelper.RC_REQUEST_UPGRADE:
                 if (resultCode == RESULT_OK) {
                     recreate();
                 }
@@ -318,11 +221,7 @@ public class MainActivity extends InAppPurchaseActivityImpl implements ViewPager
 
     @Override
     public void onPageSelected(int position) {
-        if (Premium.isFree(this)) {
-            if (position == AdsFragment.INDEX) {
-                hideKeyboard();
-            }
-        }
+
     }
 
     @Override
@@ -360,24 +259,4 @@ public class MainActivity extends InAppPurchaseActivityImpl implements ViewPager
         }
     }
 
-    private class CheckLicenseCallBack implements LicenseCheckerCallback {
-
-        @Override
-        public void allow(int reason) {
-        }
-
-        @Override
-        public void dontAllow(int reason) {
-            if (isFinishing()) {
-                return;
-            }
-            if (reason == Policy.NOT_LICENSED) {
-                handleCracked();
-            }
-        }
-
-        @Override
-        public void applicationError(int errorCode) {
-        }
-    }
 }

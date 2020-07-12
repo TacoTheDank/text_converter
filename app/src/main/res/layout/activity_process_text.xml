@@ -33,15 +33,6 @@
         android:orientation="vertical"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <TextView
-            android:id="@+id/txt_message"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="4dp"
-            android:textColor="?android:textColorPrimary"
-            android:textStyle="italic"
-            tools:text="@string/chance_remaining" />
-
         <FrameLayout
             android:id="@+id/content"
             android:layout_width="match_parent"

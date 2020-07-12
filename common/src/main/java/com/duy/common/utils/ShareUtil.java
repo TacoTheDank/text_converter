@@ -17,15 +17,11 @@
 
 package com.duy.common.utils;
 
-import android.app.Activity;
-import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
-import android.support.annotation.NonNull;
 import android.support.v4.content.FileProvider;
-import android.widget.Toast;
 
 import java.io.File;
 
@@ -60,34 +56,5 @@ public class ShareUtil {
         intent.putExtra(Intent.EXTRA_TEXT, text);
         intent.setType("text/plain");
         context.startActivity(intent);
-    }
-
-    public static void shareMessenger(String text, Context context) {
-        Intent sendIntent = new Intent();
-        sendIntent.setAction(Intent.ACTION_SEND);
-        sendIntent.putExtra(Intent.EXTRA_TEXT, text);
-        sendIntent.setType("text/plain");
-        sendIntent.setPackage("com.facebook.orca");
-        try {
-            context.startActivity(sendIntent);
-        } catch (android.content.ActivityNotFoundException ex) {
-            Toast.makeText(context, "Please Install Facebook Messenger", Toast.LENGTH_LONG).show();
-        }
-    }
-
-    public static void shareApp(Activity context, String appId) {
-        try {
-            Intent intent = new Intent(Intent.ACTION_SEND);
-            String url = String.format("http://play.google.com/store/apps/details?id=%s", appId);
-            intent.putExtra(Intent.EXTRA_TEXT, url);
-            intent.setType("text/plain");
-            context.startActivity(intent);
-        } catch (ActivityNotFoundException e) {
-
-        }
-    }
-
-    public static void shareThisApp(@NonNull Activity context) {
-        shareApp(context, context.getPackageName());
     }
 }

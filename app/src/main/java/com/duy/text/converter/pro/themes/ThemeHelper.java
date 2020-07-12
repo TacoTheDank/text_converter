@@ -25,7 +25,6 @@ import android.support.v7.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 
 import com.duy.text.converter.R;
-import com.duy.text.converter.pro.license.Premium;
 
 public class ThemeHelper {
     private static final int[] THEME_IDS = new int[]{
@@ -45,8 +44,6 @@ public class ThemeHelper {
     }
 
     public static int getThemeByName(String name, Context context) {
-        boolean canUseAdvancedFeature = Premium.isPremium(context);
-        if (!canUseAdvancedFeature) return R.style.AppThemeDark;
         String[] themes = context.getResources().getStringArray(R.array.theme_names);
         for (int i = 0; i < themes.length; i++) {
             if (name.equalsIgnoreCase(themes[i])) {

@@ -25,7 +25,6 @@ import android.preference.PreferenceFragment;
 import com.duy.text.converter.R;
 import com.duy.text.converter.pro.floating.codec.FloatingCodecOpenShortCutActivity;
 import com.duy.text.converter.pro.floating.stylish.FloatingStylishOpenShortCutActivity;
-import com.duy.text.converter.pro.license.Premium;
 
 import static com.duy.common.preferences.PreferencesUtil.bindPreferenceSummaryToValue;
 
@@ -47,14 +46,6 @@ public class SettingFragment extends PreferenceFragment {
 
         bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_key_theme)));
         addEvent();
-        disableView();
-    }
-
-    private void disableView() {
-        if (!Premium.isPremium(getActivity())) {
-            findPreference(getString(R.string.pref_key_theme)).setEnabled(false);
-            findPreference(getString(R.string.pref_key_category_floating_window)).setEnabled(false);
-        }
     }
 
     private void addEvent() {

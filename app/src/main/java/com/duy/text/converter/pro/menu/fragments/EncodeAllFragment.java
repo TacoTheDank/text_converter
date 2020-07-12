@@ -24,11 +24,11 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.duy.common.utils.DLog;
 import com.duy.text.converter.R;
 import com.duy.text.converter.adapters.EncodeResultAdapter;
 import com.duy.text.converter.core.codec.interfaces.Codec;
@@ -124,7 +124,7 @@ public class EncodeAllFragment extends Fragment {
         @Override
         protected void onProgressUpdate(Object... values) {
             super.onProgressUpdate(values);
-            DLog.d(TAG, "onProgressUpdate() called with: values = [" + Arrays.toString(values) + "]");
+            Log.d(TAG, "onProgressUpdate() called with: values = [" + Arrays.toString(values) + "]");
             String result = (String) values[0];
             String name = (String) values[1];
             addToRecycleView(result, name);
