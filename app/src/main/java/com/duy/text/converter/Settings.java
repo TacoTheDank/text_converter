@@ -19,7 +19,8 @@ package com.duy.text.converter;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
+
+import androidx.preference.PreferenceManager;
 
 /**
  * Created by Duy on 05-May-17.

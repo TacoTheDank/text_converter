@@ -36,3 +36,8 @@ android {
 
     useLibrary 'org.apache.http.legacy'
 }
+
+dependencies {
+// AndroidX
+    api 'androidx.preference:preference:1.1.1'
+}

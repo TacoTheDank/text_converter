@@ -26,8 +26,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.util.Log;
+
+import androidx.preference.PreferenceManager;
 
 import com.duy.text.converter.R;
 import com.duy.text.converter.core.codec.interfaces.CodecUtil;

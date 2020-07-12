@@ -19,7 +19,8 @@ package com.duy.text.converter.pro.notification;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.preference.PreferenceFragment;
+
+import androidx.preference.PreferenceFragmentCompat;
 
 import com.duy.text.converter.R;
 import com.duy.text.converter.pro.floating.codec.FloatingCodecOpenShortCutActivity;
@@ -31,11 +32,10 @@ import static com.duy.common.preferences.PreferencesUtil.bindPreferenceSummaryTo
  * This fragment shows notification preferences only. It is used when the
  * activity is showing a two-pane settings UI.
  */
-public class SettingFragment extends PreferenceFragment {
+public class SettingFragment extends PreferenceFragmentCompat {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.preferences);
 
         // Bind the summaries of EditText/List/Dialog/Ringtone preferences
         // to their values. When their values change, their summaries are
@@ -45,6 +45,11 @@ public class SettingFragment extends PreferenceFragment {
 
         bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_key_theme)));
         addEvent();
+    }
+
+    @Override
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+        setPreferencesFromResource(R.xml.preferences, rootKey);
     }
 
     private void addEvent() {

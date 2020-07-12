@@ -17,11 +17,10 @@
 
 package com.duy.common.preferences;
 
-import android.preference.EditTextPreference;
-import android.preference.ListPreference;
-import android.preference.Preference;
-import android.preference.PreferenceManager;
-import android.preference.RingtonePreference;
+import androidx.preference.EditTextPreference;
+import androidx.preference.ListPreference;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceManager;
 
 public class PreferencesUtil {
 
@@ -38,7 +37,6 @@ public class PreferencesUtil {
                     // Set the summary to reflect the new value.
                     preference.setSummary(index >= 0 ? listPreference.getEntries()[index] : null);
 
-                } else if (preference instanceof RingtonePreference) {
                 } else if (preference instanceof EditTextPreference) {
                     EditTextPreference editTextPreference = (EditTextPreference) preference;
                     editTextPreference.setSummary(editTextPreference.getText());

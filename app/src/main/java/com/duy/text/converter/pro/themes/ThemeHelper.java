@@ -19,11 +19,11 @@ package com.duy.text.converter.pro.themes;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.view.ContextThemeWrapper;
+import androidx.preference.PreferenceManager;
 
 import com.duy.text.converter.R;
 
