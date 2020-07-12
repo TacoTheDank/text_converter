@@ -19,7 +19,6 @@ package com.duy.text.converter.pro.notification;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.preference.Preference;
 import android.preference.PreferenceFragment;
 
 import com.duy.text.converter.R;
@@ -49,20 +48,14 @@ public class SettingFragment extends PreferenceFragment {
     }
 
     private void addEvent() {
-        findPreference("open_floating_codec").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(Preference preference) {
-                startActivity(new Intent(getActivity(), FloatingCodecOpenShortCutActivity.class));
-                return false;
-            }
+        findPreference("open_floating_codec").setOnPreferenceClickListener(preference -> {
+            startActivity(new Intent(getActivity(), FloatingCodecOpenShortCutActivity.class));
+            return false;
         });
 
-        findPreference("open_floating_stylish").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(Preference preference) {
-                startActivity(new Intent(getActivity(), FloatingStylishOpenShortCutActivity.class));
-                return false;
-            }
+        findPreference("open_floating_stylish").setOnPreferenceClickListener(preference -> {
+            startActivity(new Intent(getActivity(), FloatingStylishOpenShortCutActivity.class));
+            return false;
         });
     }
 

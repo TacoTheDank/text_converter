@@ -20,7 +20,6 @@ package flynn.tim.ciphersolver.vigenere;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.InputFilter;
-import android.text.Spanned;
 import android.text.TextWatcher;
 import android.widget.CompoundButton;
 import android.widget.EditText;
@@ -74,32 +73,26 @@ public class VigenereCipherActivity extends BaseActivity implements TextWatcher,
 
     private void setInputFilters() {
         mInput.setFilters(new InputFilter[]{
-                new InputFilter() {
-                    @Override
-                    public CharSequence filter(CharSequence src, int start, int end, Spanned dst, int dstart, int dend) {
-                        if (src.equals("")) { // for backspace
-                            return src;
-                        }
-                        if (src.toString().matches("[a-zA-Z ]+")) {
-                            return src;
-                        }
-                        return "";
+                (src, start, end, dst, dstart, dend) -> {
+                    if (src.equals("")) { // for backspace
+                        return src;
                     }
+                    if (src.toString().matches("[a-zA-Z ]+")) {
+                        return src;
+                    }
+                    return "";
                 }
         });
 
         mInputKey.setFilters(new InputFilter[]{
-                new InputFilter() {
-                    @Override
-                    public CharSequence filter(CharSequence src, int start, int end, Spanned dst, int dstart, int dend) {
-                        if (src.equals("")) { // for backspace
-                            return src;
-                        }
-                        if (src.toString().matches("[a-zA-Z ]+")) {
-                            return src;
-                        }
-                        return "";
+                (src, start, end, dst, dstart, dend) -> {
+                    if (src.equals("")) { // for backspace
+                        return src;
                     }
+                    if (src.toString().matches("[a-zA-Z ]+")) {
+                        return src;
+                    }
+                    return "";
                 }
         });
     }

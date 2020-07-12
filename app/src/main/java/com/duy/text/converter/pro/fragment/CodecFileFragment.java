@@ -112,12 +112,8 @@ public class CodecFileFragment extends Fragment implements View.OnClickListener 
     }
 
     public void setOutputPath(final String outputPath) {
-        mEditOutPath.post(new Runnable() {
-            @Override
-            public void run() {
-                mEditOutPath.setText(outputPath);
-            }
-        });
+        mEditOutPath.post(() ->
+                mEditOutPath.setText(outputPath));
         mBtnOpenOutput.setEnabled(true);
     }
 
@@ -228,12 +224,8 @@ public class CodecFileFragment extends Fragment implements View.OnClickListener 
     public void setInputUri(final Uri inputPath) {
         mInputUri = inputPath;
         if (mInputUri != null) {
-            mEditInputPath.post(new Runnable() {
-                @Override
-                public void run() {
-                    mEditInputPath.setText(inputPath.toString());
-                }
-            });
+            mEditInputPath.post(() ->
+                    mEditInputPath.setText(inputPath.toString()));
             mBtnProcess.setEnabled(true);
         } else {
             mBtnProcess.setEnabled(false);

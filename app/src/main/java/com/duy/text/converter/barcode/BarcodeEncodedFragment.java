@@ -95,21 +95,15 @@ public class BarcodeEncodedFragment extends Fragment {
         mBarcodeFormat = (BarcodeFormat) getArguments().getSerializable("format");
         mGenerateTask = new BarcodeGenerateTask(data, mBarcodeFormat);
         mGenerateTask.execute();
-        view.findViewById(R.id.btn_share).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                shareCurrentImage();
-            }
-        });
-        view.findViewById(R.id.btn_save).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    saveCurrentImage();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    Toast.makeText(getContext(), "Cannot save", Toast.LENGTH_SHORT).show();
-                }
+        view.findViewById(R.id.btn_share).setOnClickListener(v ->
+                shareCurrentImage());
+
+        view.findViewById(R.id.btn_save).setOnClickListener(v -> {
+            try {
+                saveCurrentImage();
+            } catch (Exception e) {
+                e.printStackTrace();
+                Toast.makeText(getContext(), "Cannot save", Toast.LENGTH_SHORT).show();
             }
         });
     }

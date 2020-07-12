@@ -61,11 +61,8 @@ public class StylishProcessTextAdapter extends RecyclerView.Adapter<StylishProce
     public void onBindViewHolder(ViewHolder holder, int position) {
         final String item = mResult.get(position);
         holder.txtResult.setText(item);
-        holder.rootView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (listener != null) listener.onTextSelected(item);
-            }
+        holder.rootView.setOnClickListener(v -> {
+            if (listener != null) listener.onTextSelected(item);
         });
     }
 

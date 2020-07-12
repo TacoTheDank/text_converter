@@ -26,7 +26,6 @@ import com.duy.text.converter.core.stylish.model.Style;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 
 /**
@@ -100,12 +99,8 @@ public class StylistGenerator {
         }
 
         //sort mEncoders
-        Collections.sort(mEncoders, new Comparator<Style>() {
-            @Override
-            public int compare(Style o1, Style o2) {
-                return positionMap.get(o1).compareTo(positionMap.get(o2));
-            }
-        });
+        Collections.sort(mEncoders, (o1, o2) ->
+                positionMap.get(o1).compareTo(positionMap.get(o2)));
     }
 
     public ArrayList<String> generate(String input) {

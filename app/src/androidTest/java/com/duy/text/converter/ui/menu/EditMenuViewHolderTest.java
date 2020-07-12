@@ -59,12 +59,8 @@ public class EditMenuViewHolderTest {
 
     @Test
     public void clear() throws Throwable {
-        mRule.runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                editMenuViewHolder.clear();
-            }
-        });
+        mRule.runOnUiThread(() ->
+                editMenuViewHolder.clear());
         onView(allOf(withId(R.id.edit_input), isDisplayed()))
                 .check(matches(withText("")));
     }
@@ -72,14 +68,11 @@ public class EditMenuViewHolderTest {
     @Test
     public void paste() throws Throwable {
         final String text = "sample";
-        mRule.runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                IClipboard clipboard = ClipboardFactory.createClipboardManager(mRule.getActivity());
-                clipboard.setClipboard(text);
-                editMenuViewHolder.clear();
-                editMenuViewHolder.paste();
-            }
+        mRule.runOnUiThread(() -> {
+            IClipboard clipboard = ClipboardFactory.createClipboardManager(mRule.getActivity());
+            clipboard.setClipboard(text);
+            editMenuViewHolder.clear();
+            editMenuViewHolder.paste();
         });
         onView(allOf(withId(R.id.edit_input), isDisplayed()))
                 .check(matches(withText(text)));
@@ -89,25 +82,19 @@ public class EditMenuViewHolderTest {
     public void copy() throws Throwable {
         final String text = "sample";
 
-        mRule.runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                IClipboard clipboard = ClipboardFactory.createClipboardManager(mRule.getActivity());
-                clipboard.setClipboard(text);
-                editMenuViewHolder.clear();
-            }
+        mRule.runOnUiThread(() -> {
+            IClipboard clipboard = ClipboardFactory.createClipboardManager(mRule.getActivity());
+            clipboard.setClipboard(text);
+            editMenuViewHolder.clear();
         });
 
         onView(allOf(withId(R.id.edit_input), isDisplayed()))
                 .perform(typeText(text));
 
-        mRule.runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                editMenuViewHolder.copy();
-                IClipboard clipboard = ClipboardFactory.createClipboardManager(mRule.getActivity());
-                assertThat(clipboard.getClipboard().toString(), equalTo(text));
-            }
+        mRule.runOnUiThread(() -> {
+            editMenuViewHolder.copy();
+            IClipboard clipboard = ClipboardFactory.createClipboardManager(mRule.getActivity());
+            assertThat(clipboard.getClipboard().toString(), equalTo(text));
         });
     }
 

@@ -39,7 +39,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.duy.text.converter.R;
 import com.duy.text.converter.core.stylish.StylistGenerator;
 import com.duy.text.converter.core.stylish.adapter.ItemTouchHelperCallback;
-import com.duy.text.converter.core.stylish.adapter.OnSwapStyleListener;
 import com.duy.text.converter.core.stylish.adapter.ResultAdapter;
 
 import java.util.ArrayList;
@@ -83,12 +82,8 @@ public class StylistFragment extends Fragment implements TextWatcher {
 
 
         mAdapter = new ResultAdapter(getActivity(), R.layout.list_item_style);
-        mAdapter.setOnSwapStyleListener(new OnSwapStyleListener() {
-            @Override
-            public void onSwap(int fromPosition, int toPosition) {
-                mGenerator.swapPosition(fromPosition, toPosition);
-            }
-        });
+        mAdapter.setOnSwapStyleListener((fromPosition, toPosition) ->
+                mGenerator.swapPosition(fromPosition, toPosition));
 
         RecyclerView mListResult = view.findViewById(R.id.recycler_view);
         mListResult.setLayoutManager(new LinearLayoutManager(getContext()));

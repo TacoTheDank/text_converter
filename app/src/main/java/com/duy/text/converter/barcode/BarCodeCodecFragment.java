@@ -170,13 +170,10 @@ public class BarCodeCodecFragment extends Fragment implements View.OnClickListen
         if (requestCode == IntentIntegrator.REQUEST_CODE) {
             if (resultCode == RESULT_OK) {
                 final String contents = data.getStringExtra(Intents.Scan.RESULT);
-                mInput.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        mInput.setText(contents);
-                        if (getContext() != null) {
-                            Toast.makeText(getContext(), R.string.decoded, Toast.LENGTH_SHORT).show();
-                        }
+                mInput.postDelayed(() -> {
+                    mInput.setText(contents);
+                    if (getContext() != null) {
+                        Toast.makeText(getContext(), R.string.decoded, Toast.LENGTH_SHORT).show();
                     }
                 }, 200);
             }

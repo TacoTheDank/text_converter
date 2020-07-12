@@ -61,12 +61,7 @@ public class HashFragment extends Fragment {
     private ArrayList<IHash> mHashFunctions = new ArrayList<>();
     private BaseEditText mInput, mOutput;
     private Spinner mMethodSpinner;
-    private final Runnable convertRunnable = new Runnable() {
-        @Override
-        public void run() {
-            convert();
-        }
-    };
+    private final Runnable convertRunnable = this::convert;
     private TextWatcher mInputWatcher = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -127,18 +122,10 @@ public class HashFragment extends Fragment {
 
         mMethodSpinner = view.findViewById(R.id.spinner_hash_methods);
         mMethodSpinner.setBackgroundDrawable(RoundedBackgroundEditText.createRoundedBackground(getContext()));
-        view.findViewById(R.id.img_share_out).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ShareUtil.shareText(getContext(), mOutput.getText().toString());
-            }
-        });
-        view.findViewById(R.id.img_copy_out).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ClipboardUtil.setClipboard(getContext(), mOutput.getText().toString());
-            }
-        });
+        view.findViewById(R.id.img_share_out).setOnClickListener(v ->
+                ShareUtil.shareText(getContext(), mOutput.getText().toString()));
+        view.findViewById(R.id.img_copy_out).setOnClickListener(v ->
+                ClipboardUtil.setClipboard(getContext(), mOutput.getText().toString()));
 
         ArrayList<String> names = new ArrayList<>();
         for (IHash mHashFunction : mHashFunctions) {

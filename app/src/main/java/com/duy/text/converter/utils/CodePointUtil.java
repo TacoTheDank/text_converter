@@ -29,10 +29,8 @@ import java.util.Iterator;
 public class CodePointUtil {
     @NonNull
     public static Iterable<Integer> codePoints(final String string) {
-        return new Iterable<Integer>() {
-            @NonNull
-            public Iterator<Integer> iterator() {
-                return new Iterator<Integer>() {
+        return () ->
+                new Iterator<Integer>() {
                     int nextIndex = 0;
 
                     public boolean hasNext() {
@@ -49,8 +47,6 @@ public class CodePointUtil {
                         throw new UnsupportedOperationException();
                     }
                 };
-            }
-        };
     }
 
     public static ArrayList<Integer> codePointsArr(String text) {

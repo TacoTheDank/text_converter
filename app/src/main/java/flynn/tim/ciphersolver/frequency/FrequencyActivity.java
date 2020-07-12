@@ -29,14 +29,10 @@ import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
-import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
-import com.github.mikephil.charting.utils.ViewPortHandler;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -85,12 +81,8 @@ public class FrequencyActivity extends BaseActivity implements TextWatcher {
 
         BarDataSet dataSet = new BarDataSet(yVals, "");
         dataSet.setColors(ColorTemplate.COLORFUL_COLORS);
-        dataSet.setValueFormatter(new ValueFormatter() {
-            @Override
-            public String getFormattedValue(float value, Entry entry, int dataSetIndex, ViewPortHandler viewPortHandler) {
-                return String.valueOf((int) value);
-            }
-        });
+        dataSet.setValueFormatter((value, entry, dataSetIndex, viewPortHandler) ->
+                String.valueOf((int) value));
 
         BarData barData = new BarData(labels, dataSet);
         barData.setValueTextColor(ViewUtils.getColorFromAttr(this, android.R.attr.textColorPrimary));
@@ -109,12 +101,7 @@ public class FrequencyActivity extends BaseActivity implements TextWatcher {
         for (Map.Entry<Character, Integer> entry : analyze.entrySet()) {
             labels.add(String.valueOf(entry.getKey()));
         }
-        Collections.sort(labels, new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                return o1.compareTo(o2);
-            }
-        });
+        Collections.sort(labels, String::compareTo);
         return labels;
     }
 

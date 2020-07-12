@@ -41,43 +41,34 @@ public class IClipboardTest {
 
     @Test
     public void getClipboard() throws Throwable {
-        mRule.runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                IClipboard clipboard = ClipboardFactory.createClipboardManager(mRule.getActivity());
-                String text = "Text";
-                clipboard.setClipboard(text);
-                CharSequence clipboardContent = clipboard.getClipboard();
-                assertThat(text, equalTo(clipboardContent));
-            }
+        mRule.runOnUiThread(() -> {
+            IClipboard clipboard = ClipboardFactory.createClipboardManager(mRule.getActivity());
+            String text = "Text";
+            clipboard.setClipboard(text);
+            CharSequence clipboardContent = clipboard.getClipboard();
+            assertThat(text, equalTo(clipboardContent));
         });
     }
 
     @Test
     public void setClipboard_success() throws Throwable {
-        mRule.runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                IClipboard clipboard = ClipboardFactory.createClipboardManager(mRule.getActivity());
-                String text = "Text";
-                boolean result = clipboard.setClipboard(text);
-                assertThat(result, equalTo(true));
-            }
+        mRule.runOnUiThread(() -> {
+            IClipboard clipboard = ClipboardFactory.createClipboardManager(mRule.getActivity());
+            String text = "Text";
+            boolean result = clipboard.setClipboard(text);
+            assertThat(result, equalTo(true));
         });
 
     }
 
     @Test
     public void setClipboard_failed() throws Throwable {
-        mRule.runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                String largeText = TestUtils.duplicateString("LargeText", 500000);
-                if (BuildConfig.DEBUG) Log.d(TAG, "run: size " + largeText.getBytes().length);
-                IClipboard clipboard = ClipboardFactory.createClipboardManager(mRule.getActivity());
-                boolean result = clipboard.setClipboard(largeText);
-                assertThat(result, equalTo(true));
-            }
+        mRule.runOnUiThread(() -> {
+            String largeText = TestUtils.duplicateString("LargeText", 500000);
+            if (BuildConfig.DEBUG) Log.d(TAG, "run: size " + largeText.getBytes().length);
+            IClipboard clipboard = ClipboardFactory.createClipboardManager(mRule.getActivity());
+            boolean result = clipboard.setClipboard(largeText);
+            assertThat(result, equalTo(true));
         });
     }
 

@@ -67,11 +67,8 @@ public class EncodeResultAdapter extends RecyclerView.Adapter<EncodeResultAdapte
             if (holder.imgShare != null) holder.imgShare.setVisibility(View.GONE);
             if (holder.shareMsg != null) holder.shareMsg.setVisibility(View.GONE);
             if (holder.rootView != null) {
-                holder.rootView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        if (listener != null) listener.onTextSelected(str);
-                    }
+                holder.rootView.setOnClickListener(v -> {
+                    if (listener != null) listener.onTextSelected(str);
                 });
             }
         } else {
@@ -79,28 +76,16 @@ public class EncodeResultAdapter extends RecyclerView.Adapter<EncodeResultAdapte
             if (holder.imgShare != null) holder.imgShare.setVisibility(View.VISIBLE);
             if (holder.shareMsg != null) holder.shareMsg.setVisibility(View.VISIBLE);
             if (holder.imgShare != null) {
-                holder.imgShare.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        ShareManager.share(str, context);
-                    }
-                });
+                holder.imgShare.setOnClickListener(v ->
+                        ShareManager.share(str, context));
             }
             if (holder.imgCopy != null) {
-                holder.imgCopy.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        ClipboardUtil.setClipboard(context, str);
-                    }
-                });
+                holder.imgCopy.setOnClickListener(v ->
+                        ClipboardUtil.setClipboard(context, str));
             }
             if (holder.shareMsg != null) {
-                holder.shareMsg.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        ShareManager.shareMessenger(str, context);
-                    }
-                });
+                holder.shareMsg.setOnClickListener(v ->
+                        ShareManager.shareMessenger(str, context));
             }
         }
 

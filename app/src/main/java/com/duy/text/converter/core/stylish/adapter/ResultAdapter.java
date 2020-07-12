@@ -76,28 +76,16 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ViewHolder
         final String str = mItems.get(position);
         holder.textView.setText(mItems.get(position));
         if (holder.imgShare != null) {
-            holder.imgShare.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    ShareManager.share(str, context);
-                }
-            });
+            holder.imgShare.setOnClickListener(v ->
+                    ShareManager.share(str, context));
         }
         if (holder.imgCopy != null) {
-            holder.imgCopy.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    ClipboardUtil.setClipboard(context, str);
-                }
-            });
+            holder.imgCopy.setOnClickListener(v ->
+                    ClipboardUtil.setClipboard(context, str));
         }
         if (holder.shareMsg != null) {
-            holder.shareMsg.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    ShareManager.shareMessenger(str, context);
-                }
-            });
+            holder.shareMsg.setOnClickListener(v ->
+                    ShareManager.shareMessenger(str, context));
         }
     }
 

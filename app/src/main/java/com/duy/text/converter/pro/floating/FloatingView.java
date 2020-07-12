@@ -289,11 +289,8 @@ public abstract class FloatingView extends Service implements OnTouchListener {
         }
 
         mRootView.setVisibility(View.VISIBLE);
-        mInactiveButton.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if (mInactiveButton != null) mInactiveButton.setVisibility(View.INVISIBLE);
-            }
+        mInactiveButton.postDelayed(() -> {
+            if (mInactiveButton != null) mInactiveButton.setVisibility(View.INVISIBLE);
         }, 30);
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
@@ -458,16 +455,13 @@ public abstract class FloatingView extends Service implements OnTouchListener {
             mDeleteIconHolder.setTranslationY(CLOSE_ANIMATION_DISTANCE);
 
             ValueAnimator animator = ValueAnimator.ofInt(0, 100);
-            animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-                @Override
-                public void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    float percent = valueAnimator.getAnimatedFraction();
-                    mDeleteIconHolder.setTranslationX(mWiggle.x * percent);
+            animator.addUpdateListener(valueAnimator -> {
+                float percent = valueAnimator.getAnimatedFraction();
+                mDeleteIconHolder.setTranslationX(mWiggle.x * percent);
 
-                    int destinationY = mWiggle.y;
-                    float deltaY = destinationY - CLOSE_ANIMATION_DISTANCE;
-                    mDeleteIconHolder.setTranslationY(CLOSE_ANIMATION_DISTANCE + (deltaY * percent));
-                }
+                int destinationY = mWiggle.y;
+                float deltaY = destinationY - CLOSE_ANIMATION_DISTANCE;
+                mDeleteIconHolder.setTranslationY(CLOSE_ANIMATION_DISTANCE + (deltaY * percent));
             });
             animator.addListener(new AnimationFinishedListener() {
                 @Override
@@ -516,12 +510,9 @@ public abstract class FloatingView extends Service implements OnTouchListener {
         }
 
         mInactiveButton.setVisibility(View.VISIBLE);
-        mRootView.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if (mRootView != null && !mIsViewOpen) {
-                    mRootView.setVisibility(View.GONE);
-                }
+        mRootView.postDelayed(() -> {
+            if (mRootView != null && !mIsViewOpen) {
+                mRootView.setVisibility(View.GONE);
             }
         }, 30);
 
@@ -671,12 +662,9 @@ public abstract class FloatingView extends Service implements OnTouchListener {
                 }
             });
             mAnimationTask.run();
-            mRootView.setOnTouchListener(new OnTouchListener() {
-                @Override
-                public boolean onTouch(View v, MotionEvent event) {
-                    close();
-                    return true;
-                }
+            mRootView.setOnTouchListener((v, event) -> {
+                close();
+                return true;
             });
 
             // Home and Recent Apps send ACTION_CLOSE_SYSTEM_DIALOGS so we can use that to hide our self.
@@ -771,12 +759,7 @@ public abstract class FloatingView extends Service implements OnTouchListener {
         Log.v(TAG, "show()");
         if (mView == null) {
             mView = onCreateView(mRootView);
-            mView.setOnTouchListener(new OnTouchListener() {
-                @Override
-                public boolean onTouch(View view, MotionEvent motionEvent) {
-                    return true;
-                }
-            });
+            mView.setOnTouchListener((view, motionEvent) -> true);
             FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) mView.getLayoutParams();
             params.leftMargin = getMargin();
             params.rightMargin = getMargin();
@@ -990,13 +973,10 @@ public abstract class FloatingView extends Service implements OnTouchListener {
                         .setListener(mAnimationFinishedListener);
             } else {
                 ValueAnimator animator = ValueAnimator.ofInt(0, 100);
-                animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-                    @Override
-                    public void onAnimationUpdate(ValueAnimator valueAnimator) {
-                        float percent = valueAnimator.getAnimatedFraction();
-                        mDraggableIcon.setTranslationX(mDynamicUpdate.getTranslationX(percent));
-                        mDraggableIcon.setTranslationY(mDynamicUpdate.getTranslationY(percent));
-                    }
+                animator.addUpdateListener(valueAnimator -> {
+                    float percent = valueAnimator.getAnimatedFraction();
+                    mDraggableIcon.setTranslationX(mDynamicUpdate.getTranslationX(percent));
+                    mDraggableIcon.setTranslationY(mDynamicUpdate.getTranslationY(percent));
                 });
                 animator.setDuration(mDuration);
                 animator.setInterpolator(mInterpolator);
