@@ -49,82 +49,10 @@ public enum CodecMethod {
             return new AsciiCodec();
         }
     },
-    BINARY {
+    ATBASH {
         @Override
         public Codec getCodec() {
-            return new BinaryCodec();
-        }
-    },
-    HEX {
-        @Override
-        public Codec getCodec() {
-            return new HexCodec();
-        }
-    },
-    OCTAL {
-        @Override
-        public Codec getCodec() {
-            return new OctalCodec();
-        }
-    },
-    REVERSE {
-        @Override
-        public Codec getCodec() {
-            return new ReverseCodec();
-        }
-    },
-    UPPER_CASE {
-        @Override
-        public Codec getCodec() {
-            return new UpperCaseCodec();
-        }
-    },
-    LOWER_CASE {
-        @Override
-        public Codec getCodec() {
-            return new LowerCaseCodec();
-        }
-    },
-    UPSIDE_DOWN {
-        @Override
-        public Codec getCodec() {
-            return new UpsideDownCodec();
-        }
-    },
-    SUPER_SCRIPT {
-        @Override
-        public Codec getCodec() {
-            return new SuperscriptCodec();
-        }
-    },
-    SUB_SCRIPT {
-        @Override
-        public Codec getCodec() {
-            return new SubscriptCodec();
-        }
-    },
-    MORSE_CODE {
-        @Override
-        public Codec getCodec() {
-            return new MorseCodec();
-        }
-    },
-    ZALGO_MINI {
-        @Override
-        public Codec getCodec() {
-            return new ZalgoMiniCodec();
-        }
-    },
-    ZALGO_NORMAL {
-        @Override
-        public Codec getCodec() {
-            return new ZalgoNormalCodec();
-        }
-    },
-    ZALGO_BIG {
-        @Override
-        public Codec getCodec() {
-            return new ZalgoBigCodec();
+            return new AtbashCodec();
         }
     },
     BASE_32 {
@@ -139,16 +67,10 @@ public enum CodecMethod {
             return new Base64Codec();
         }
     },
-    URL {
+    BINARY {
         @Override
         public Codec getCodec() {
-            return new URLCodec();
-        }
-    },
-    RANDOM_CASE {
-        @Override
-        public Codec getCodec() {
-            return new RandomCaseCodec();
+            return new BinaryCodec();
         }
     },
     CAESAR {
@@ -157,16 +79,22 @@ public enum CodecMethod {
             return new CaesarCodec();
         }
     },
-    ATBASH {
+    HEX {
         @Override
         public Codec getCodec() {
-            return new AtbashCodec();
+            return new HexCodec();
         }
     },
-    ROT_13 {
+    LOWER_CASE {
         @Override
         public Codec getCodec() {
-            return new Rot13Codec();
+            return new LowerCaseCodec();
+        }
+    },
+    MORSE_CODE {
+        @Override
+        public Codec getCodec() {
+            return new MorseCodec();
         }
     },
     NATO {
@@ -175,16 +103,88 @@ public enum CodecMethod {
             return new NatoCodec();
         }
     },
+    OCTAL {
+        @Override
+        public Codec getCodec() {
+            return new OctalCodec();
+        }
+    },
+    RANDOM_CASE {
+        @Override
+        public Codec getCodec() {
+            return new RandomCaseCodec();
+        }
+    },
+    REVERSE {
+        @Override
+        public Codec getCodec() {
+            return new ReverseCodec();
+        }
+    },
+    ROT_13 {
+        @Override
+        public Codec getCodec() {
+            return new Rot13Codec();
+        }
+    },
+    SUB_SCRIPT {
+        @Override
+        public Codec getCodec() {
+            return new SubscriptCodec();
+        }
+    },
+    SUPER_SCRIPT {
+        @Override
+        public Codec getCodec() {
+            return new SuperscriptCodec();
+        }
+    },
     UNICODE {
         @Override
         public Codec getCodec() {
             return new UnicodeCodec();
         }
     },
+    UPPER_CASE {
+        @Override
+        public Codec getCodec() {
+            return new UpperCaseCodec();
+        }
+    },
+    UPSIDE_DOWN {
+        @Override
+        public Codec getCodec() {
+            return new UpsideDownCodec();
+        }
+    },
+    URL {
+        @Override
+        public Codec getCodec() {
+            return new URLCodec();
+        }
+    },
     WINGDINGS {
         @Override
         public Codec getCodec() {
             return new WingdingsCodec();
+        }
+    },
+    ZALGO_BIG {
+        @Override
+        public Codec getCodec() {
+            return new ZalgoBigCodec();
+        }
+    },
+    ZALGO_MINI {
+        @Override
+        public Codec getCodec() {
+            return new ZalgoMiniCodec();
+        }
+    },
+    ZALGO_NORMAL {
+        @Override
+        public Codec getCodec() {
+            return new ZalgoNormalCodec();
         }
     };
 

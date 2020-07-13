@@ -31,6 +31,7 @@ import com.duy.text.converter.core.codec.CaesarCodec;
 import com.duy.text.converter.core.codec.HexCodec;
 import com.duy.text.converter.core.codec.LowerCaseCodec;
 import com.duy.text.converter.core.codec.MorseCodec;
+import com.duy.text.converter.core.codec.NatoCodec;
 import com.duy.text.converter.core.codec.OctalCodec;
 import com.duy.text.converter.core.codec.RandomCaseCodec;
 import com.duy.text.converter.core.codec.ReverseCodec;
@@ -38,8 +39,10 @@ import com.duy.text.converter.core.codec.Rot13Codec;
 import com.duy.text.converter.core.codec.SubscriptCodec;
 import com.duy.text.converter.core.codec.SuperscriptCodec;
 import com.duy.text.converter.core.codec.URLCodec;
+import com.duy.text.converter.core.codec.UnicodeCodec;
 import com.duy.text.converter.core.codec.UpperCaseCodec;
 import com.duy.text.converter.core.codec.UpsideDownCodec;
+import com.duy.text.converter.core.codec.WingdingsCodec;
 import com.duy.text.converter.core.codec.ZalgoBigCodec;
 import com.duy.text.converter.core.codec.ZalgoMiniCodec;
 import com.duy.text.converter.core.codec.ZalgoNormalCodec;
@@ -68,48 +71,55 @@ public class CodecUtil {
         switch (decodeMethod) {
             case ASCII:
                 return new AsciiCodec().decode(inp);
-            case OCTAL:
-                return new OctalCodec().decode(inp);
-            case BINARY:
-                return new BinaryCodec().decode(inp);
-            case HEX:
-                return new HexCodec().decode(inp);
-            case UPPER_CASE:
-                return new UpperCaseCodec().decode(inp);
-            case LOWER_CASE:
-                return new LowerCaseCodec().decode(inp);
-            case REVERSE:
-                return new ReverseCodec().decode(inp);
-            case UPSIDE_DOWN:
-                return new UpsideDownCodec().decode(inp);
-            case SUPER_SCRIPT:
-                return new SuperscriptCodec().decode(inp);
-            case SUB_SCRIPT:
-                return new SubscriptCodec().decode(inp);
-            case MORSE_CODE:
-                return new MorseCodec().decode(inp);
-            case BASE_64:
-                return new Base64Codec().decode(inp);
-            case ZALGO_MINI:
-            case ZALGO_NORMAL:
-            case ZALGO_BIG:
-                break;
-            case BASE_32:
-                return new Base32Codec().decode(inp);
-            case URL:
-                return new URLCodec().decode(inp);
-            case RANDOM_CASE:
-                return new RandomCaseCodec().decode(inp);
-            case CAESAR:
-                return new CaesarCodec().decode(inp);
             case ATBASH:
                 return new AtbashCodec().decode(inp);
+            case BASE_32:
+                return new Base32Codec().decode(inp);
+            case BASE_64:
+                return new Base64Codec().decode(inp);
+            case BINARY:
+                return new BinaryCodec().decode(inp);
+            case CAESAR:
+                return new CaesarCodec().decode(inp);
+            case HEX:
+                return new HexCodec().decode(inp);
+            case LOWER_CASE:
+                return new LowerCaseCodec().decode(inp);
+            case MORSE_CODE:
+                return new MorseCodec().decode(inp);
+            case NATO:
+                return new NatoCodec().decode(inp);
+            case OCTAL:
+                return new OctalCodec().decode(inp);
+            case RANDOM_CASE:
+                return new RandomCaseCodec().decode(inp);
+            case REVERSE:
+                return new ReverseCodec().decode(inp);
             case ROT_13:
                 return new Rot13Codec().decode(inp);
+            case SUB_SCRIPT:
+                return new SubscriptCodec().decode(inp);
+            case SUPER_SCRIPT:
+                return new SuperscriptCodec().decode(inp);
+            case UNICODE:
+                return new UnicodeCodec().decode(inp);
+            case UPPER_CASE:
+                return new UpperCaseCodec().decode(inp);
+            case UPSIDE_DOWN:
+                return new UpsideDownCodec().decode(inp);
+            case URL:
+                return new URLCodec().decode(inp);
+            case WINGDINGS:
+                return new WingdingsCodec().decode(inp);
+            case ZALGO_BIG:
+                return new ZalgoBigCodec().decode(inp);
+            case ZALGO_MINI:
+                return new ZalgoMiniCodec().decode(inp);
+            case ZALGO_NORMAL:
+                return new ZalgoNormalCodec().decode(inp);
             default:
                 return decodeMethod.getCodec().decode(inp);
         }
-        return inp;
     }
 
     public static String encode(String name, Context context, String inp) {
@@ -129,46 +139,52 @@ public class CodecUtil {
         switch (encodeMethod) {
             case ASCII:
                 return new AsciiCodec().encode(inp);
-            case OCTAL:
-                return new OctalCodec().encode(inp);
-            case BINARY:
-                return new BinaryCodec().encode(inp);
-            case HEX:
-                return new HexCodec().encode(inp);
-            case UPPER_CASE:
-                return new UpperCaseCodec().encode(inp);
-            case LOWER_CASE:
-                return new LowerCaseCodec().encode(inp);
-            case REVERSE:
-                return new ReverseCodec().encode(inp);
-            case UPSIDE_DOWN:
-                return new UpsideDownCodec().encode(inp);
-            case SUPER_SCRIPT:
-                return new SuperscriptCodec().encode(inp);
-            case SUB_SCRIPT:
-                return new SubscriptCodec().encode(inp);
-            case MORSE_CODE:
-                return new MorseCodec().encode(inp);
+            case ATBASH:
+                return new AtbashCodec().encode(inp);
+            case BASE_32:
+                return new Base32Codec().encode(inp);
             case BASE_64:
                 return new Base64Codec().encode(inp);
+            case BINARY:
+                return new BinaryCodec().encode(inp);
+            case CAESAR:
+                return new CaesarCodec().encode(inp);
+            case HEX:
+                return new HexCodec().encode(inp);
+            case LOWER_CASE:
+                return new LowerCaseCodec().encode(inp);
+            case MORSE_CODE:
+                return new MorseCodec().encode(inp);
+            case NATO:
+                return new NatoCodec().encode(inp);
+            case OCTAL:
+                return new OctalCodec().encode(inp);
+            case RANDOM_CASE:
+                return new RandomCaseCodec().encode(inp);
+            case REVERSE:
+                return new ReverseCodec().encode(inp);
+            case ROT_13:
+                return new Rot13Codec().encode(inp);
+            case SUB_SCRIPT:
+                return new SubscriptCodec().encode(inp);
+            case SUPER_SCRIPT:
+                return new SuperscriptCodec().encode(inp);
+            case UNICODE:
+                return new UnicodeCodec().encode(inp);
+            case UPPER_CASE:
+                return new UpperCaseCodec().encode(inp);
+            case UPSIDE_DOWN:
+                return new UpsideDownCodec().encode(inp);
+            case URL:
+                return new URLCodec().encode(inp);
+            case WINGDINGS:
+                return new WingdingsCodec().encode(inp);
+            case ZALGO_BIG:
+                return new ZalgoBigCodec().encode(inp);
             case ZALGO_MINI:
                 return new ZalgoMiniCodec().encode(inp);
             case ZALGO_NORMAL:
                 return new ZalgoNormalCodec().encode(inp);
-            case ZALGO_BIG:
-                return new ZalgoBigCodec().encode(inp);
-            case BASE_32:
-                return new Base32Codec().encode(inp);
-            case URL:
-                return new URLCodec().encode(inp);
-            case RANDOM_CASE:
-                return new RandomCaseCodec().encode(inp);
-            case CAESAR:
-                return new CaesarCodec().encode(inp);
-            case ATBASH:
-                return new AtbashCodec().encode(inp);
-            case ROT_13:
-                return new Rot13Codec().encode(inp);
             default:
                 return encodeMethod.getCodec().encode(inp);
         }
