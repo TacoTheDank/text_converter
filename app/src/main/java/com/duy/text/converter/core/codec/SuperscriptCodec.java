@@ -29,11 +29,11 @@ import com.duy.text.converter.core.codec.interfaces.CodecImpl;
  */
 
 public class SuperscriptCodec extends CodecImpl {
-    private static final String SUPPER_SCRIPT = "ᵃᵇᶜᵈᵉᶠᵍʰⁱʲᵏˡᵐⁿᵒᵖqʳˢᵗᵘᵛʷˣʸᶻ_,;.?!/\\'ᴬᴮᶜᴰᴱᶠᴳᴴᴵᴶᴷᴸᴹᴺᴼᴾQᴿˢᵀᵁⱽᵂˣʸᶻ⁰¹²³⁴⁵⁶⁷⁸⁹";
-    private static final String NORMAL = "abcdefghijklmnopqrstuvwxyz_,;.?!/\\'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    private static final String NORMAL = "abcdefghijklmnopqrstuvwxyz_,;.?!/\\'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+-=()";
+    private static final String SUPER_SCRIPT = "ᵃᵇᶜᵈᵉᶠᵍʰⁱʲᵏˡᵐⁿᵒᵖqʳˢᵗᵘᵛʷˣʸᶻ_,;.?!/\\'ᴬᴮᶜᴰᴱᶠᴳᴴᴵᴶᴷᴸᴹᴺᴼᴾQᴿˢᵀᵁⱽᵂˣʸᶻ⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾";
 
     static {
-        if (SUPPER_SCRIPT.length() != NORMAL.length()) {
+        if (SUPER_SCRIPT.length() != NORMAL.length()) {
             throw new RuntimeException();
         }
     }
@@ -48,7 +48,7 @@ public class SuperscriptCodec extends CodecImpl {
             letter = text.charAt(i);
             int index = NORMAL.indexOf(letter);
             if (index != -1) {
-                result.append(SUPPER_SCRIPT.charAt(index));
+                result.append(SUPER_SCRIPT.charAt(index));
                 incConfident();
             } else {
                 result.append(letter);
@@ -64,7 +64,7 @@ public class SuperscriptCodec extends CodecImpl {
         char letter;
         for (int i = 0; i < text.length(); i++) {
             letter = text.charAt(i);
-            int a = SUPPER_SCRIPT.indexOf(letter);
+            int a = SUPER_SCRIPT.indexOf(letter);
             if (a != -1) {
                 result.append(NORMAL.charAt(a));
                 incConfident();

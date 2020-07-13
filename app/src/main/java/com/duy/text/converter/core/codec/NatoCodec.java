@@ -32,7 +32,7 @@ public class NatoCodec extends CodecImpl {
     private static final ArrayList<NatoItem> DATA = new ArrayList<>();
 
     static {
-        DATA.add(new NatoItem("A", "Alpha"));
+        DATA.add(new NatoItem("A", "Alfa"));
         DATA.add(new NatoItem("B", "Bravo"));
         DATA.add(new NatoItem("C", "Charlie"));
         DATA.add(new NatoItem("D", "Delta"));
@@ -41,7 +41,7 @@ public class NatoCodec extends CodecImpl {
         DATA.add(new NatoItem("G", "Golf"));
         DATA.add(new NatoItem("H", "Hotel"));
         DATA.add(new NatoItem("I", "India"));
-        DATA.add(new NatoItem("J", "Juliet"));
+        DATA.add(new NatoItem("J", "Juliett"));
         DATA.add(new NatoItem("K", "Kilo"));
         DATA.add(new NatoItem("L", "Lima"));
         DATA.add(new NatoItem("M", "Mike"));
@@ -68,8 +68,13 @@ public class NatoCodec extends CodecImpl {
         DATA.add(new NatoItem("7", "Seven"));
         DATA.add(new NatoItem("8", "Eight"));
         DATA.add(new NatoItem("9", "Nine"));
+        // TODO: Add support for detecting when something should be a decimal (versus a stop).
+        //  This is because they are the same character. https://en.wikipedia.org/wiki/NATO_phonetic_alphabet#Usage
+        //DATA.add(new NatoItem(".", "Decimal"));
+        DATA.add(new NatoItem("00", "Hundred"));
+        DATA.add(new NatoItem("000", "Thousand"));
         DATA.add(new NatoItem("-", "Dash"));
-        DATA.add(new NatoItem(".", "Period"));
+        DATA.add(new NatoItem(".", "Stop"));
 
         for (int i = 0, dataSize = DATA.size(); i < dataSize; i++) {
             DATA.add(DATA.get(i).makeReverser());
