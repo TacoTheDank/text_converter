@@ -45,6 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:scaleType="centerInside" />
+
     </FrameLayout>
 
     <LinearLayout
@@ -67,5 +68,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/action_share_text" />
+
     </LinearLayout>
+
 </LinearLayout>

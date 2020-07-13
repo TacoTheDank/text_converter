@@ -20,7 +20,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -46,13 +45,13 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:text="Select text file" />
+
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="?android:listDivider" />
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -80,6 +79,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/decode" />
+
         </RadioGroup>
 
         <LinearLayout
@@ -94,14 +94,15 @@
                 android:padding="4dp"
                 android:text="@string/choose_method" />
 
-
             <androidx.appcompat.widget.AppCompatSpinner
                 android:id="@+id/spinner_codec_methods"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="end"
                 android:background="@drawable/bg_edit_text_dark" />
+
         </LinearLayout>
+
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
@@ -117,7 +118,6 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="?android:listDivider" />
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -145,7 +145,7 @@
             android:layout_gravity="right"
             android:enabled="false"
             android:text="Open output" />
-    </LinearLayout>
 
+    </LinearLayout>
 
 </LinearLayout>

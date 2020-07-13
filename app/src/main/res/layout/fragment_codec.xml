@@ -46,6 +46,7 @@
             <include
                 android:id="@+id/edit_menu_input"
                 layout="@layout/edit_menu" />
+
         </LinearLayout>
 
         <com.duy.text.converter.view.RoundedBackgroundEditText
@@ -74,13 +75,13 @@
             android:text="@string/choose_method"
             android:textColor="?android:textColorPrimary" />
 
-
         <androidx.appcompat.widget.AppCompatSpinner
             android:id="@+id/spinner_codec_methods"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="end"
             android:background="?roundBackground" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -120,6 +121,6 @@
             android:inputType="textMultiLine"
             android:padding="8dp" />
 
-
     </LinearLayout>
+
 </LinearLayout>

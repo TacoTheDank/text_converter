@@ -46,6 +46,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/hint_input" />
+
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -59,8 +60,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:hint="@string/hint_key" />
-            </com.google.android.material.textfield.TextInputLayout>
 
+            </com.google.android.material.textfield.TextInputLayout>
 
             <RadioGroup
                 android:layout_width="match_parent"
@@ -84,6 +85,7 @@
                     android:layout_weight="1"
                     android:checked="false"
                     android:text="@string/button_decrypt" />
+
             </RadioGroup>
 
             <include layout="@layout/divider" />
@@ -92,8 +94,9 @@
                 android:id="@+id/recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
+
         </LinearLayout>
 
-
     </LinearLayout>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -57,13 +57,11 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
-
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/view_pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
@@ -72,8 +70,6 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:menu="@menu/nav_menu">
+        app:menu="@menu/nav_menu" />
 
-    </com.google.android.material.navigation.NavigationView>
 </androidx.drawerlayout.widget.DrawerLayout>
-

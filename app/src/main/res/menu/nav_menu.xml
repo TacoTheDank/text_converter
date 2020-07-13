@@ -34,11 +34,11 @@
                 android:id="@+id/action_caesar_cipher"
                 android:title="@string/title_menu_caesar_cipher" />
             <item
-                android:id="@+id/action_frequency_analysis"
-                android:title="@string/title_frequency_analysis" />
-            <item
                 android:id="@+id/action_vigenere_cipher"
                 android:title="@string/title_vigenere_cipher" />
+            <item
+                android:id="@+id/action_frequency_analysis"
+                android:title="@string/title_frequency_analysis" />
         </menu>
     </item>
 
@@ -52,5 +52,4 @@
                 android:title="@string/action_floating_stylish" />
         </menu>
     </item>
-
 </menu>

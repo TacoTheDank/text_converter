@@ -27,4 +27,5 @@
         android:layout_margin="8dp"
         android:src="@drawable/ic_enhanced_encryption_white_48dp"
         app:fabSize="normal" />
+
 </FrameLayout>

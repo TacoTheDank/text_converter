@@ -29,7 +29,6 @@
     app:cardElevation="0dp"
     app:cardUseCompatPadding="true">
 
-
     <com.duy.text.converter.view.BaseTextView
         android:id="@+id/txt_result"
         android:layout_width="match_parent"
@@ -41,5 +40,5 @@
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
         android:textColor="?android:textColorPrimary"
         tools:text="sample asd asd asd asd asd asd asd asd asd as das d asd as" />
-</androidx.cardview.widget.CardView>
 
+</androidx.cardview.widget.CardView>

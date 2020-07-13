@@ -28,7 +28,6 @@
     app:cardCornerRadius="4dp"
     app:cardUseCompatPadding="true">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -51,7 +50,6 @@
                 android:textColor="?android:textColorPrimary"
                 android:textStyle="bold"
                 tools:text="Title" />
-
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/btn_copy"
@@ -85,7 +83,6 @@
                 android:src="@drawable/ic_msg_green"
                 android:tint="?imageTintColor" />
 
-
         </LinearLayout>
 
         <View
@@ -101,5 +98,7 @@
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
             android:textColor="?android:textColorPrimary"
             tools:text="sample" />
+
     </LinearLayout>
+
 </androidx.cardview.widget.CardView>

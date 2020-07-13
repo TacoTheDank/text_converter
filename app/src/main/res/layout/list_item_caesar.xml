@@ -38,4 +38,5 @@
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
         android:textColor="?android:textColorPrimary"
         tools:text="Result" />
+
 </LinearLayout>

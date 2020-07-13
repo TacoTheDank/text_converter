@@ -75,6 +75,7 @@
                         android:layout_height="wrap_content"
                         android:checked="false"
                         android:text="@string/button_decrypt" />
+
                 </RadioGroup>
 
                 <LinearLayout
@@ -97,6 +98,7 @@
                         android:padding="8dp" />
 
                 </LinearLayout>
+
             </LinearLayout>
 
             <include layout="@layout/divider" />
@@ -108,6 +110,6 @@
 
         </LinearLayout>
 
-
     </LinearLayout>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

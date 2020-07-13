@@ -58,9 +58,7 @@
                     android:src="@drawable/ic_content_paste_white_24dp"
                     android:tint="?imageTintColor" />
 
-
             </LinearLayout>
-
 
             <com.duy.text.converter.view.RoundedBackgroundEditText
                 android:id="@+id/edit_input"
@@ -84,9 +82,7 @@
             android:layout_height="40dp"
             app:tabGravity="center"
             app:tabMode="scrollable"
-            app:tabTextAppearance="@style/Base.TextAppearance.AppCompat.Small">
-
-        </com.google.android.material.tabs.TabLayout>
+            app:tabTextAppearance="@style/Base.TextAppearance.AppCompat.Small" />
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/spinner_codec_methods"
@@ -128,7 +124,6 @@
                     android:src="@drawable/ic_content_paste_white_24dp"
                     android:tint="?imageTintColor" />
 
-
             </LinearLayout>
 
             <com.duy.text.converter.view.RoundedBackgroundEditText
@@ -145,5 +140,7 @@
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
 
         </LinearLayout>
+
     </LinearLayout>
+
 </androidx.cardview.widget.CardView>

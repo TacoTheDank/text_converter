@@ -101,7 +101,9 @@
                         android:layout_height="wrap_content"
                         android:text="@string/using_camera"
                         android:textColor="?android:textColorPrimary" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -134,8 +136,11 @@
                         android:layout_height="wrap_content"
                         android:text="Select From Gallery"
                         android:textColor="?android:textColorPrimary" />
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
         </LinearLayout>
 
     </LinearLayout>

@@ -27,4 +27,5 @@
         android:layout_margin="8dp"
         android:src="@drawable/ic_text_format_white_48dp"
         app:fabSize="normal" />
+
 </LinearLayout>

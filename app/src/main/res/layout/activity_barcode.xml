@@ -34,9 +34,7 @@
             android:layout_height="wrap_content"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:tabGravity="center"
-            app:tabMode="scrollable">
-
-        </com.google.android.material.tabs.TabLayout>
+            app:tabMode="scrollable" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -46,15 +44,11 @@
         android:orientation="vertical"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/view_pager"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1">
-
-        </androidx.viewpager.widget.ViewPager>
-
+            android:layout_weight="1" />
 
     </LinearLayout>
 

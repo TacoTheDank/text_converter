@@ -15,7 +15,6 @@
   ~  along with this program.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -23,7 +22,6 @@
     android:orientation="horizontal"
     android:paddingTop="4dp"
     android:paddingBottom="4dp">
-
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/btn_copy"
@@ -35,7 +33,6 @@
         android:padding="8dp"
         android:src="@drawable/ic_content_copy_white_24dp"
         android:tint="?imageTintColor" />
-
 
     <com.duy.text.converter.view.BaseTextView
         android:id="@+id/txt_result"

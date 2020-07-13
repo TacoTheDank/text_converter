@@ -28,6 +28,7 @@
             android:title="@string/pref_title_theme" />
 
     </PreferenceCategory-->
+
     <PreferenceCategory android:title="@string/pref_title_menu_text">
         <ListPreference
             android:defaultValue="@string/ascii"
@@ -49,7 +50,6 @@
             android:key="open_floating_codec"
             android:summary="@string/pref_desc_open_codec"
             android:title="@string/action_open_floating_codec" />
-
         <Preference
             android:key="open_floating_stylish"
             android:summary="@string/pref_desc_open_floating_stylish"
