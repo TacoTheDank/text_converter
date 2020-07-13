@@ -71,8 +71,9 @@ public class NatoCodec extends CodecImpl {
         // TODO: Add support for detecting when something should be a decimal (versus a stop).
         //  This is because they are the same character. https://en.wikipedia.org/wiki/NATO_phonetic_alphabet#Usage
         //DATA.add(new NatoItem(".", "Decimal"));
-        DATA.add(new NatoItem("00", "Hundred"));
-        DATA.add(new NatoItem("000", "Thousand"));
+        // TODO: These two don't even work, because of course it's never that simple. Make them work.
+        //DATA.add(new NatoItem("00", "Hundred"));
+        //DATA.add(new NatoItem("000", "Thousand"));
         DATA.add(new NatoItem("-", "Dash"));
         DATA.add(new NatoItem(".", "Stop"));
 
