@@ -41,8 +41,10 @@
     <string name="action_share_text">Share</string>
     <string name="action_clear_all">Clear all</string>
 
-    <string name="pref_title_theme">Theme</string>
-    <string name="pref_title_user_interface">User interface</string>
+    <!--string name="pref_title_theme">Theme</string-->
+    <string name="pref_theme_dark">Theme Dark</string>
+    <!--string name="pref_theme_light">Theme Light</string>
+    <string name="pref_title_user_interface">User interface</string-->
     <string name="pref_title_process_text">Process text menu</string>
     <string name="pref_title_floating_window">Floating window</string>
     <string name="pref_title_menu_text">Menu text (Android M and above)</string>
@@ -53,7 +55,7 @@
     <string name="hint_decimal">Decimal (0–9)</string>
     <string name="hint_octal">Octal (0–8)</string>
     <string name="hint_binary">Binary (0–1)</string>
-    <string name="hint_hex">Hex (0–9A–F)</string>
+    <string name="hint_hex">Hex (0–9, A–F)</string>
     <string name="hint_output_here">Enter here for decode…</string>
     <string name="hint_encode_here">Enter here for encode…</string>
     <string name="hint_input">Input…</string>
@@ -73,7 +75,7 @@
     <string name="tab_title_base">Base converter</string>
 
     <string name="title_menu_cipher">Cipher</string>
-    <string name="title_menu_caesar_cipher">Caesar cipher</string>
+    <string name="title_menu_caesar_cipher">Caesar Cipher</string>
     <string name="title_select_image">Select Image</string>
     <string name="title_frequency_analysis">Frequency Analysis</string>
     <string name="title_vigenere_cipher">Vigenère Cipher</string>
@@ -89,6 +91,5 @@
     <string name="button_decrypt">Decrypt</string>
     <string name="character_offset">Character Offset</string>
     <string name="hint_key">Key</string>
-
 
 </resources>

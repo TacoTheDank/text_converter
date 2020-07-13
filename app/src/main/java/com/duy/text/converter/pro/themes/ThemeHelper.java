@@ -29,15 +29,9 @@ import com.duy.text.converter.R;
 
 public class ThemeHelper {
     private static final int[] THEME_IDS = new int[]{
-            R.style.AppThemeDark,
-            R.style.AppThemeLight_Theme1,
-            R.style.AppThemeLight_Theme2,
-            R.style.AppThemeLight_Theme3,
-            R.style.AppThemeLight_Theme4,
-            R.style.AppThemeLight_Theme5,
-            R.style.AppThemeLight_Theme6
+            R.style.AppThemeDark/*,
+            R.style.AppThemeLight*/
     };
-
 
     public static void setTheme(Context context) {
         String name = getCurrentTheme(context);

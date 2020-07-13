@@ -16,19 +16,18 @@
   -->
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory
+    <!--PreferenceCategory
         android:key="@string/pref_key_user_interface"
         android:title="@string/pref_title_user_interface">
 
         <ListPreference
-            android:defaultValue="@string/theme_dark"
+            android:defaultValue="@string/pref_theme_dark"
             android:entries="@array/theme_names"
             android:entryValues="@array/theme_names"
             android:key="@string/pref_key_theme"
-            android:title="@string/pref_title_theme">
+            android:title="@string/pref_title_theme" />
 
-        </ListPreference>
-    </PreferenceCategory>
+    </PreferenceCategory-->
     <PreferenceCategory android:title="@string/pref_title_menu_text">
         <ListPreference
             android:defaultValue="@string/ascii"

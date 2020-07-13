@@ -25,7 +25,7 @@
         <item>Base32</item>
         <item>Base64</item>
         <item>Binary</item>
-        <item>Caesar offset 1</item>
+        <item>Caesar (offset 1)</item>
         <item>Hex</item>
         <item>Lowercase</item>
         <item>Morse code</item>
@@ -40,10 +40,10 @@
         <item>Uppercase</item>
         <item>Upside-down</item>
         <item>URL</item>
-        <item>Winding</item>
-        <item>Zalgo big</item>
-        <item>Zalgo mini</item>
-        <item>Zalgo normal</item>
+        <item>Wingdings</item>
+        <item>Zalgo Big</item>
+        <item>Zalgo Mini</item>
+        <item>Zalgo Normal</item>
     </string-array>
 
     <string-array name="barcode_format">
@@ -66,20 +66,8 @@
         <item>UPC/EAN extension</item>
     </string-array>
 
-    <string name="theme_dark">Theme Dark</string>
     <string-array name="theme_names">
-        <item>@string/theme_dark</item>
-        <!--<item>Theme Dark 1</item>-->
-        <!--<item>Theme Dark 2</item>-->
-        <!--<item>Theme Dark 3</item>-->
-        <!--<item>Theme Dark 4</item>-->
-        <!--<item>Theme Dark 5</item>-->
-        <!--<item>Theme Dark 6</item>-->
-        <item>Theme Light 1</item>
-        <item>Theme Light 2</item>
-        <item>Theme Light 3</item>
-        <item>Theme Light 4</item>
-        <item>Theme Light 5</item>
-        <item>Theme Light 6</item>
+        <item>@string/pref_theme_dark</item>
+        <!--item>@string/pref_theme_light</item-->
     </string-array>
 </resources>
