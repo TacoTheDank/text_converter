@@ -50,6 +50,6 @@ public class LowerCaseCodec extends CodecImpl {
     @NonNull
     @Override
     public String getName(Context context) {
-        return "Lower Case";
+        return "Lowercase";
     }
 }

@@ -50,6 +50,6 @@ public class UpperCaseCodec extends CodecImpl {
     @NonNull
     @Override
     public String getName(Context context) {
-        return "Upper case";
+        return "Uppercase";
     }
 }

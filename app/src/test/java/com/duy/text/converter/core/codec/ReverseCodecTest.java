@@ -25,10 +25,10 @@ import org.junit.Test;
 /**
  * Created by Duy on 2/10/2018.
  */
-public class ReverserCodecTest {
-    private static final String TO_BE_ENCODE = "ReverserCodecTest";
-    private static final String TO_BE_DECODE = "tseTcedoCresreveR";
-    private Codec codec = new ReverserCodec();
+public class ReverseCodecTest {
+    private static final String TO_BE_ENCODE = "ReverseCodecTest";
+    private static final String TO_BE_DECODE = "tseTcedoCesreveR";
+    private Codec codec = new ReverseCodec();
 
     @Test
     public void encode() throws Exception {

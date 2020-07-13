@@ -26,6 +26,7 @@ import org.apache.commons.codec.digest.DigestUtils;
  */
 
 public class Md5Hash implements IHash {
+
     @NonNull
     @Override
     public String getName() {
@@ -41,5 +42,4 @@ public class Md5Hash implements IHash {
             return "";
         }
     }
-
 }

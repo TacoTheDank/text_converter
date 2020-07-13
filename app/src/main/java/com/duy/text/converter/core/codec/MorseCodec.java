@@ -104,6 +104,6 @@ public class MorseCodec extends CodecImpl {
     @NonNull
     @Override
     public String getName(Context context) {
-        return "International morse code";
+        return "Morse code";
     }
 }

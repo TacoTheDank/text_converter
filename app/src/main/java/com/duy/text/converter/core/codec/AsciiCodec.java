@@ -77,6 +77,6 @@ public class AsciiCodec extends CodecImpl {
     @NonNull
     @Override
     public String getName(Context context) {
-        return "Ascii";
+        return "ASCII";
     }
 }

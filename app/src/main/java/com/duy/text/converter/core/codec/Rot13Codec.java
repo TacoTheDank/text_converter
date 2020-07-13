@@ -33,6 +33,6 @@ public class Rot13Codec extends CaesarCodec {
     @NonNull
     @Override
     public String getName(Context context) {
-        return "ROT-13";
+        return "ROT13";
     }
 }

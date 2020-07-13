@@ -29,7 +29,7 @@ import com.duy.text.converter.core.codec.MorseCodec;
 import com.duy.text.converter.core.codec.NatoCodec;
 import com.duy.text.converter.core.codec.OctalCodec;
 import com.duy.text.converter.core.codec.RandomCaseCodec;
-import com.duy.text.converter.core.codec.ReverserCodec;
+import com.duy.text.converter.core.codec.ReverseCodec;
 import com.duy.text.converter.core.codec.Rot13Codec;
 import com.duy.text.converter.core.codec.SubscriptCodec;
 import com.duy.text.converter.core.codec.SuperscriptCodec;
@@ -37,7 +37,7 @@ import com.duy.text.converter.core.codec.URLCodec;
 import com.duy.text.converter.core.codec.UnicodeCodec;
 import com.duy.text.converter.core.codec.UpperCaseCodec;
 import com.duy.text.converter.core.codec.UpsideDownCodec;
-import com.duy.text.converter.core.codec.WingdingCodec;
+import com.duy.text.converter.core.codec.WingdingsCodec;
 import com.duy.text.converter.core.codec.ZalgoBigCodec;
 import com.duy.text.converter.core.codec.ZalgoMiniCodec;
 import com.duy.text.converter.core.codec.ZalgoNormalCodec;
@@ -67,10 +67,10 @@ public enum CodecMethod {
             return new OctalCodec();
         }
     },
-    REVERSER {
+    REVERSE {
         @Override
         public Codec getCodec() {
-            return new ReverserCodec();
+            return new ReverseCodec();
         }
     },
     UPPER_CASE {
@@ -79,19 +79,19 @@ public enum CodecMethod {
             return new UpperCaseCodec();
         }
     },
-    LOWER {
+    LOWER_CASE {
         @Override
         public Codec getCodec() {
             return new LowerCaseCodec();
         }
     },
-    UPSIDE_DOWNSIDE {
+    UPSIDE_DOWN {
         @Override
         public Codec getCodec() {
             return new UpsideDownCodec();
         }
     },
-    SUPPER_SCRIPT {
+    SUPER_SCRIPT {
         @Override
         public Codec getCodec() {
             return new SuperscriptCodec();
@@ -181,10 +181,10 @@ public enum CodecMethod {
             return new UnicodeCodec();
         }
     },
-    WINGDING {
+    WINGDINGS {
         @Override
         public Codec getCodec() {
-            return new WingdingCodec();
+            return new WingdingsCodec();
         }
     };
 

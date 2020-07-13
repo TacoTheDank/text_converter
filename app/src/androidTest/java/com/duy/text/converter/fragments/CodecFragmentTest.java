@@ -58,19 +58,20 @@ import static com.duy.text.converter.core.codec.interfaces.CodecMethod.BASE_64;
 import static com.duy.text.converter.core.codec.interfaces.CodecMethod.BINARY;
 import static com.duy.text.converter.core.codec.interfaces.CodecMethod.CAESAR;
 import static com.duy.text.converter.core.codec.interfaces.CodecMethod.HEX;
-import static com.duy.text.converter.core.codec.interfaces.CodecMethod.LOWER;
+import static com.duy.text.converter.core.codec.interfaces.CodecMethod.LOWER_CASE;
 import static com.duy.text.converter.core.codec.interfaces.CodecMethod.MORSE_CODE;
 import static com.duy.text.converter.core.codec.interfaces.CodecMethod.NATO;
 import static com.duy.text.converter.core.codec.interfaces.CodecMethod.OCTAL;
-import static com.duy.text.converter.core.codec.interfaces.CodecMethod.REVERSER;
+import static com.duy.text.converter.core.codec.interfaces.CodecMethod.RANDOM_CASE;
+import static com.duy.text.converter.core.codec.interfaces.CodecMethod.REVERSE;
 import static com.duy.text.converter.core.codec.interfaces.CodecMethod.ROT_13;
 import static com.duy.text.converter.core.codec.interfaces.CodecMethod.SUB_SCRIPT;
-import static com.duy.text.converter.core.codec.interfaces.CodecMethod.SUPPER_SCRIPT;
+import static com.duy.text.converter.core.codec.interfaces.CodecMethod.SUPER_SCRIPT;
 import static com.duy.text.converter.core.codec.interfaces.CodecMethod.UNICODE;
 import static com.duy.text.converter.core.codec.interfaces.CodecMethod.UPPER_CASE;
-import static com.duy.text.converter.core.codec.interfaces.CodecMethod.UPSIDE_DOWNSIDE;
+import static com.duy.text.converter.core.codec.interfaces.CodecMethod.UPSIDE_DOWN;
 import static com.duy.text.converter.core.codec.interfaces.CodecMethod.URL;
-import static com.duy.text.converter.core.codec.interfaces.CodecMethod.WINGDING;
+import static com.duy.text.converter.core.codec.interfaces.CodecMethod.WINGDINGS;
 import static com.duy.text.converter.core.codec.interfaces.CodecMethod.ZALGO_BIG;
 import static com.duy.text.converter.core.codec.interfaces.CodecMethod.ZALGO_MINI;
 import static com.duy.text.converter.core.codec.interfaces.CodecMethod.ZALGO_NORMAL;
@@ -99,32 +100,32 @@ public class CodecFragmentTest {
 
     @Test
     public void AsciiCodec_encode() throws InterruptedException {
-        testEncode(ASCII.getCodec(), "Hello ASCII");
+        testEncode(ASCII.getCodec(), "Encode ASCII");
     }
 
     @Test
     public void AsciiCodec_decode() throws InterruptedException {
-        testDecode(ASCII.getCodec(), ASCII.getCodec().encode("Hello ascii"));
+        testDecode(ASCII.getCodec(), ASCII.getCodec().encode("Decode ASCII"));
     }
 
     @Test
     public void AtbashCodec_encode() throws InterruptedException {
-        testEncode(ATBASH.getCodec(), "Decode ATBASH");
+        testEncode(ATBASH.getCodec(), "Encode ATBASH");
     }
 
     @Test
     public void AtbashCodec_decode() throws InterruptedException {
-        testDecode(ATBASH.getCodec(), ATBASH.getCodec().encode("Hello ATBASH"));
+        testDecode(ATBASH.getCodec(), ATBASH.getCodec().encode("Decode ATBASH"));
     }
 
     @Test
     public void Base32Codec_encode() throws InterruptedException {
-        testEncode(BASE_32.getCodec(), "Decode ATBASH");
+        testEncode(BASE_32.getCodec(), "Encode BASE_32");
     }
 
     @Test
     public void Base32Codec_decode() throws InterruptedException {
-        testDecode(BASE_32.getCodec(), BASE_32.getCodec().encode("Hello BASE_32"));
+        testDecode(BASE_32.getCodec(), BASE_32.getCodec().encode("Decode BASE_32"));
     }
 
     @Test
@@ -164,17 +165,17 @@ public class CodecFragmentTest {
 
     @Test
     public void HexCodec_decode() throws InterruptedException {
-        testDecode(HEX.getCodec(), HEX.getCodec().encode("Decode CAESAR"));
+        testDecode(HEX.getCodec(), HEX.getCodec().encode("Decode HEX"));
     }
 
     @Test
     public void LowerCaseCodec_encode() throws InterruptedException {
-        testEncode(LOWER.getCodec(), "Encode LOWER");
+        testEncode(LOWER_CASE.getCodec(), "Encode LOWER_CASE");
     }
 
     @Test
     public void LowerCaseCodec_decode() throws InterruptedException {
-        testDecode(LOWER.getCodec(), LOWER.getCodec().encode("Decode LOWER"));
+        testDecode(LOWER_CASE.getCodec(), LOWER_CASE.getCodec().encode("Decode LOWER_CASE"));
     }
 
     @Test
@@ -208,13 +209,23 @@ public class CodecFragmentTest {
     }
 
     @Test
-    public void ReverserCodec_encode() throws InterruptedException {
-        testEncode(REVERSER.getCodec(), "Encode REVERSER");
+    public void RandomCaseCodec_encode() throws InterruptedException {
+        testEncode(RANDOM_CASE.getCodec(), "Encode OCTAL");
     }
 
     @Test
-    public void ReverserCodec_decode() throws InterruptedException {
-        testDecode(REVERSER.getCodec(), REVERSER.getCodec().encode("Decode REVERSER"));
+    public void RandomCaseCodec_decode() throws InterruptedException {
+        testDecode(RANDOM_CASE.getCodec(), RANDOM_CASE.getCodec().encode("Decode OCTAL"));
+    }
+
+    @Test
+    public void ReverseCodec_encode() throws InterruptedException {
+        testEncode(REVERSE.getCodec(), "Encode REVERSE");
+    }
+
+    @Test
+    public void ReverseCodec_decode() throws InterruptedException {
+        testDecode(REVERSE.getCodec(), REVERSE.getCodec().encode("Decode REVERSE"));
     }
 
     @Test
@@ -239,62 +250,62 @@ public class CodecFragmentTest {
 
     @Test
     public void SuperscriptCodec_encode() throws InterruptedException {
-        testEncode(SUPPER_SCRIPT.getCodec(), "Encode SUPPER_SCRIPT");
+        testEncode(SUPER_SCRIPT.getCodec(), "Encode SUPER_SCRIPT");
     }
 
     @Test
     public void SuperscriptCodec_decode() throws InterruptedException {
-        testDecode(SUPPER_SCRIPT.getCodec(), SUPPER_SCRIPT.getCodec().encode("Decode SUPPER_SCRIPT"));
+        testDecode(SUPER_SCRIPT.getCodec(), SUPER_SCRIPT.getCodec().encode("Decode SUPER_SCRIPT"));
     }
 
     @Test
     public void UnicodeCodec_encode() throws InterruptedException {
-        testEncode(UNICODE.getCodec(), "Xin chào các bạn đây là tiếng việt");
+        testEncode(UNICODE.getCodec(), "Encode Xin chào các bạn đây là tiếng việt");
     }
 
     @Test
     public void UnicodeCodec_decode() throws InterruptedException {
-        testDecode(UNICODE.getCodec(), UNICODE.getCodec().encode("Xin chào các bạn đây là tiếng việt"));
+        testDecode(UNICODE.getCodec(), UNICODE.getCodec().encode("Decode Xin chào các bạn đây là tiếng việt"));
     }
 
     @Test
     public void UpperCaseCodec_encode() throws InterruptedException {
-        testEncode(UPPER_CASE.getCodec(), "Encode UPPER");
+        testEncode(UPPER_CASE.getCodec(), "Encode UPPER_CASE");
     }
 
     @Test
     public void UpperCaseCodec_decode() throws InterruptedException {
-        testDecode(UPPER_CASE.getCodec(), UPPER_CASE.getCodec().encode("Decode UPPER"));
+        testDecode(UPPER_CASE.getCodec(), UPPER_CASE.getCodec().encode("Decode UPPER_CASE"));
     }
 
     @Test
     public void UpsideDownCodec_encode() throws InterruptedException {
-        testEncode(UPSIDE_DOWNSIDE.getCodec(), "Encode UPSIDE_DOWNSIDE");
+        testEncode(UPSIDE_DOWN.getCodec(), "Encode UPSIDE_DOWN");
     }
 
     @Test
     public void UpsideDownCodec_decode() throws InterruptedException {
-        testDecode(UPSIDE_DOWNSIDE.getCodec(), UPSIDE_DOWNSIDE.getCodec().encode("Decode UPSIDE_DOWNSIDE"));
+        testDecode(UPSIDE_DOWN.getCodec(), UPSIDE_DOWN.getCodec().encode("Decode UPSIDE_DOWN"));
     }
 
     @Test
     public void URLCodec_encode() throws InterruptedException {
-        testEncode(URL.getCodec(), "https://play.google.com/apps/publish/?account=7055567654109499514#AppDashboardPlace:p=com.duy.text_converter.pro");
+        testEncode(URL.getCodec(), "Encode https://www.youtube.com/watch?v=dQw4w9WgXcQ");
     }
 
     @Test
     public void URLCodec_decode() throws InterruptedException {
-        testDecode(URL.getCodec(), URL.getCodec().encode("https://play.google.com/apps/publish/?account=7055567654109499514#AppDashboardPlace:p=com.duy.text_converter.pro"));
+        testDecode(URL.getCodec(), URL.getCodec().encode("Decode https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
     }
 
     @Test
-    public void WingdingCodec_encode() throws InterruptedException {
-        testEncode(WINGDING.getCodec(), "Encode WINGDING");
+    public void WingdingsCodec_encode() throws InterruptedException {
+        testEncode(WINGDINGS.getCodec(), "Encode WINGDINGS");
     }
 
     @Test
-    public void WingdingCodec_decode() throws InterruptedException {
-        testDecode(WINGDING.getCodec(), WINGDING.getCodec().encode("Decode WINGDING"));
+    public void WingdingsCodec_decode() throws InterruptedException {
+        testDecode(WINGDINGS.getCodec(), WINGDINGS.getCodec().encode("Decode WINGDINGS"));
     }
 
     @Test

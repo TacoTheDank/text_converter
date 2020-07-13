@@ -16,10 +16,10 @@ Forked from the [original by tranleduy2000](https://github.com/tranleduy2000/tex
 - Hex
 - Lowercase text (ABC -> abc)
 - Morse code
-- NATO (Alpha, Bravo, Charlie, etc.)
+- NATO (phonetic alphabet)
 - Octal
 - Random case
-- Reverser text (abc def -> fed cba)
+- Reverse text (abc def -> fed cba)
 - ROT13 (Special case of Caesar)
 - Subscript (ₐbcdₑfgₕᵢⱼₖₗₘₙₒₚqᵣₛₜᵤᵥwₓyz_,;.?!/\'ₐBCDₑFGₕᵢⱼₖₗₘₙₒₚQᵣₛₜᵤᵥWₓYZ₀₁₂₃₄₅₆₇₈₉)
 - Superscript (ᵃᵇᶜᵈᵉᶠᵍʰⁱʲᵏˡᵐⁿᵒᵖqʳˢᵗᵘᵛʷˣʸᶻ_,;.?!/\'ᴬᴮᶜᴰᴱᶠᴳᴴᴵᴶᴷᴸᴹᴺᴼᴾQᴿˢᵀᵁⱽᵂˣʸᶻ⁰¹²³⁴⁵⁶⁷⁸⁹)
@@ -27,7 +27,7 @@ Forked from the [original by tranleduy2000](https://github.com/tranleduy2000/tex
 - Uppercase text (abc -> ABC)
 - Upside-down text (hello -> oןןǝɥ)
 - URL
-- Wingding
+- Wingdings
 - Zalgo Big/Mini/Normal
 
 ### Supported barcodes (encoding/decoding)

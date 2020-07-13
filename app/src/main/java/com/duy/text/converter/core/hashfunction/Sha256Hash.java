@@ -42,6 +42,4 @@ public class Sha256Hash implements IHash {
             return "";
         }
     }
-
-
 }

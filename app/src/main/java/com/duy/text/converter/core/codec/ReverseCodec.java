@@ -27,7 +27,7 @@ import com.duy.text.converter.core.codec.interfaces.CodecImpl;
  * Created by DUy on 06-Feb-17.
  */
 
-public class ReverserCodec extends CodecImpl {
+public class ReverseCodec extends CodecImpl {
 
     /**
      * reverse Text
@@ -57,6 +57,6 @@ public class ReverserCodec extends CodecImpl {
     @NonNull
     @Override
     public String getName(Context context) {
-        return "Reverser";
+        return "Reverse";
     }
 }

@@ -51,6 +51,6 @@ public class RandomCaseCodec extends CodecImpl {
     @NonNull
     @Override
     public String getName(Context context) {
-        return "Random Case";
+        return "Random case";
     }
 }

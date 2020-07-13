@@ -106,7 +106,7 @@ public class NatoCodec extends CodecImpl {
     @NonNull
     @Override
     public String getName(Context context) {
-        return "Nato";
+        return "NATO (phonetic)";
     }
 
     @NonNull

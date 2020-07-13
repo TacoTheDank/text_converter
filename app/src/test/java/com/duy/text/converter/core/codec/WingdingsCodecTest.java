@@ -25,10 +25,10 @@ import org.junit.Test;
 /**
  * Created by Duy on 2/13/2018.
  */
-public class WingdingCodecTest {
-    private static final String TO_BE_ENCODE = "WINGDINGCODECTEST";
-    private static final String TO_BE_DECODE = "🕈✋☠☝👎✋☠☝👍⚐👎☜👍❄☜💧❄";
-    private Codec codec = new WingdingCodec();
+public class WingdingsCodecTest {
+    private static final String TO_BE_ENCODE = "WINGDINGSCODECTEST";
+    private static final String TO_BE_DECODE = "🕈✋☠☝👎✋☠☝💧👍⚐👎☜👍❄☜💧❄";
+    private Codec codec = new WingdingsCodec();
 
     @Test
     public void encode() throws Exception {

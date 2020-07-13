@@ -62,6 +62,6 @@ public class Base32Codec extends CodecImpl {
     @NonNull
     @Override
     public String getName(Context context) {
-        return "Base 32";
+        return "Base32";
     }
 }

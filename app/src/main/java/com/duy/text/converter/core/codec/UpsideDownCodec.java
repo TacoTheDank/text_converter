@@ -99,6 +99,6 @@ public class UpsideDownCodec extends CodecImpl {
     @NonNull
     @Override
     public String getName(Context context) {
-        return "Upside down";
+        return "Upside-down";
     }
 }

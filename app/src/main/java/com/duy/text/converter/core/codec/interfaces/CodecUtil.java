@@ -33,7 +33,7 @@ import com.duy.text.converter.core.codec.LowerCaseCodec;
 import com.duy.text.converter.core.codec.MorseCodec;
 import com.duy.text.converter.core.codec.OctalCodec;
 import com.duy.text.converter.core.codec.RandomCaseCodec;
-import com.duy.text.converter.core.codec.ReverserCodec;
+import com.duy.text.converter.core.codec.ReverseCodec;
 import com.duy.text.converter.core.codec.Rot13Codec;
 import com.duy.text.converter.core.codec.SubscriptCodec;
 import com.duy.text.converter.core.codec.SuperscriptCodec;
@@ -76,13 +76,13 @@ public class CodecUtil {
                 return new HexCodec().decode(inp);
             case UPPER_CASE:
                 return new UpperCaseCodec().decode(inp);
-            case LOWER:
+            case LOWER_CASE:
                 return new LowerCaseCodec().decode(inp);
-            case REVERSER:
-                return new ReverserCodec().decode(inp);
-            case UPSIDE_DOWNSIDE:
+            case REVERSE:
+                return new ReverseCodec().decode(inp);
+            case UPSIDE_DOWN:
                 return new UpsideDownCodec().decode(inp);
-            case SUPPER_SCRIPT:
+            case SUPER_SCRIPT:
                 return new SuperscriptCodec().decode(inp);
             case SUB_SCRIPT:
                 return new SubscriptCodec().decode(inp);
@@ -137,13 +137,13 @@ public class CodecUtil {
                 return new HexCodec().encode(inp);
             case UPPER_CASE:
                 return new UpperCaseCodec().encode(inp);
-            case LOWER:
+            case LOWER_CASE:
                 return new LowerCaseCodec().encode(inp);
-            case REVERSER:
-                return new ReverserCodec().encode(inp);
-            case UPSIDE_DOWNSIDE:
+            case REVERSE:
+                return new ReverseCodec().encode(inp);
+            case UPSIDE_DOWN:
                 return new UpsideDownCodec().encode(inp);
-            case SUPPER_SCRIPT:
+            case SUPER_SCRIPT:
                 return new SuperscriptCodec().encode(inp);
             case SUB_SCRIPT:
                 return new SubscriptCodec().encode(inp);

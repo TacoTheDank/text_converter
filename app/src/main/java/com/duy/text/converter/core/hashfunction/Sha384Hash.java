@@ -26,14 +26,16 @@ import org.apache.commons.codec.digest.DigestUtils;
  */
 
 public class Sha384Hash implements IHash {
+
     @NonNull
     @Override
     public String getName() {
         return "SHA-384";
     }
 
+    @NonNull
     @Override
-    public String encode(String text) {
+    public String encode(@NonNull String text) {
         try {
             return DigestUtils.sha384Hex(text.getBytes());
         } catch (Exception e) {
