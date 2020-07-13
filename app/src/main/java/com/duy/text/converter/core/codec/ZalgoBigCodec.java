@@ -22,6 +22,7 @@ import android.content.Context;
 import androidx.annotation.NonNull;
 
 import com.duy.text.converter.core.codec.interfaces.CodecImpl;
+import com.duy.text.converter.core.codec.interfaces.ZalgoBase;
 
 /**
  * Created by Duy on 13-Jul-17.
@@ -32,15 +33,14 @@ public class ZalgoBigCodec extends CodecImpl {
     @NonNull
     @Override
     public String encode(@NonNull String text) {
-        return ZalgoMiniCodec.convert(text, false, false, true, true, true);
+        return ZalgoBase.convert(text, false, false, true, true, true);
     }
 
     @NonNull
     @Override
     public String decode(@NonNull String text) {
-        return new ZalgoMiniCodec().decode(text);
+        return new ZalgoBase().decode(text);
     }
-
 
     @NonNull
     @Override
