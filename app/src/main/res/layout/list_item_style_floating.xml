@@ -16,6 +16,7 @@
   -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -31,8 +32,8 @@
         android:background="?attr/rippleBackground"
         android:contentDescription="@string/action_copy"
         android:padding="8dp"
-        android:src="@drawable/ic_content_copy_white_24dp"
-        android:tint="?imageTintColor" />
+        android:tint="?imageTintColor"
+        app:srcCompat="@drawable/ic_content_copy" />
 
     <com.duy.text.converter.view.BaseTextView
         android:id="@+id/txt_result"

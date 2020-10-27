@@ -89,12 +89,12 @@
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/imageView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
                         android:layout_margin="8dp"
-                        android:src="@drawable/ic_camera_alt_white_48dp"
                         android:text="@string/decode"
-                        android:tint="?imageTintColor" />
+                        android:tint="?imageTintColor"
+                        app:srcCompat="@drawable/ic_camera_alt" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -124,12 +124,12 @@
                     android:orientation="vertical">
 
                     <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
                         android:layout_margin="8dp"
-                        android:src="@drawable/ic_collections_white_48dp"
                         android:text="Decode"
-                        android:tint="?imageTintColor" />
+                        android:tint="?imageTintColor"
+                        app:srcCompat="@drawable/ic_photo_library" />
 
                     <TextView
                         android:layout_width="wrap_content"

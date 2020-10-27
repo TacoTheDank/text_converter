@@ -83,10 +83,6 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ViewHolder
             holder.imgCopy.setOnClickListener(v ->
                     ClipboardUtil.setClipboard(context, str));
         }
-        if (holder.shareMsg != null) {
-            holder.shareMsg.setOnClickListener(v ->
-                    ShareManager.shareMessenger(str, context));
-        }
     }
 
     @Override
@@ -122,14 +118,13 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ViewHolder
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         TextView textView;
-        View imgCopy, imgShare, shareMsg;
+        View imgCopy, imgShare;
 
         ViewHolder(View itemView) {
             super(itemView);
             textView = itemView.findViewById(R.id.txt_result);
             imgCopy = itemView.findViewById(R.id.btn_copy);
             imgShare = itemView.findViewById(R.id.btn_share);
-            shareMsg = itemView.findViewById(R.id.img_share_msg);
         }
     }
 }

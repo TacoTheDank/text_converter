@@ -45,8 +45,8 @@
                     android:background="?rippleBackground"
                     android:contentDescription="@string/action_copy"
                     android:padding="8dp"
-                    android:src="@drawable/ic_content_copy_white_24dp"
-                    android:tint="?imageTintColor" />
+                    android:tint="?imageTintColor"
+                    app:srcCompat="@drawable/ic_content_copy" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/btn_paste"
@@ -55,8 +55,8 @@
                     android:background="?rippleBackground"
                     android:contentDescription="@string/action_paste"
                     android:padding="8dp"
-                    android:src="@drawable/ic_content_paste_white_24dp"
-                    android:tint="?imageTintColor" />
+                    android:tint="?imageTintColor"
+                    app:srcCompat="@drawable/ic_content_paste" />
 
             </LinearLayout>
 
@@ -111,8 +111,8 @@
                     android:background="?rippleBackground"
                     android:contentDescription="@string/action_copy"
                     android:padding="8dp"
-                    android:src="@drawable/ic_content_copy_white_24dp"
-                    android:tint="?imageTintColor" />
+                    android:tint="?imageTintColor"
+                    app:srcCompat="@drawable/ic_content_copy" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/image_paste_out"
@@ -121,8 +121,8 @@
                     android:background="?rippleBackground"
                     android:contentDescription="@string/action_paste"
                     android:padding="8dp"
-                    android:src="@drawable/ic_content_paste_white_24dp"
-                    android:tint="?imageTintColor" />
+                    android:tint="?imageTintColor"
+                    app:srcCompat="@drawable/ic_content_paste" />
 
             </LinearLayout>
 

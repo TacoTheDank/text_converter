@@ -37,17 +37,4 @@ public class ShareManager {
             e.printStackTrace();
         }
     }
-
-    public static void shareMessenger(String text, Context context) {
-        Intent sendIntent = new Intent();
-        sendIntent.setAction(Intent.ACTION_SEND);
-        sendIntent.putExtra(Intent.EXTRA_TEXT, text);
-        sendIntent.setType("text/plain");
-        sendIntent.setPackage("com.facebook.orca");
-        try {
-            context.startActivity(sendIntent);
-        } catch (android.content.ActivityNotFoundException ex) {
-            Toast.makeText(context, "Please Install Facebook Messenger", Toast.LENGTH_LONG).show();
-        }
-    }
 }

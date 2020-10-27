@@ -65,7 +65,6 @@ public class EncodeResultAdapter extends RecyclerView.Adapter<EncodeResultAdapte
         if (processText) {
             if (holder.imgCopy != null) holder.imgCopy.setVisibility(View.GONE);
             if (holder.imgShare != null) holder.imgShare.setVisibility(View.GONE);
-            if (holder.shareMsg != null) holder.shareMsg.setVisibility(View.GONE);
             if (holder.rootView != null) {
                 holder.rootView.setOnClickListener(v -> {
                     if (listener != null) listener.onTextSelected(str);
@@ -74,7 +73,6 @@ public class EncodeResultAdapter extends RecyclerView.Adapter<EncodeResultAdapte
         } else {
             if (holder.imgCopy != null) holder.imgCopy.setVisibility(View.VISIBLE);
             if (holder.imgShare != null) holder.imgShare.setVisibility(View.VISIBLE);
-            if (holder.shareMsg != null) holder.shareMsg.setVisibility(View.VISIBLE);
             if (holder.imgShare != null) {
                 holder.imgShare.setOnClickListener(v ->
                         ShareManager.share(str, context));
@@ -82,10 +80,6 @@ public class EncodeResultAdapter extends RecyclerView.Adapter<EncodeResultAdapte
             if (holder.imgCopy != null) {
                 holder.imgCopy.setOnClickListener(v ->
                         ClipboardUtil.setClipboard(context, str));
-            }
-            if (holder.shareMsg != null) {
-                holder.shareMsg.setOnClickListener(v ->
-                        ShareManager.shareMessenger(str, context));
             }
         }
 
@@ -102,7 +96,7 @@ public class EncodeResultAdapter extends RecyclerView.Adapter<EncodeResultAdapte
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         TextView txtResult, txtTitle;
-        View imgCopy, imgShare, shareMsg, rootView;
+        View imgCopy, imgShare, rootView;
 
         ViewHolder(View itemView) {
             super(itemView);
@@ -110,7 +104,6 @@ public class EncodeResultAdapter extends RecyclerView.Adapter<EncodeResultAdapte
             txtTitle = itemView.findViewById(R.id.txt_name);
             imgCopy = itemView.findViewById(R.id.btn_copy);
             imgShare = itemView.findViewById(R.id.btn_share);
-            shareMsg = itemView.findViewById(R.id.img_share_msg);
             rootView = itemView.findViewById(R.id.root_view);
         }
 
