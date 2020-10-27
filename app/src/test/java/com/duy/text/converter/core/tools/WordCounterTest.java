@@ -19,6 +19,8 @@ package com.duy.text.converter.core.tools;
 
 import junit.framework.TestCase;
 
+import org.junit.Assert;
+
 /**
  * Created by Duy on 01-May-18.
  */
@@ -26,7 +28,7 @@ public class WordCounterTest extends TestCase {
     public void testProcess() throws Exception {
         WordCounter tool = new WordCounter();
         String process = tool.process("Hello android");
-        assertEquals(process, "2");
+        Assert.assertEquals(process, "2");
     }
 
 }

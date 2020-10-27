@@ -19,7 +19,7 @@ package com.duy.text.converter.core.codec;
 
 import org.junit.Test;
 
-import static junit.framework.Assert.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created by Duy on 31-Jul-17.

@@ -19,16 +19,18 @@ package com.duy.text.converter.core.codec;
 
 import junit.framework.TestCase;
 
+import org.junit.Assert;
+
 /**
  * Created by Duy on 28-Aug-17.
  */
 public class Rot13CodecTest extends TestCase {
     public void testDecode() throws Exception {
-        assertEquals(new Rot13Codec().decode(new Rot13Codec().encode("hello")), "hello");
+        Assert.assertEquals(new Rot13Codec().decode(new Rot13Codec().encode("hello")), "hello");
     }
 
     public void testEncode() throws Exception {
-        assertEquals(new Rot13Codec().encode(new Rot13Codec().decode("hello")), "hello");
+        Assert.assertEquals(new Rot13Codec().encode(new Rot13Codec().decode("hello")), "hello");
     }
 
 }

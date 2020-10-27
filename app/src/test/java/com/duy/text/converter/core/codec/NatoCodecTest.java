@@ -19,6 +19,8 @@ package com.duy.text.converter.core.codec;
 
 import junit.framework.TestCase;
 
+import org.junit.Assert;
+
 /**
  * Created by Duy on 11/21/2017.
  */
@@ -28,14 +30,14 @@ public class NatoCodecTest extends TestCase {
         NatoCodec natoCodec = new NatoCodec();
 
         String decoded = natoCodec.decode("Alpha One Zero Three Zulu Nine Nine One");
-        assertEquals(decoded, "A103Z991");
+        Assert.assertEquals(decoded, "A103Z991");
     }
 
     public void testEncode() throws Exception {
         NatoCodec natoCodec = new NatoCodec();
 
         String encoded = natoCodec.encode("A103Z991");
-        assertEquals(encoded, "Alpha One Zero Three Zulu Nine Nine One");
+        Assert.assertEquals(encoded, "Alpha One Zero Three Zulu Nine Nine One");
     }
 
 }

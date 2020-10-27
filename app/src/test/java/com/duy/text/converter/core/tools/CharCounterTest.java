@@ -19,6 +19,8 @@ package com.duy.text.converter.core.tools;
 
 import junit.framework.TestCase;
 
+import org.junit.Assert;
+
 /**
  * Created by Duy on 01-May-18.
  */
@@ -26,7 +28,7 @@ public class CharCounterTest extends TestCase {
     public void testProcess() throws Exception {
         CharCounter charCounter = new CharCounter();
         String result = charCounter.process("Hello");
-        assertEquals(result, "5");
+        Assert.assertEquals(result, "5");
     }
 
 }

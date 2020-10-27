@@ -21,8 +21,8 @@ import com.duy.text.converter.core.codec.interfaces.Codec;
 
 import org.junit.Test;
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertNotNull;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * Created by Duy on 13-Jul-17.

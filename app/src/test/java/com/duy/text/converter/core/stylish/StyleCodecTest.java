@@ -22,6 +22,8 @@ import com.duy.text.converter.core.stylish.model.Style;
 
 import junit.framework.TestCase;
 
+import org.junit.Assert;
+
 import java.util.ArrayList;
 
 /**
@@ -49,9 +51,9 @@ public class StyleCodecTest extends TestCase {
             System.out.println(style);
             if (style.length() != size) {
                 System.out.println(style + " " + style.length());
-                fail();
+                Assert.fail();
             }
         }
-        assertTrue(true);
+        Assert.assertTrue(true);
     }
 }

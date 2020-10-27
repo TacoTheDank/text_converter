@@ -19,6 +19,8 @@ package com.duy.text.converter.core.codec;
 
 import junit.framework.TestCase;
 
+import org.junit.Assert;
+
 /**
  * Created by Duy on 08-Aug-17.
  */
@@ -27,14 +29,14 @@ public class RandomCaseCodecTest extends TestCase {
         String inp = "RandomCaseCodecTest";
         String out = new RandomCaseCodec().encode(inp);
         System.out.println(out);
-        assertEquals(inp.toLowerCase(), out.toLowerCase());
+        Assert.assertEquals(inp.toLowerCase(), out.toLowerCase());
     }
 
     public void testDecode() throws Exception {
         String inp = "RandomCaseCodecTest";
         String out = new RandomCaseCodec().decode(inp);
         System.out.println(out);
-        assertEquals(inp.toLowerCase(), out.toLowerCase());
+        Assert.assertEquals(inp.toLowerCase(), out.toLowerCase());
     }
 
 }

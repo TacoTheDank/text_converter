@@ -19,6 +19,8 @@ package com.duy.text.converter.core.codec;
 
 import junit.framework.TestCase;
 
+import org.junit.Assert;
+
 /**
  * Created by Duy on 10-Aug-17.
  */
@@ -28,7 +30,7 @@ public class AtbashCodecTest extends TestCase {
         System.out.println(abcdef);
         String decode = new AtbashCodec().decode(abcdef);
         System.out.println("decode = " + decode);
-        assertEquals("ABCDEF", decode);
+        Assert.assertEquals("ABCDEF", decode);
     }
 
     public void testEncode() throws Exception {

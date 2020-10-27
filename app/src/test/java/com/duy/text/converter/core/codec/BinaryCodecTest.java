@@ -20,7 +20,7 @@ package com.duy.text.converter.core.codec;
 import org.junit.Test;
 
 import static com.duy.text.converter.core.codec.AsciiCodecTest.UTF_16_STR;
-import static junit.framework.Assert.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created by Duy on 02-Aug-17.

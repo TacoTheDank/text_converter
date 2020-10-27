@@ -17,10 +17,9 @@
 
 package com.duy.text.converter.core.codec;
 
-import org.junit.Assert;
 import org.junit.Test;
 
-import static junit.framework.Assert.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created by Duy on 2/10/2018.
@@ -32,12 +31,12 @@ public class OctalCodecTest {
 
     @Test
     public void encode() throws Exception {
-        Assert.assertEquals(codec.encode(TO_BE_ENCODE), TO_BE_DECODE);
+        assertEquals(codec.encode(TO_BE_ENCODE), TO_BE_DECODE);
     }
 
     @Test
     public void decode() throws Exception {
-        Assert.assertEquals(codec.decode(TO_BE_DECODE), TO_BE_ENCODE);
+        assertEquals(codec.decode(TO_BE_DECODE), TO_BE_ENCODE);
     }
 
     @Test
