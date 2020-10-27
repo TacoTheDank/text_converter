@@ -38,11 +38,11 @@ import com.duy.text.converter.clipboard.IClipboard;
 
 public class EditMenuViewHolder implements View.OnClickListener {
     @NonNull
-    private View mRootView;
+    private final View mRootView;
     @NonNull
-    private EditText mEditText;
+    private final EditText mEditText;
     @NonNull
-    private Context mContext;
+    private final Context mContext;
 
     public EditMenuViewHolder(@NonNull View editMenuView, @NonNull EditText editText) {
         mRootView = editMenuView;

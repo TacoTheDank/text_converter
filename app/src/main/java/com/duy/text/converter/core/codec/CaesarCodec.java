@@ -29,7 +29,7 @@ import com.duy.text.converter.core.codec.interfaces.CodecImpl;
 
 public class CaesarCodec extends CodecImpl {
     private static final String NORMAL = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toUpperCase();
-    private int offset;
+    private final int offset;
 
     public CaesarCodec() {
         this(1);

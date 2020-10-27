@@ -30,7 +30,7 @@ import org.apache.commons.codec.binary.Base32;
  */
 
 public class Base32Codec extends CodecImpl {
-    private Base32 base32 = new Base32();
+    private final Base32 base32 = new Base32();
 
     @NonNull
     @Override

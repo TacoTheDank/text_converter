@@ -30,7 +30,7 @@ import static org.junit.Assert.assertNotNull;
 public class ZalgoMiniCodecTest {
     private static final String TO_BE_ENCODE = "ZalgoCodecTest";
     private static final String TO_BE_DECODE = "ZalgoCodecTest";
-    private Codec codec = new ZalgoMiniCodec();
+    private final Codec codec = new ZalgoMiniCodec();
 
     @Test
     public void encode() {

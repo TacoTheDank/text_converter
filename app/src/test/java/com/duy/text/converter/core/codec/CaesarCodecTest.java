@@ -29,7 +29,7 @@ import static org.junit.Assert.assertEquals;
 public class CaesarCodecTest {
     private static final String TO_BE_ENCODE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private static final String TO_BE_DECODE = "BCDEFGHIJKLMNOPQRSTUVWXYZA";
-    private Codec codec = new CaesarCodec(1);
+    private final Codec codec = new CaesarCodec(1);
 
     @Test
     public void testDecode() throws Exception {

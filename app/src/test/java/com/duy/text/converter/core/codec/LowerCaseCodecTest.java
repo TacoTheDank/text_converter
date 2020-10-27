@@ -26,7 +26,7 @@ import org.junit.Test;
 public class LowerCaseCodecTest {
     private static final String TO_BE_ENCODE = "LOWERCASECODECTEST";
     private static final String TO_BE_DECODE = "lowercasecodectest";
-    private LowerCaseCodec codec = new LowerCaseCodec();
+    private final LowerCaseCodec codec = new LowerCaseCodec();
 
     @Test
     public void encode() throws Exception {

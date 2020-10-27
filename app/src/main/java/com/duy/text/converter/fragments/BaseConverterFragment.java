@@ -47,7 +47,7 @@ import java.util.Map;
  */
 
 public class BaseConverterFragment extends Fragment implements View.OnClickListener {
-    private HashMap<Base, EditText> mEditTextBase = new HashMap<>();
+    private final HashMap<Base, EditText> mEditTextBase = new HashMap<>();
 
     public static BaseConverterFragment newInstance() {
 
@@ -217,7 +217,7 @@ public class BaseConverterFragment extends Fragment implements View.OnClickListe
     enum Base {
         BINARY(2), OCTAL(8), DECIMAL(10), HEX(16);
 
-        private int radix;
+        private final int radix;
 
         Base(int radix) {
             this.radix = radix;
@@ -230,7 +230,7 @@ public class BaseConverterFragment extends Fragment implements View.OnClickListe
 
     private static class BaseInputFilter implements InputFilter {
         private static final String NUMBER = "0123456789ABCDEF";
-        private String mAcceptChar;
+        private final String mAcceptChar;
 
         public BaseInputFilter(Base base) {
             mAcceptChar = NUMBER.substring(0, base.getRadix());
@@ -251,8 +251,8 @@ public class BaseConverterFragment extends Fragment implements View.OnClickListe
 
     private class OnBaseChangeListener implements TextWatcher {
 
-        private EditText parent;
-        private Base base;
+        private final EditText parent;
+        private final Base base;
 
         OnBaseChangeListener(EditText parent, Base base) {
             this.parent = parent;

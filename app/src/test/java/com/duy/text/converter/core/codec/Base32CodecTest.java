@@ -26,7 +26,7 @@ import org.junit.Test;
 public class Base32CodecTest {
     private static final String TO_BE_ENCODE = "Base32Codec";
     private static final String TO_BE_DECODE = "IJQXGZJTGJBW6ZDFMM======";
-    private Base32Codec codec = new Base32Codec();
+    private final Base32Codec codec = new Base32Codec();
 
     @Test
     public void encode() throws Exception {

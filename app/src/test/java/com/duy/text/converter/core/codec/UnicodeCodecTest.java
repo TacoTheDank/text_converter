@@ -25,9 +25,9 @@ import static org.junit.Assert.assertEquals;
  * Created by Duy on 2/10/2018.
  */
 public class UnicodeCodecTest {
-    private UnicodeCodec codec = new UnicodeCodec();
-    private String toBeEncode = "برنامه نویسی";
-    private String toBeDecode = "\\u0628\\u0631\\u0646\\u0627\\u0645\\u0647 \\u0646\\u0648\\u06CC\\u0633\\u06CC";
+    private final UnicodeCodec codec = new UnicodeCodec();
+    private final String toBeEncode = "برنامه نویسی";
+    private final String toBeDecode = "\\u0628\\u0631\\u0646\\u0627\\u0645\\u0647 \\u0646\\u0648\\u06CC\\u0633\\u06CC";
 
     @Test
     public void decode() throws Exception {

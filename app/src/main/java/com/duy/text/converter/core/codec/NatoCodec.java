@@ -135,8 +135,8 @@ public class NatoCodec extends CodecImpl {
 
 
     static class NatoItem {
-        private String source;
-        private String value;
+        private final String source;
+        private final String value;
 
         NatoItem(String source, String value) {
             this.source = source;

@@ -28,7 +28,7 @@ import org.junit.Test;
 public class WingdingsCodecTest {
     private static final String TO_BE_ENCODE = "WINGDINGSCODECTEST";
     private static final String TO_BE_DECODE = "🕈✋☠☝👎✋☠☝💧👍⚐👎☜👍❄☜💧❄";
-    private Codec codec = new WingdingsCodec();
+    private final Codec codec = new WingdingsCodec();
 
     @Test
     public void encode() throws Exception {

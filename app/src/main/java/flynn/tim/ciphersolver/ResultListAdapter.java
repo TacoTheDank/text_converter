@@ -37,9 +37,9 @@ import java.util.ArrayList;
 
 public class ResultListAdapter extends ArrayAdapter<Result> {
 
-    private int mLayout;
+    private final int mLayout;
     private ArrayList<Result> mResults;
-    private LayoutInflater mInflater;
+    private final LayoutInflater mInflater;
 
     //Constructor
     public ResultListAdapter(Context context, int layout, ArrayList<Result> arr) {

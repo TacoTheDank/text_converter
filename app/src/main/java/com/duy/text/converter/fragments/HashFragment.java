@@ -58,11 +58,11 @@ import java.util.ArrayList;
 public class HashFragment extends Fragment {
     private static final String TAG = "HashFragment";
     private final Handler mHandler = new Handler();
-    private ArrayList<IHash> mHashFunctions = new ArrayList<>();
+    private final ArrayList<IHash> mHashFunctions = new ArrayList<>();
     private BaseEditText mInput, mOutput;
     private Spinner mMethodSpinner;
     private final Runnable convertRunnable = this::convert;
-    private TextWatcher mInputWatcher = new TextWatcher() {
+    private final TextWatcher mInputWatcher = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 

@@ -22,7 +22,7 @@ package com.duy.text.converter.localdata;
  */
 
 public class DatabasePresenter implements DatabaseContract.Presenter {
-    private DatabaseContract.View view;
+    private final DatabaseContract.View view;
 
     public DatabasePresenter(DatabaseContract.View view) {
         this.view = view;

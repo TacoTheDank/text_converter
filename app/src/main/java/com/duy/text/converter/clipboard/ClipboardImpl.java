@@ -30,9 +30,9 @@ import androidx.annotation.Nullable;
 
 public class ClipboardImpl implements IClipboard {
     @NonNull
-    private Context mContext;
+    private final Context mContext;
     @Nullable
-    private ClipboardManager mClipboardManager;
+    private final ClipboardManager mClipboardManager;
 
     ClipboardImpl(@NonNull Context context) {
         this.mContext = context;

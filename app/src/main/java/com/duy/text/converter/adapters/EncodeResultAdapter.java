@@ -35,8 +35,8 @@ import java.util.ArrayList;
 public class EncodeResultAdapter extends RecyclerView.Adapter<EncodeResultAdapter.ViewHolder> {
     private static final String TAG = "DecodeResultAdapter";
     private final Context context;
-    private boolean processText;
-    private ArrayList<EncodeItem> mEncodeItems = new ArrayList<>();
+    private final boolean processText;
+    private final ArrayList<EncodeItem> mEncodeItems = new ArrayList<>();
     private OnTextSelectedListener listener;
 
     public EncodeResultAdapter(Context context, boolean processText) {

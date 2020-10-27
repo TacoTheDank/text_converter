@@ -27,7 +27,7 @@ import static org.junit.Assert.assertEquals;
 public class OctalCodecTest {
     private static final String TO_BE_ENCODE = "OctalCodecTest";
     private static final String TO_BE_DECODE = "117 143 164 141 154 103 157 144 145 143 124 145 163 164";
-    private OctalCodec codec = new OctalCodec();
+    private final OctalCodec codec = new OctalCodec();
 
     @Test
     public void encode() throws Exception {

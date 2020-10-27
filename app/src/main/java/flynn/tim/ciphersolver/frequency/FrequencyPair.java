@@ -21,8 +21,8 @@ package flynn.tim.ciphersolver.frequency;
  * Created by Tim on 8/19/2015.
  */
 class FrequencyPair {
-    private String character;
-    private int value;
+    private final String character;
+    private final int value;
 
     FrequencyPair(String character, int value) {
         this.character = character;

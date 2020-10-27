@@ -46,7 +46,7 @@ public class FloatingCodecService extends FloatingView implements ViewPager.OnPa
 
     private BaseEditText mInput, mOutput;
     private ViewPager mConvertMethod;
-    private TextWatcher mOutputWatcher = new TextWatcher() {
+    private final TextWatcher mOutputWatcher = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -62,7 +62,7 @@ public class FloatingCodecService extends FloatingView implements ViewPager.OnPa
 
         }
     };
-    private TextWatcher mInputWatcher = new TextWatcher() {
+    private final TextWatcher mInputWatcher = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 

@@ -26,7 +26,7 @@ import org.junit.Test;
 public class Base64CodecTest {
     private static final String TO_BE_ENCODE = "Base64Codec";
     private static final String TO_BE_DECODE = "QmFzZTY0Q29kZWM=";
-    private Base64Codec codec = new Base64Codec();
+    private final Base64Codec codec = new Base64Codec();
 
     @Test
     public void encode() throws Exception {

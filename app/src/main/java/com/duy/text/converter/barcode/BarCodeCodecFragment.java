@@ -242,8 +242,8 @@ public class BarCodeCodecFragment extends Fragment implements View.OnClickListen
 
     @SuppressLint("StaticFieldLeak")
     private static class DecodeImageTask extends AsyncTask<Uri, Void, String> {
-        private Context context;
-        private TextView txtResult;
+        private final Context context;
+        private final TextView txtResult;
 
         private DecodeImageTask(@NonNull Context context, @NonNull TextView txtResult) {
             this.context = context;

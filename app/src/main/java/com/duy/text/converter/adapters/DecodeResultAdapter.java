@@ -38,8 +38,8 @@ import java.util.Locale;
 public class DecodeResultAdapter extends RecyclerView.Adapter<DecodeResultAdapter.ViewHolder> {
     private static final String TAG = "DecodeResultAdapter";
     private final Context context;
-    private boolean processText;
-    private ArrayList<DecodeItem> mDecodeItems = new ArrayList<>();
+    private final boolean processText;
+    private final ArrayList<DecodeItem> mDecodeItems = new ArrayList<>();
     private OnTextSelectedListener listener;
 
     public DecodeResultAdapter(Context context, boolean processText) {

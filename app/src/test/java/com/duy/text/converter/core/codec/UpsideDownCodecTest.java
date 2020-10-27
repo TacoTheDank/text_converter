@@ -28,7 +28,7 @@ import org.junit.Test;
 public class UpsideDownCodecTest {
     private static final String TO_BE_ENCODE = "UpsideDownCodecTest";
     private static final String TO_BE_DECODE = "ʇsǝ⊥ɔǝpoϽuʍoᗡǝpısd∩";
-    private Codec codec = new UpsideDownCodec();
+    private final Codec codec = new UpsideDownCodec();
 
     @Test
     public void encode() throws Exception {

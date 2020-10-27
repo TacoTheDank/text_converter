@@ -32,7 +32,7 @@ import java.util.ArrayList;
  */
 
 public class CodecMethodAdapter extends PagerAdapter {
-    private ArrayList<String> names;
+    private final ArrayList<String> names;
 
     CodecMethodAdapter(Context context) {
         names = CodecUtil.getAllCodecName(context);

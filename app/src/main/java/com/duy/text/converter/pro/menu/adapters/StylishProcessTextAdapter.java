@@ -33,9 +33,9 @@ import java.util.List;
 
 public class StylishProcessTextAdapter extends RecyclerView.Adapter<StylishProcessTextAdapter.ViewHolder> {
     private static final String TAG = "DecodeResultAdapter";
-    private ArrayList<String> mResult = new ArrayList<>();
+    private final ArrayList<String> mResult = new ArrayList<>();
     private OnTextSelectedListener listener;
-    private Context context;
+    private final Context context;
 
     public StylishProcessTextAdapter(Context context) {
         this.context = context;

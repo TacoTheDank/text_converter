@@ -26,7 +26,7 @@ import androidx.annotation.NonNull;
 
 public class LeftEffect implements Style {
 
-    private String left;
+    private final String left;
 
     public LeftEffect(String left) {
         this.left = left;

@@ -236,9 +236,9 @@ public class CodecFileFragment extends Fragment implements View.OnClickListener 
     @SuppressLint("StaticFieldLeak")
     private class EncodeTask extends AsyncTask<InputStream, Integer, File> {
 
-        private Context context;
-        private boolean encode;
-        private String methodName;
+        private final Context context;
+        private final boolean encode;
+        private final String methodName;
         private ProgressDialog mProgressDialog;
 
         EncodeTask(Context context, boolean encode, String methodName) {

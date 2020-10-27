@@ -25,7 +25,7 @@ import static org.junit.Assert.assertEquals;
  * Created by Duy on 31-Jul-17.
  */
 public class HexCodecTest {
-    private HexCodec codec = new HexCodec();
+    private final HexCodec codec = new HexCodec();
 
     @Test
     public void testEncode() {

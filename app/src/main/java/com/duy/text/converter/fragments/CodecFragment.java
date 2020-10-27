@@ -54,7 +54,7 @@ public class CodecFragment extends Fragment implements View.OnClickListener, Ada
     private static final String TAG = "CodecFragment";
     private BaseEditText mInput, mOutput;
     private Spinner mMethodSpinner;
-    private TextWatcher mOutputWatcher = new TextWatcher() {
+    private final TextWatcher mOutputWatcher = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -70,7 +70,7 @@ public class CodecFragment extends Fragment implements View.OnClickListener, Ada
 
         }
     };
-    private TextWatcher mInputWatcher = new TextWatcher() {
+    private final TextWatcher mInputWatcher = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 

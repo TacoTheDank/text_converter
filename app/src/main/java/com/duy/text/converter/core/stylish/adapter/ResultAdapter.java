@@ -39,10 +39,10 @@ import java.util.Collections;
 public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ViewHolder>
         implements ItemTouchHelperAdapter {
     private static final String TAG = "StyleAdapter";
-    private Context context;
-    private int layout;
-    private LayoutInflater inflater;
-    private ArrayList<String> mItems = new ArrayList<>();
+    private final Context context;
+    private final int layout;
+    private final LayoutInflater inflater;
+    private final ArrayList<String> mItems = new ArrayList<>();
     private OnSwapStyleListener mOnSwapStyleListener;
 
     public ResultAdapter(Context context, @LayoutRes int layout) {

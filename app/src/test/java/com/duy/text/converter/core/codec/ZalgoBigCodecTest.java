@@ -29,7 +29,7 @@ import static org.junit.Assert.assertNotNull;
  */
 public class ZalgoBigCodecTest {
     private static final String TO_BE_ENCODE = "ZalgoBigCodecTest";
-    private Codec codec = new ZalgoBigCodec();
+    private final Codec codec = new ZalgoBigCodec();
 
     @Test
     public void encode() {

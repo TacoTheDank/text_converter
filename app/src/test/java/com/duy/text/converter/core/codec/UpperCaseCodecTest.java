@@ -28,7 +28,7 @@ import org.junit.Test;
 public class UpperCaseCodecTest {
     private static final String TO_BE_ENCODE = "uppercasecodectest";
     private static final String TO_BE_DECODE = "UPPERCASECODECTEST";
-    private Codec codec = new UpperCaseCodec();
+    private final Codec codec = new UpperCaseCodec();
 
     @Test
     public void encode() throws Exception {

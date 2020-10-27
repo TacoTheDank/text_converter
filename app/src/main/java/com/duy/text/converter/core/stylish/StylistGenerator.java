@@ -35,9 +35,9 @@ import java.util.HashMap;
 public class StylistGenerator {
 
     private static final String PREF_NAME = "stylish_position.xml";
-    private ArrayList<Style> mEncoders;
+    private final ArrayList<Style> mEncoders;
     @Nullable
-    private Context mContext;
+    private final Context mContext;
 
     public StylistGenerator() {
         this(null);

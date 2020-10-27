@@ -28,7 +28,7 @@ import org.junit.Test;
 public class SubscriptCodecTest {
     private static final String TO_BE_ENCODE = "subscriptCodectest";
     private static final String TO_BE_DECODE = "ₛᵤbₛcᵣᵢₚₜCₒdₑcₜₑₛₜ";
-    private Codec codec = new SubscriptCodec();
+    private final Codec codec = new SubscriptCodec();
 
     @Test
     public void encode() throws Exception {

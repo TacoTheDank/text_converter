@@ -33,7 +33,7 @@ public class BarcodeEncodedPagerAdapter extends FragmentStatePagerAdapter {
             BarcodeFormat.EAN_8, BarcodeFormat.EAN_13, BarcodeFormat.ITF, BarcodeFormat.PDF_417,
             BarcodeFormat.QR_CODE, BarcodeFormat.UPC_A
     };
-    private String data;
+    private final String data;
 
     public BarcodeEncodedPagerAdapter(FragmentManager fm, String data) {
         super(fm);

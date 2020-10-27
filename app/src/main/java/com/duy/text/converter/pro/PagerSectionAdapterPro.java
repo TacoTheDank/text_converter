@@ -36,8 +36,8 @@ import com.duy.text.converter.fragments.CodecFragment;
 
 public class PagerSectionAdapterPro extends FragmentPagerAdapter {
     private static final int COUNT = 4;
-    private String init;
-    private Context context;
+    private final String init;
+    private final Context context;
 
     public PagerSectionAdapterPro(Context context, FragmentManager fm, String init) {
         super(fm);

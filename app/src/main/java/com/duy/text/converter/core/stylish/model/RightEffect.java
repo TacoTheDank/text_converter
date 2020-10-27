@@ -26,7 +26,7 @@ import androidx.annotation.NonNull;
 
 public class RightEffect implements Style {
 
-    private String character;
+    private final String character;
 
     public RightEffect(String text) {
         this.character = text;

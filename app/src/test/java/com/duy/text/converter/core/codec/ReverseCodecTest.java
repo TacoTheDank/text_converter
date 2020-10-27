@@ -28,7 +28,7 @@ import org.junit.Test;
 public class ReverseCodecTest {
     private static final String TO_BE_ENCODE = "ReverseCodecTest";
     private static final String TO_BE_DECODE = "tseTcedoCesreveR";
-    private Codec codec = new ReverseCodec();
+    private final Codec codec = new ReverseCodec();
 
     @Test
     public void encode() throws Exception {

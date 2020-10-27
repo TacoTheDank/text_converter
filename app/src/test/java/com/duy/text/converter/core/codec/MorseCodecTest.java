@@ -27,7 +27,7 @@ import static org.junit.Assert.assertEquals;
 public class MorseCodecTest {
     private static final String TO_BE_ENCODE = "morsecodectest0123456789";
     private static final String TO_BE_DECODE = "-- --- .-. ... . -.-. --- -.. . -.-. - . ... - ----- .---- ..--- ...-- ....- ..... -.... --... ---.. ----.";
-    private MorseCodec codec = new MorseCodec();
+    private final MorseCodec codec = new MorseCodec();
 
     @Test
     public void encode() throws Exception {

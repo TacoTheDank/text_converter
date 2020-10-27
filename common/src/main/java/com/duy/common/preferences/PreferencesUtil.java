@@ -24,7 +24,7 @@ import androidx.preference.PreferenceManager;
 
 public class PreferencesUtil {
 
-    private static Preference.OnPreferenceChangeListener sBindPreferenceSummaryToValueListener =
+    private static final Preference.OnPreferenceChangeListener sBindPreferenceSummaryToValueListener =
             (preference, value) -> {
                 String stringValue = value.toString();
 

@@ -25,7 +25,9 @@ import androidx.annotation.NonNull;
  */
 public class LeftRightStyle implements Style {
     @NonNull
-    private String left, right;
+    private final String left;
+    @NonNull
+    private final String right;
 
     public LeftRightStyle(@NonNull String left, @NonNull String right) {
         this.left = left;
