@@ -25,7 +25,6 @@ import android.util.Log;
 import android.view.MenuItem;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.preference.PreferenceManager;
 
@@ -51,7 +50,7 @@ public class SettingActivity extends BaseActivity implements SharedPreferences.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
 
-        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
+        setSupportActionBar(findViewById(R.id.toolbar));
         setTitle(R.string.action_settings);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -85,7 +84,7 @@ public class SettingActivity extends BaseActivity implements SharedPreferences.O
         if (BuildConfig.DEBUG)
             Log.d(TAG, "changeModeProcessTextMenu() called with: pref = [" + pref + "], key = [" + key + "]");
         boolean show = pref.getBoolean(key, true);
-        final String[] classes = new String[]{
+        final String[] classes = {
                 DecodeAllProcessTextActivity.class.getName(),
                 EncodeAllProcessTextActivity.class.getName(),
                 StylishProcessTextActivity.class.getName()};

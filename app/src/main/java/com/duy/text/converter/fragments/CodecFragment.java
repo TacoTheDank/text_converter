@@ -216,11 +216,7 @@ public class CodecFragment extends Fragment implements View.OnClickListener, Ada
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        if (mInput.hasFocus()) {
-            convert(true);
-        } else {
-            convert(false);
-        }
+        convert(mInput.hasFocus());
     }
 
     @Override

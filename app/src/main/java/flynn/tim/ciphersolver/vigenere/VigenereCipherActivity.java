@@ -99,9 +99,9 @@ public class VigenereCipherActivity extends BaseActivity implements TextWatcher,
 
     private void processData() {
         String result;
-        if (mInput.getText().toString().trim().equals("")) {
+        if (mInput.getText().toString().trim().isEmpty()) {
             result = "No ciphertext entered!";
-        } else if (mInputKey.getText().toString().trim().equals("")) {
+        } else if (mInputKey.getText().toString().trim().isEmpty()) {
             result = "No keyword entered!";
         } else {
             if (mCkbEncrypt.isChecked()) {

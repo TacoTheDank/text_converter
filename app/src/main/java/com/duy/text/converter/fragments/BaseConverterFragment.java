@@ -70,10 +70,10 @@ public class BaseConverterFragment extends Fragment implements View.OnClickListe
 
         //bind view
         mEditTextBase.clear();
-        mEditTextBase.put(Base.BINARY, (EditText) view.findViewById(R.id.edit_binary));
-        mEditTextBase.put(Base.OCTAL, (EditText) view.findViewById(R.id.edit_octal));
-        mEditTextBase.put(Base.DECIMAL, (EditText) view.findViewById(R.id.edit_decimal));
-        mEditTextBase.put(Base.HEX, (EditText) view.findViewById(R.id.edit_hex));
+        mEditTextBase.put(Base.BINARY, view.findViewById(R.id.edit_binary));
+        mEditTextBase.put(Base.OCTAL, view.findViewById(R.id.edit_octal));
+        mEditTextBase.put(Base.DECIMAL, view.findViewById(R.id.edit_decimal));
+        mEditTextBase.put(Base.HEX, view.findViewById(R.id.edit_hex));
 
         //set input filter, disable keyboard
         for (Map.Entry<Base, EditText> entry : mEditTextBase.entrySet()) {

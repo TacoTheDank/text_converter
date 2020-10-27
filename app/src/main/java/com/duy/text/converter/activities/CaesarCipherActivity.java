@@ -100,12 +100,10 @@ public class CaesarCipherActivity extends BaseActivity implements TextWatcher {
             } else {
                 int offset = Integer.parseInt(mSpinnerOffset.getSelectedItem().toString());
                 if (mIsEncrypt.isChecked()) {
-                    String result;
-                    result = new CaesarCodec(offset).encode(input);
+                    String result = new CaesarCodec(offset).encode(input);
                     resultList.add(result);
                 } else {
-                    String result;
-                    result = new CaesarCodec(offset).decode(input);
+                    String result = new CaesarCodec(offset).decode(input);
                     resultList.add(result);
                 }
             }

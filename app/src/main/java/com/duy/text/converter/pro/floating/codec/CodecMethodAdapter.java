@@ -49,7 +49,7 @@ public class CodecMethodAdapter extends PagerAdapter {
     }
 
     @Override
-    public void destroyItem(View container, int position, Object object) {
+    public void destroyItem(ViewGroup container, int position, Object object) {
 
     }
 

@@ -34,7 +34,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -95,7 +94,7 @@ public class BarCodeCodecFragment extends Fragment implements View.OnClickListen
 
         new EditMenuViewHolder(
                 view.findViewById(R.id.edit_input),
-                (EditText) view.findViewById(R.id.edit_input))
+                view.findViewById(R.id.edit_input))
                 .bind();
 
         String[] data = getResources().getStringArray(R.array.barcode_format);

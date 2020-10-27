@@ -19,7 +19,6 @@ package com.duy.text.converter.utils;
 
 import android.content.Context;
 import android.content.Intent;
-import android.widget.Toast;
 
 /**
  * Created by Duy on 11-Jul-17.

@@ -244,8 +244,7 @@ public abstract class FloatingView extends Service implements OnTouchListener {
         }
         String channelId = getClass().getName();
         String chanelName = getClass().getSimpleName();
-        NotificationChannel channel;
-        channel = new NotificationChannel(channelId, chanelName, NotificationManager.IMPORTANCE_NONE);
+        NotificationChannel channel = new NotificationChannel(channelId, chanelName, NotificationManager.IMPORTANCE_NONE);
         channel.setLightColor(Color.BLUE);
         channel.setLockscreenVisibility(Notification.VISIBILITY_PRIVATE);
         NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);

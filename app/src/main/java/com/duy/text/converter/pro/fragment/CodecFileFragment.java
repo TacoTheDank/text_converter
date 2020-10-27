@@ -98,7 +98,7 @@ public class CodecFileFragment extends Fragment implements View.OnClickListener 
         mEditInputPath = view.findViewById(R.id.edit_input_path);
         mEditOutPath = view.findViewById(R.id.edit_output_path);
         if (savedInstanceState != null) {
-            setInputUri((Uri) savedInstanceState.getParcelable("input_path"));
+            setInputUri(savedInstanceState.getParcelable("input_path"));
             setOutputPath(savedInstanceState.getString("output_path"));
         }
 

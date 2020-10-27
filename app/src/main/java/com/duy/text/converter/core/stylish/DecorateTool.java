@@ -24,7 +24,7 @@ import java.util.ArrayList;
  */
 
 public class DecorateTool {
-    private static final String[] EFFECTS = new String[]{
+    private static final String[] EFFECTS = {
             "•?((¯°·._.• [ %1$s ] •._.·°¯))؟•",
             "ıllıllı [ %1$s ] ıllıllı",
             "¸,ø¤º°`°º¤ø,¸¸,ø¤º° [ %1$s ] °º¤ø,¸¸,ø¤º°`°º¤ø,¸",

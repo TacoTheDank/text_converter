@@ -28,7 +28,7 @@ import com.google.zxing.BarcodeFormat;
  */
 
 public class BarcodeEncodedPagerAdapter extends FragmentStatePagerAdapter {
-    public static final BarcodeFormat[] BARCODE_FORMATS = new BarcodeFormat[]{
+    public static final BarcodeFormat[] BARCODE_FORMATS = {
             BarcodeFormat.AZTEC, BarcodeFormat.CODABAR, BarcodeFormat.CODE_39, BarcodeFormat.CODE_128,
             BarcodeFormat.EAN_8, BarcodeFormat.EAN_13, BarcodeFormat.ITF, BarcodeFormat.PDF_417,
             BarcodeFormat.QR_CODE, BarcodeFormat.UPC_A

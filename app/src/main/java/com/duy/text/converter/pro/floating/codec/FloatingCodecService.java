@@ -155,11 +155,7 @@ public class FloatingCodecService extends FloatingView implements ViewPager.OnPa
 
     @Override
     public void onPageSelected(int position) {
-        if (mInput.hasFocus()) {
-            convert(true);
-        } else {
-            convert(false);
-        }
+        convert(mInput.hasFocus());
     }
 
     @Override

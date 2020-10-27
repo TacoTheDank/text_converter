@@ -58,7 +58,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private ArrayList<TextItem> getAll() {
         ArrayList<TextItem> list = new ArrayList<>();
 
-        String[] projection = new String[]{
+        String[] projection = {
                 COLUMN_TIME,
                 COLUMN_CONTENT
         };

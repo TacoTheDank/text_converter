@@ -28,7 +28,7 @@ import androidx.preference.PreferenceManager;
 import com.duy.text.converter.R;
 
 public class ThemeHelper {
-    private static final int[] THEME_IDS = new int[]{
+    private static final int[] THEME_IDS = {
             R.style.AppThemeDark/*,
             R.style.AppThemeLight*/
     };
