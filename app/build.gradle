@@ -69,9 +69,9 @@ dependencies {
 
 // Third party
     // Apache commons
-    implementation 'commons-codec:commons-codec:1.14'
-    implementation 'org.apache.commons:commons-lang3:3.10'
-    implementation 'org.apache.commons:commons-text:1.8'
+    implementation 'commons-codec:commons-codec:1.15'
+    implementation 'org.apache.commons:commons-lang3:3.11'
+    implementation 'org.apache.commons:commons-text:1.9'
 
     // Barcode
     implementation 'com.google.zxing:core:3.4.0'
