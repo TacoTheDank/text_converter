@@ -228,6 +228,27 @@ public class BaseConverterFragment extends Fragment implements View.OnClickListe
         }
     }
 
+    private static class BaseInputFilter implements InputFilter {
+        private static final String NUMBER = "0123456789ABCDEF";
+        private String mAcceptChar;
+
+        public BaseInputFilter(Base base) {
+            mAcceptChar = NUMBER.substring(0, base.getRadix());
+        }
+
+        @Override
+        public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
+            String str = source.toString();
+            StringBuilder result = new StringBuilder();
+            for (char c : str.toCharArray()) {
+                if (mAcceptChar.contains(Character.toString(Character.toUpperCase(c)))) {
+                    result.append(c);
+                }
+            }
+            return result.toString();
+        }
+    }
+
     private class OnBaseChangeListener implements TextWatcher {
 
         private EditText parent;
@@ -259,27 +280,6 @@ public class BaseConverterFragment extends Fragment implements View.OnClickListe
         @Override
         public void afterTextChanged(Editable s) {
 
-        }
-    }
-
-    private static class BaseInputFilter implements InputFilter {
-        private static final String NUMBER = "0123456789ABCDEF";
-        private String mAcceptChar;
-
-        public BaseInputFilter(Base base) {
-            mAcceptChar = NUMBER.substring(0, base.getRadix());
-        }
-
-        @Override
-        public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
-            String str = source.toString();
-            StringBuilder result = new StringBuilder();
-            for (char c : str.toCharArray()) {
-                if (mAcceptChar.contains(Character.toString(Character.toUpperCase(c)))) {
-                    result.append(c);
-                }
-            }
-            return result.toString();
         }
     }
 }
