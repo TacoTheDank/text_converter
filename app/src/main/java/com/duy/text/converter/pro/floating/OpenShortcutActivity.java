@@ -39,7 +39,7 @@ public abstract class OpenShortcutActivity extends Activity {
     public void onCreate(Bundle state) {
         super.onCreate(state);
 
-        if (Build.VERSION.SDK_INT >= 23 && !Settings.canDrawOverlays(this)) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !Settings.canDrawOverlays(this)) {
             startActivityForResult(
                     new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:" + getPackageName())),
                     REQUEST_CODE_WINDOW_OVERLAY_PERMISSION);
@@ -53,7 +53,7 @@ public abstract class OpenShortcutActivity extends Activity {
         if (ACTION_OPEN.equals(getIntent().getAction()) && intent.getAction() == null) {
             intent.setAction(ACTION_OPEN);
         }
-        if (Build.VERSION.SDK_INT >= 26) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             startForegroundService(intent);
         } else {
             startService(intent);
@@ -75,7 +75,7 @@ public abstract class OpenShortcutActivity extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_CODE_WINDOW_OVERLAY_PERMISSION) {
-            if (Build.VERSION.SDK_INT >= 23 && Settings.canDrawOverlays(this)) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && Settings.canDrawOverlays(this)) {
                 onSuccess();
             } else {
                 onFailure();

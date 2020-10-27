@@ -20,6 +20,7 @@ package com.duy.text.converter.pro.floating.stylish;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 
@@ -38,7 +39,7 @@ public class FloatingStylishCreateShortCutActivity extends Activity {
         super.onCreate(state);
 
         if (Intent.ACTION_CREATE_SHORTCUT.equals(getIntent().getAction())) {
-            if (android.os.Build.VERSION.SDK_INT >= 23 && !Settings.canDrawOverlays(this)) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !Settings.canDrawOverlays(this)) {
                 Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:" + getPackageName()));
                 startActivityForResult(intent, REQUEST_CODE_WINDOW_OVERLAY_PERMISSION);
             } else {
@@ -75,7 +76,7 @@ public class FloatingStylishCreateShortCutActivity extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_CODE_WINDOW_OVERLAY_PERMISSION) {
-            if (android.os.Build.VERSION.SDK_INT < 23 || Settings.canDrawOverlays(this)) {
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M || Settings.canDrawOverlays(this)) {
                 onSuccess();
             } else {
                 onFailure();

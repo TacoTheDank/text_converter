@@ -53,8 +53,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-import static android.os.Build.VERSION_CODES.N;
-
 /**
  * Created by Duy on 23-Aug-17.
  */
@@ -160,7 +158,7 @@ public class BarcodeEncodedFragment extends Fragment {
             File file = saveCurrentImage();
             if (file != null) {
                 Uri bitmapUri;
-                if (Build.VERSION.SDK_INT >= N) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                     bitmapUri = FileProvider.getUriForFile(getContext(),
                             getContext().getPackageName() + ".fileprovider", file);
                 } else {

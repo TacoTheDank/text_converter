@@ -191,7 +191,7 @@ public class CodecFileFragment extends Fragment implements View.OnClickListener 
 
     private boolean isPermissionGrated() {
         int i;
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
             i = ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.READ_EXTERNAL_STORAGE);
             if (i != PackageManager.PERMISSION_GRANTED) {
                 return false;

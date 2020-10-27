@@ -34,7 +34,7 @@ public class ShareUtil {
 
     public static void shareImage(Context context, File file) {
         Uri uri;
-        if (Build.VERSION.SDK_INT >= 24) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             uri = FileProvider.getUriForFile(context, context.getPackageName() + ".fileprovider", file);
         } else {
             uri = Uri.fromFile(file);

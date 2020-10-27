@@ -46,7 +46,7 @@ public abstract class CreateShortcutActivity extends Activity {
         super.onCreate(state);
 
         if (Intent.ACTION_CREATE_SHORTCUT.equals(getIntent().getAction())) {
-            if (Build.VERSION.SDK_INT >= 23 && !Settings.canDrawOverlays(this)) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !Settings.canDrawOverlays(this)) {
                 startActivityForResult(
                         new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:" + getPackageName())),
                         REQUEST_CODE_WINDOW_OVERLAY_PERMISSION);
@@ -80,7 +80,7 @@ public abstract class CreateShortcutActivity extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_CODE_WINDOW_OVERLAY_PERMISSION) {
-            if (Build.VERSION.SDK_INT >= 23 && Settings.canDrawOverlays(this)) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && Settings.canDrawOverlays(this)) {
                 onSuccess();
             } else {
                 onFailure();
