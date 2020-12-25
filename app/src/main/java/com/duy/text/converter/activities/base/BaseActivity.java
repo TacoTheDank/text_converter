@@ -28,6 +28,7 @@ import android.view.inputmethod.InputMethodManager;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
 import androidx.preference.PreferenceManager;
 
 import com.duy.text.converter.R;
@@ -56,7 +57,7 @@ public abstract class BaseActivity extends AppCompatActivity implements SharedPr
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String s) {
         Log.d(TAG, "onSharedPreferenceChanged() called with: s = [" + s + "]");
         if (s.equalsIgnoreCase(getString(R.string.pref_key_theme))) {
-            recreate();
+            ActivityCompat.recreate(this);
         }
     }
 

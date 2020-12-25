@@ -24,6 +24,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 
+import androidx.core.content.ContextCompat;
+
 import com.duy.text.converter.R;
 
 
@@ -53,11 +55,7 @@ public abstract class OpenShortcutActivity extends Activity {
         if (ACTION_OPEN.equals(getIntent().getAction()) && intent.getAction() == null) {
             intent.setAction(ACTION_OPEN);
         }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            startForegroundService(intent);
-        } else {
-            startService(intent);
-        }
+        ContextCompat.startForegroundService(this, intent);
         finish();
     }
 

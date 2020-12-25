@@ -34,6 +34,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.app.ActivityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.preference.PreferenceManager;
 import androidx.viewpager.widget.PagerAdapter;
@@ -184,7 +185,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQ_CODE_SETTING) {
             if (resultCode == RESULT_OK) {
-                recreate();
+                ActivityCompat.recreate(this);
             }
         }
     }
