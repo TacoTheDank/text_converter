@@ -34,8 +34,8 @@ import static com.duy.common.preferences.PreferencesUtil.bindPreferenceSummaryTo
  */
 public class SettingFragment extends PreferenceFragmentCompat {
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+        setPreferencesFromResource(R.xml.preferences, rootKey);
 
         // Bind the summaries of EditText/List/Dialog/Ringtone preferences
         // to their values. When their values change, their summaries are
@@ -45,11 +45,6 @@ public class SettingFragment extends PreferenceFragmentCompat {
 
         bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_key_theme)));
         addEvent();
-    }
-
-    @Override
-    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        setPreferencesFromResource(R.xml.preferences, rootKey);
     }
 
     private void addEvent() {
