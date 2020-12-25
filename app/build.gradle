@@ -32,10 +32,6 @@ android {
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
 
-    sourceSets {
-        main.res.srcDirs += 'src/main/res-cipher'
-    }
-
     buildTypes {
         release {
             minifyEnabled false
