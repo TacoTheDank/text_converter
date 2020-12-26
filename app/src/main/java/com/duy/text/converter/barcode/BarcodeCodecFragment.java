@@ -27,8 +27,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -213,22 +213,20 @@ public class BarcodeCodecFragment extends Fragment implements View.OnClickListen
 
 
     private void decodeImage() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-            int result = ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.READ_EXTERNAL_STORAGE);
-            if (result != PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(getContext(), R.string.message_read_permission, Toast.LENGTH_SHORT).show();
-                String[] permissions = {Manifest.permission.READ_EXTERNAL_STORAGE,
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE};
-                requestPermissions(permissions, REQUEST_READ_EXTERNAL_STORAGE);
-                return;
-            }
+        int result = ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.READ_EXTERNAL_STORAGE);
+        if (result != PackageManager.PERMISSION_GRANTED) {
+            Toast.makeText(getContext(), R.string.message_read_permission, Toast.LENGTH_SHORT).show();
+            String[] permissions = {Manifest.permission.READ_EXTERNAL_STORAGE,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE};
+            requestPermissions(permissions, REQUEST_READ_EXTERNAL_STORAGE);
+            return;
         }
 
         try {
             Intent getIntent = new Intent(Intent.ACTION_GET_CONTENT);
             getIntent.setType("image/*");
 
-            Intent pickIntent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            Intent pickIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
             pickIntent.setType("image/*");
 
             Intent chooserIntent = Intent.createChooser(getIntent, getString(R.string.title_select_image));

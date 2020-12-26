@@ -25,7 +25,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -107,7 +106,7 @@ public class CodecFileFragment extends Fragment implements View.OnClickListener 
         adapter.setDropDownViewResource(android.R.layout.simple_list_item_single_choice);
 
         mCodecMethodSpinner = view.findViewById(R.id.spinner_codec_methods);
-        mCodecMethodSpinner.setBackgroundDrawable(RoundedBackgroundEditText.createRoundedBackground(getContext()));
+        mCodecMethodSpinner.setBackground(RoundedBackgroundEditText.createRoundedBackground(getContext()));
         mCodecMethodSpinner.setAdapter(adapter);
     }
 
@@ -177,11 +176,9 @@ public class CodecFileFragment extends Fragment implements View.OnClickListener 
     }
 
     private void selectFile() {
-        if (!isPermissionGrated()) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_SELECT_FILE);
-            }
+        if (!isPermissionGranted()) {
+            requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_SELECT_FILE);
             return;
         }
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
@@ -189,13 +186,10 @@ public class CodecFileFragment extends Fragment implements View.OnClickListener 
         startActivityForResult(intent, REQUEST_SELECT_FILE);
     }
 
-    private boolean isPermissionGrated() {
-        int i;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-            i = ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.READ_EXTERNAL_STORAGE);
-            if (i != PackageManager.PERMISSION_GRANTED) {
-                return false;
-            }
+    private boolean isPermissionGranted() {
+        int i = ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.READ_EXTERNAL_STORAGE);
+        if (i != PackageManager.PERMISSION_GRANTED) {
+            return false;
         }
         i = ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE);
         return i == PackageManager.PERMISSION_GRANTED;

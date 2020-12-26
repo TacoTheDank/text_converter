@@ -121,7 +121,7 @@ public class HashFragment extends Fragment {
         mInput.addTextChangedListener(mInputWatcher);
 
         mMethodSpinner = view.findViewById(R.id.spinner_hash_methods);
-        mMethodSpinner.setBackgroundDrawable(RoundedBackgroundEditText.createRoundedBackground(getContext()));
+        mMethodSpinner.setBackground(RoundedBackgroundEditText.createRoundedBackground(getContext()));
         view.findViewById(R.id.img_share_out).setOnClickListener(v ->
                 ShareUtil.shareText(getContext(), mOutput.getText().toString()));
         view.findViewById(R.id.img_copy_out).setOnClickListener(v ->

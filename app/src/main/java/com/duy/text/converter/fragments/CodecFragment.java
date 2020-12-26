@@ -138,7 +138,7 @@ public class CodecFragment extends Fragment implements View.OnClickListener, Ada
                 android.R.layout.simple_list_item_1, names);
         adapter.setDropDownViewResource(android.R.layout.simple_list_item_single_choice);
         mMethodSpinner = view.findViewById(R.id.spinner_codec_methods);
-        mMethodSpinner.setBackgroundDrawable(RoundedBackgroundEditText.createRoundedBackground(getContext()));
+        mMethodSpinner.setBackground(RoundedBackgroundEditText.createRoundedBackground(getContext()));
         mMethodSpinner.setAdapter(adapter);
         mMethodSpinner.setOnItemSelectedListener(this);
 
