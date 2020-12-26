@@ -85,27 +85,24 @@ public class CaesarCipherActivity extends BaseActivity implements TextWatcher {
         resultList.clear();
         String input = mInput.getText().toString().trim();
         if (!input.isEmpty()) {
+            String result;
             if (mSpinnerOffset.getSelectedItem().toString().equalsIgnoreCase("All")) {
-                if (mIsEncrypt.isChecked()) {
-                    for (int offset = 1; offset <= 26; offset++) {
-                        String result = new CaesarCodec(offset).encode(input);
-                        resultList.add(String.format(Locale.US, "Offset %d:%s", offset, result));
+                for (int offset = 1; offset <= 26; offset++) {
+                    if (mIsEncrypt.isChecked()) {
+                        result = new CaesarCodec(offset).encode(input);
+                    } else {
+                        result = new CaesarCodec(offset).decode(input);
                     }
-                } else {
-                    for (int offset = 1; offset <= 26; offset++) {
-                        String result = new CaesarCodec(offset).decode(input);
-                        resultList.add(String.format(Locale.US, "Offset %d:%s", offset, result));
-                    }
+                    resultList.add(String.format(Locale.US, "Offset %d:%s", offset, result));
                 }
             } else {
                 int offset = Integer.parseInt(mSpinnerOffset.getSelectedItem().toString());
                 if (mIsEncrypt.isChecked()) {
-                    String result = new CaesarCodec(offset).encode(input);
-                    resultList.add(result);
+                    result = new CaesarCodec(offset).encode(input);
                 } else {
-                    String result = new CaesarCodec(offset).decode(input);
-                    resultList.add(result);
+                    result = new CaesarCodec(offset).decode(input);
                 }
+                resultList.add(result);
             }
         }
         mAdapter.setData(resultList);
