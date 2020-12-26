@@ -24,8 +24,6 @@ android {
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-
-        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
 
     compileOptions {
@@ -33,11 +31,9 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
-    useLibrary 'org.apache.http.legacy'
 }
 
 dependencies {
 // AndroidX
-    api 'androidx.preference:preference:1.1.1'
+    implementation 'androidx.preference:preference:1.1.1'
 }
