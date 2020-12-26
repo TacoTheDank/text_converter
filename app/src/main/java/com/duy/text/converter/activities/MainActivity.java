@@ -42,10 +42,10 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.duy.text.converter.R;
 import com.duy.text.converter.help.HelpDialog;
-import com.duy.text.converter.pro.PagerSectionAdapterPro;
-import com.duy.text.converter.pro.SettingActivity;
-import com.duy.text.converter.pro.floating.codec.FloatingCodecOpenShortCutActivity;
-import com.duy.text.converter.pro.floating.stylish.FloatingStylishOpenShortCutActivity;
+import com.duy.text.converter.pro.PagerSectionAdapter;
+import com.duy.text.converter.pro.SettingsActivity;
+import com.duy.text.converter.pro.floating.codec.FloatingCodecOpenShortcutActivity;
+import com.duy.text.converter.pro.floating.stylish.FloatingStylishOpenShortcutActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 
@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     }
 
     protected PagerAdapter getPageAdapter(String initValue) {
-        return new PagerSectionAdapterPro(this, getSupportFragmentManager(), initValue);
+        return new PagerSectionAdapter(this, getSupportFragmentManager(), initValue);
     }
 
     @Nullable
@@ -144,14 +144,14 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         int id = item.getItemId();
         switch (id) {
             case R.id.action_settings:
-                Intent intent = new Intent(this, SettingActivity.class);
+                Intent intent = new Intent(this, SettingsActivity.class);
                 startActivityForResult(intent, REQ_CODE_SETTING);
                 break;
             case R.id.action_open_stylish:
-                startActivity(new Intent(this, FloatingStylishOpenShortCutActivity.class));
+                startActivity(new Intent(this, FloatingStylishOpenShortcutActivity.class));
                 break;
             case R.id.action_open_codec:
-                startActivity(new Intent(this, FloatingCodecOpenShortCutActivity.class));
+                startActivity(new Intent(this, FloatingCodecOpenShortcutActivity.class));
                 break;
             case R.id.action_how_to_use:
                 HelpDialog helpDialog = new HelpDialog();

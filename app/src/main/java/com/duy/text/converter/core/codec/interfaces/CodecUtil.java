@@ -38,7 +38,7 @@ import com.duy.text.converter.core.codec.ReverseCodec;
 import com.duy.text.converter.core.codec.Rot13Codec;
 import com.duy.text.converter.core.codec.SubscriptCodec;
 import com.duy.text.converter.core.codec.SuperscriptCodec;
-import com.duy.text.converter.core.codec.URLCodec;
+import com.duy.text.converter.core.codec.UrlCodec;
 import com.duy.text.converter.core.codec.UnicodeCodec;
 import com.duy.text.converter.core.codec.UpperCaseCodec;
 import com.duy.text.converter.core.codec.UpsideDownCodec;
@@ -108,7 +108,7 @@ public class CodecUtil {
             case UPSIDE_DOWN:
                 return new UpsideDownCodec().decode(inp);
             case URL:
-                return new URLCodec().decode(inp);
+                return new UrlCodec().decode(inp);
             case WINGDINGS:
                 return new WingdingsCodec().decode(inp);
             case ZALGO_BIG:
@@ -176,7 +176,7 @@ public class CodecUtil {
             case UPSIDE_DOWN:
                 return new UpsideDownCodec().encode(inp);
             case URL:
-                return new URLCodec().encode(inp);
+                return new UrlCodec().encode(inp);
             case WINGDINGS:
                 return new WingdingsCodec().encode(inp);
             case ZALGO_BIG:

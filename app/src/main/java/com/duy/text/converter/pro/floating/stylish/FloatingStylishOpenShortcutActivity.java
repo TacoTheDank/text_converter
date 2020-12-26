@@ -26,39 +26,29 @@ import android.provider.Settings;
 
 import com.duy.text.converter.R;
 
-
 /**
  * Created by Duy on 9/4/2017.
  */
 
-public class FloatingStylishCreateShortCutActivity extends Activity {
+public class FloatingStylishOpenShortcutActivity extends Activity {
     private static final int REQUEST_CODE_WINDOW_OVERLAY_PERMISSION = 10001;
 
     @Override
     public void onCreate(Bundle state) {
         super.onCreate(state);
 
-        if (Intent.ACTION_CREATE_SHORTCUT.equals(getIntent().getAction())) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !Settings.canDrawOverlays(this)) {
-                Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:" + getPackageName()));
-                startActivityForResult(intent, REQUEST_CODE_WINDOW_OVERLAY_PERMISSION);
-            } else {
-                onSuccess();
-            }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !Settings.canDrawOverlays(this)) {
+            Uri uri = Uri.parse("package:" + getPackageName());
+            Intent activity = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, uri);
+            startActivityForResult(activity, REQUEST_CODE_WINDOW_OVERLAY_PERMISSION);
+        } else {
+            onSuccess();
         }
     }
 
     private void onSuccess() {
-        Intent.ShortcutIconResource icon = Intent.ShortcutIconResource.fromContext(this, R.mipmap.ic_launcher_round);
-
-        Intent intent = new Intent();
-        Intent launchIntent = new Intent(this, FloatingStylishOpenShortCutActivity.class);
-
-        intent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, launchIntent);
-        intent.putExtra(Intent.EXTRA_SHORTCUT_NAME, getString(R.string.app_name));
-        intent.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, icon);
-
-        setResult(RESULT_OK, intent);
+        Intent intent = new Intent(this, FloatingStylishService.class);
+        startService(intent);
         finish();
     }
 
@@ -72,6 +62,7 @@ public class FloatingStylishCreateShortCutActivity extends Activity {
         super.finish();
         overridePendingTransition(R.anim.blank, R.anim.blank);
     }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

@@ -64,7 +64,7 @@ import static android.app.Activity.RESULT_OK;
  * Created by Duy on 14-Aug-17.
  */
 
-public class BarCodeCodecFragment extends Fragment implements View.OnClickListener {
+public class BarcodeCodecFragment extends Fragment implements View.OnClickListener {
     private static final String TAG = "BarCodeFragment";
     private static final String KEY_TEXT = "KEY_TEXT";
     private static final int REQUEST_PICK_IMAGE = 1010;
@@ -72,11 +72,11 @@ public class BarCodeCodecFragment extends Fragment implements View.OnClickListen
     private BaseEditText mInput;
     private DecodeImageTask mDecodeImageTask;
 
-    public static BarCodeCodecFragment newInstance() {
+    public static BarcodeCodecFragment newInstance() {
 
         Bundle args = new Bundle();
 
-        BarCodeCodecFragment fragment = new BarCodeCodecFragment();
+        BarcodeCodecFragment fragment = new BarcodeCodecFragment();
         fragment.setArguments(args);
         return fragment;
     }

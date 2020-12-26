@@ -34,7 +34,7 @@ import com.duy.text.converter.activities.base.BaseActivity;
 import com.duy.text.converter.pro.menu.DecodeAllProcessTextActivity;
 import com.duy.text.converter.pro.menu.EncodeAllProcessTextActivity;
 import com.duy.text.converter.pro.menu.StylishProcessTextActivity;
-import com.duy.text.converter.pro.notification.SettingFragment;
+import com.duy.text.converter.pro.notification.SettingsFragment;
 
 import static android.content.pm.PackageManager.COMPONENT_ENABLED_STATE_DISABLED;
 
@@ -42,8 +42,8 @@ import static android.content.pm.PackageManager.COMPONENT_ENABLED_STATE_DISABLED
  * Created by Duy on 26-Jul-17.
  */
 
-public class SettingActivity extends BaseActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
-    private static final String TAG = "SettingActivity";
+public class SettingsActivity extends BaseActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
+    private static final String TAG = "SettingsActivity";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -58,7 +58,7 @@ public class SettingActivity extends BaseActivity implements SharedPreferences.O
         PreferenceManager.getDefaultSharedPreferences(this).registerOnSharedPreferenceChangeListener(this);
 
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.content, new SettingFragment()).commit();
+        fragmentTransaction.replace(R.id.content, new SettingsFragment()).commit();
     }
 
     @Override

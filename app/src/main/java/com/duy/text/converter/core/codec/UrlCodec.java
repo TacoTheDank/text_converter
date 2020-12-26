@@ -25,18 +25,19 @@ import com.duy.text.converter.core.codec.interfaces.CodecImpl;
 
 import org.apache.commons.codec.DecoderException;
 import org.apache.commons.codec.EncoderException;
+import org.apache.commons.codec.net.URLCodec;
 
 /**
  * Created by Duy on 11-Jul-17.
  */
 
-public class URLCodec extends CodecImpl {
+public class UrlCodec extends CodecImpl {
     @NonNull
     @Override
     public String encode(@NonNull String text) {
         setMax(1);
         setConfident(1);
-        org.apache.commons.codec.net.URLCodec urlCodec = new org.apache.commons.codec.net.URLCodec();
+        URLCodec urlCodec = new URLCodec();
         try {
             return urlCodec.encode(text);
         } catch (EncoderException e) {
@@ -51,7 +52,7 @@ public class URLCodec extends CodecImpl {
     public String decode(@NonNull String text) {
         setMax(1);
         setConfident(1);
-        org.apache.commons.codec.net.URLCodec urlCodec = new org.apache.commons.codec.net.URLCodec();
+        URLCodec urlCodec = new URLCodec();
         try {
             return urlCodec.decode(text);
         } catch (DecoderException e) {

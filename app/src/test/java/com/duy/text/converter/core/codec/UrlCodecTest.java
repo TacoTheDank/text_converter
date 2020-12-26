@@ -26,7 +26,7 @@ import org.junit.Test;
 /**
  * Created by Duy on 11-Jul-17.
  */
-public class URLCodecTest {
+public class UrlCodecTest {
     private static final String TO_BE_ENCODE = "https://commons.apache.org/proper/commons-codec/apidocs/org/apache/commons/codec/net/URLCodec.html";
     private final Codec codec = CodecMethod.URL.getCodec();
 

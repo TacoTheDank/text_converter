@@ -24,7 +24,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.duy.text.converter.R;
-import com.duy.text.converter.barcode.BarCodeCodecFragment;
+import com.duy.text.converter.barcode.BarcodeCodecFragment;
 import com.duy.text.converter.core.stylish.fragments.DecorateFragment;
 import com.duy.text.converter.core.stylish.fragments.StylistFragment;
 import com.duy.text.converter.fragments.CodecFragment;
@@ -34,12 +34,12 @@ import com.duy.text.converter.fragments.CodecFragment;
  * Created by DUy on 06-Feb-17.
  */
 
-public class PagerSectionAdapterPro extends FragmentPagerAdapter {
+public class PagerSectionAdapter extends FragmentPagerAdapter {
     private static final int COUNT = 4;
     private final String init;
     private final Context context;
 
-    public PagerSectionAdapterPro(Context context, FragmentManager fm, String init) {
+    public PagerSectionAdapter(Context context, FragmentManager fm, String init) {
         super(fm);
         this.context = context;
         this.init = init;
@@ -56,7 +56,7 @@ public class PagerSectionAdapterPro extends FragmentPagerAdapter {
             case 0:
                 return CodecFragment.newInstance(init);
             case 1:
-                return BarCodeCodecFragment.newInstance();
+                return BarcodeCodecFragment.newInstance();
             case 2:
                 return StylistFragment.newInstance();
             case 3:

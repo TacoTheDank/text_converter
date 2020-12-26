@@ -33,7 +33,7 @@ import com.duy.text.converter.core.codec.ReverseCodec;
 import com.duy.text.converter.core.codec.Rot13Codec;
 import com.duy.text.converter.core.codec.SubscriptCodec;
 import com.duy.text.converter.core.codec.SuperscriptCodec;
-import com.duy.text.converter.core.codec.URLCodec;
+import com.duy.text.converter.core.codec.UrlCodec;
 import com.duy.text.converter.core.codec.UnicodeCodec;
 import com.duy.text.converter.core.codec.UpperCaseCodec;
 import com.duy.text.converter.core.codec.UpsideDownCodec;
@@ -160,7 +160,7 @@ public enum CodecMethod {
     URL {
         @Override
         public Codec getCodec() {
-            return new URLCodec();
+            return new UrlCodec();
         }
     },
     WINGDINGS {

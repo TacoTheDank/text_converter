@@ -23,8 +23,8 @@ import android.os.Bundle;
 import androidx.preference.PreferenceFragmentCompat;
 
 import com.duy.text.converter.R;
-import com.duy.text.converter.pro.floating.codec.FloatingCodecOpenShortCutActivity;
-import com.duy.text.converter.pro.floating.stylish.FloatingStylishOpenShortCutActivity;
+import com.duy.text.converter.pro.floating.codec.FloatingCodecOpenShortcutActivity;
+import com.duy.text.converter.pro.floating.stylish.FloatingStylishOpenShortcutActivity;
 
 import static com.duy.common.preferences.PreferencesUtil.bindPreferenceSummaryToValue;
 
@@ -32,7 +32,7 @@ import static com.duy.common.preferences.PreferencesUtil.bindPreferenceSummaryTo
  * This fragment shows notification preferences only. It is used when the
  * activity is showing a two-pane settings UI.
  */
-public class SettingFragment extends PreferenceFragmentCompat {
+public class SettingsFragment extends PreferenceFragmentCompat {
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.preferences, rootKey);
@@ -49,12 +49,12 @@ public class SettingFragment extends PreferenceFragmentCompat {
 
     private void addEvent() {
         findPreference("open_floating_codec").setOnPreferenceClickListener(preference -> {
-            startActivity(new Intent(getActivity(), FloatingCodecOpenShortCutActivity.class));
+            startActivity(new Intent(getActivity(), FloatingCodecOpenShortcutActivity.class));
             return false;
         });
 
         findPreference("open_floating_stylish").setOnPreferenceClickListener(preference -> {
-            startActivity(new Intent(getActivity(), FloatingStylishOpenShortCutActivity.class));
+            startActivity(new Intent(getActivity(), FloatingStylishOpenShortcutActivity.class));
             return false;
         });
     }

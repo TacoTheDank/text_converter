@@ -134,11 +134,11 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.duy.text.converter.pro.SettingActivity" />
+        <activity android:name="com.duy.text.converter.pro.SettingsActivity" />
 
         <!--activity and service for floating converter-->
         <activity
-            android:name=".pro.floating.codec.FloatingCodecCreateShortCutActivity"
+            android:name=".pro.floating.codec.FloatingCodecCreateShortcutActivity"
             android:icon="@mipmap/ic_floating_codec"
             android:label="@string/app_name">
             <intent-filter>
@@ -149,7 +149,7 @@
 
         <!--activity and service for floating converter-->
         <activity
-            android:name=".pro.floating.stylish.FloatingStylishCreateShortCutActivity"
+            android:name=".pro.floating.stylish.FloatingStylishCreateShortcutActivity"
             android:icon="@mipmap/ic_floating_stylish"
             android:label="@string/app_name">
             <intent-filter>
@@ -159,7 +159,7 @@
         </activity>
 
         <activity
-            android:name=".pro.floating.codec.FloatingCodecOpenShortCutActivity"
+            android:name=".pro.floating.codec.FloatingCodecOpenShortcutActivity"
             android:excludeFromRecents="true"
             android:exported="true"
             android:label="@string/app_name"
@@ -167,7 +167,7 @@
             android:theme="@style/Theme.TransparentBackground" />
 
         <activity
-            android:name=".pro.floating.stylish.FloatingStylishOpenShortCutActivity"
+            android:name=".pro.floating.stylish.FloatingStylishOpenShortcutActivity"
             android:excludeFromRecents="true"
             android:exported="true"
             android:label="@string/app_name"
